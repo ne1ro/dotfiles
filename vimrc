@@ -1,6 +1,6 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-colorscheme solarized
+colorscheme base16-eighties
 set background=dark
 set tabstop=2 shiftwidth=2 expandtab
 set number
