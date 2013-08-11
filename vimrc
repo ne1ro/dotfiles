@@ -30,15 +30,13 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'ZoomWin'
   Bundle 'Lokaltog/vim-powerline'
   Bundle 'majutsushi/tagbar'
-  Bundle 'wavded/vim-stylus'
-  Bundle 'digitaltoad/vim-jade'
   Bundle 'mintplant/vim-literate-coffeescript'
   Bundle 'mileszs/ack.vim'
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'skammer/vim-css-color'
   Bundle 'Valloric/YouCompleteMe' 
   Bundle 'slim-template/vim-slim' 
-  Bundle 'VimClojure' 
+  Bundle 'chriskempson/base16-vim'
 
 set ttyfast
 set noswapfile

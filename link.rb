@@ -16,4 +16,4 @@ old_dotfiles.each {|file| FileUtils.mv(file, old_dotfiles_dir) if File.exists? f
 # Link dotfiles
 dotfiles.each {|file| File.symlink(dotfiles_dir + file, Dir.home + '/.' + file) if File.exists? dotfiles_dir + file}
 
-puts "Successfully linking #{dotfiles.to_s}"
+puts "Successfully linking #{dotfiles.join ','}"
