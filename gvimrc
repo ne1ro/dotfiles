@@ -12,5 +12,5 @@ set go-=B
 set go-=t
 set go-=b
 set go-=l
-set guifont=Ubuntu\ Mono\ 12
+set guifont=Mensch\ 11
 autocmd vimenter * NERDTree /home/neiro/Projects/
