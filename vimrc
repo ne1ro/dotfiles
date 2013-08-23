@@ -28,7 +28,7 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'scrooloose/nerdtree'
   Bundle 'groenewege/vim-less'
   Bundle 'ZoomWin'
-  Bundle 'Lokaltog/vim-powerline'
+  Bundle 'bling/vim-airline'
   Bundle 'majutsushi/tagbar'
   Bundle 'mintplant/vim-literate-coffeescript'
   Bundle 'mileszs/ack.vim'
