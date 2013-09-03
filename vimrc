@@ -37,6 +37,8 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'Valloric/YouCompleteMe' 
   Bundle 'slim-template/vim-slim' 
   Bundle 'chriskempson/base16-vim'
+  Bundle 'digitaltoad/vim-jade'
+  Bundle 'wavded/vim-stylus'
 
 set ttyfast
 set noswapfile
