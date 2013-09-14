@@ -50,6 +50,4 @@ export PATH=$PATH:/home/neiro/.rbenv/shims:/home/neiro/.rbenv/bin:/usr/lib/light
 # Commit and push in one command
 function gt() {
      git add . && git commit -am "$1" && git push
-
 }
-
