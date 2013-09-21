@@ -77,3 +77,6 @@ au Syntax * RainbowParenthesesLoadBraces
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'tomorrow'
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*.js
+let g:ctrlp_dont_split = 'nerdtree'
