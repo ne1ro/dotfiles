@@ -24,7 +24,6 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'mattn/zencoding-vim'
   Bundle 'scrooloose/nerdtree'
-  Bundle 'groenewege/vim-less'
   Bundle 'ZoomWin'
   Bundle 'bling/vim-airline'
   Bundle 'majutsushi/tagbar'
@@ -34,9 +33,10 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'skammer/vim-css-color'
   Bundle 'Valloric/YouCompleteMe' 
   Bundle 'slim-template/vim-slim' 
-  Bundle 'chriskempson/base16-vim'
   Bundle 'digitaltoad/vim-jade'
   Bundle 'wavded/vim-stylus'
+  Bundle 'altercation/vim-colors-solarized'
+  Bundle 'elzr/vim-json'
 
 set ttyfast
 set noswapfile
