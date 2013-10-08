@@ -1,6 +1,6 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=4 shiftwidth=4 expandtab
 set number
 set autoindent
 set nowrap
@@ -18,17 +18,14 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'tpope/vim-rails'
   Bundle 'tpope/vim-endwise'
   Bundle 'kien/ctrlp.vim'
-  Bundle 'scrooloose/nerdcommenter'
-  Bundle 'Auto-Pairs'
+  Bundle 'Raimondi/delimitMate'
+  Bundle 'tpope/vim-commentary'
   Bundle 'scrooloose/syntastic'
-  Bundle 'kchmck/vim-coffee-script'
   Bundle 'mattn/zencoding-vim'
   Bundle 'scrooloose/nerdtree'
   Bundle 'ZoomWin'
   Bundle 'bling/vim-airline'
   Bundle 'majutsushi/tagbar'
-  Bundle 'mintplant/vim-literate-coffeescript'
-  Bundle 'mileszs/ack.vim'
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'skammer/vim-css-color'
   Bundle 'Valloric/YouCompleteMe' 
@@ -37,11 +34,15 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'wavded/vim-stylus'
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'elzr/vim-json'
+  Bundle 'jelera/vim-javascript-syntax'
+  Bundle 'pangloss/vim-javascript'
+  Bundle 'nathanaelkane/vim-indent-guides'
 
+set t_Co=256
 set ttyfast
 set noswapfile
 let NERDTreeShowHidden=1
-
+au FileType javascript call JavaScriptFold()
 set mousehide
 
 " Key mappings
@@ -76,7 +77,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'solarized'
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*.js
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_dont_split = 'nerdtree'
