@@ -1,4 +1,4 @@
 My dotfiles
 ============
 
-Type `$ ruby link.rb` to link dotfiles
+Type `$ ./link.sh` to link dotfiles
