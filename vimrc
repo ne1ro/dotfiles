@@ -1,6 +1,6 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=2 shiftwidth=2 expandtab
 set number
 set autoindent
 set nowrap
@@ -42,7 +42,6 @@ set t_Co=256
 set ttyfast
 set noswapfile
 let NERDTreeShowHidden=1
-au FileType javascript call JavaScriptFold()
 set mousehide
 
 " Key mappings
