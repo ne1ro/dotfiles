@@ -30,10 +30,13 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'skammer/vim-css-color'
   Bundle 'Valloric/YouCompleteMe' 
   Bundle 'slim-template/vim-slim' 
+  Bundle 'digitaltoad/vim-jade'
+  Bundle 'wavded/vim-stylus'
+  Bundle 'altercation/vim-colors-solarized'
   Bundle 'elzr/vim-json'
+  Bundle 'jelera/vim-javascript-syntax'
+  Bundle 'pangloss/vim-javascript'
   Bundle 'nathanaelkane/vim-indent-guides'
-  Bundle 'chriskempson/base16-vim'
-  Bundle 'kchmck/vim-coffee-script'
 
 set t_Co=256
 set ttyfast

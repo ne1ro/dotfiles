@@ -4,7 +4,7 @@ set listchars=trail:~,extends:>,precedes:<
 set guioptions-=r " Removes right hand scroll bar
 set background=dark
 set relativenumber
-colorscheme base16-eighties
+colorscheme solarized
 set go-=L " Removes left hand scroll bar
 set go-=m
 set go-=M
@@ -14,5 +14,5 @@ set go-=b
 set go-=l
 autocmd vimenter * NERDTree /home/neiro/Projects/
 autocmd BufEnter * NERDTreeMirror
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+set guifont=Meslo\ LG\ S\ for\ Powerline\ 11
 
