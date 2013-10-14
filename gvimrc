@@ -15,4 +15,3 @@ set go-=l
 autocmd vimenter * NERDTree /home/neiro/Projects/
 autocmd BufEnter * NERDTreeMirror
 set guifont=Meslo\ LG\ S\ for\ Powerline\ 11
-
