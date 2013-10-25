@@ -53,6 +53,3 @@ export PATH=$PATH:/home/neiro/.rbenv/shims:/home/neiro/.rbenv/bin:/usr/lib/light
 function gt() {
      git add . && git commit -am "$1" && git push
 }
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source /home/neiro/.rvm/scripts/rvm
