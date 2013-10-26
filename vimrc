@@ -36,6 +36,7 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'pangloss/vim-javascript'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'moll/vim-node'
+  Bundle 'altercation/vim-colors-solarized'
 
 set t_Co=256
 set ttyfast
