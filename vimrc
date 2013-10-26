@@ -9,7 +9,6 @@ set mousehide
 set showmatch
 set antialias
 let g:Powerline_symbols = 'fancy'
-
 set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
 
@@ -32,11 +31,11 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'slim-template/vim-slim' 
   Bundle 'digitaltoad/vim-jade'
   Bundle 'wavded/vim-stylus'
-  Bundle 'chriskempson/base16-vim'
   Bundle 'elzr/vim-json'
   Bundle 'jelera/vim-javascript-syntax'
   Bundle 'pangloss/vim-javascript'
   Bundle 'nathanaelkane/vim-indent-guides'
+  Bundle 'moll/vim-node'
 
 set t_Co=256
 set ttyfast
@@ -76,7 +75,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'solarized'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_dont_split = 'nerdtree'
@@ -145,3 +144,5 @@ return label
 endfunction
 
 set tabline=%!MyTabLine()
+
+au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
