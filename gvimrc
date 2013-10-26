@@ -1,5 +1,4 @@
 set guioptions-=T " Removes top toolbar
-set list
 set listchars=trail:~,extends:>,precedes:<
 set guioptions-=r " Removes right hand scroll bar
 set background=dark
@@ -14,4 +13,4 @@ set go-=b
 set go-=l
 autocmd vimenter * NERDTree /home/neiro/Projects/
 autocmd BufEnter * NERDTreeMirror
-set guifont=Meslo\ LG\ S\ for\ Powerline\ 11
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
