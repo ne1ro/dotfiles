@@ -34,6 +34,11 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'tpope/vim-haml'
+  Bundle 'digitaltoad/vim-jade'
+  Bundle 'jelera/vim-javascript-syntax'
+  Bundle 'pangloss/vim-javascript'
+  Bundle 'moll/vim-node'
+  Bundle 'wavded/vim-stylus'
 
 set t_Co=256
 set ttyfast
