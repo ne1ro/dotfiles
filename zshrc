@@ -53,3 +53,5 @@ export PATH=$PATH:/home/neiro/.rbenv/shims:/home/neiro/.rbenv/bin:/usr/lib/light
 function gt() {
      git add . && git commit -am "$1" && git push
 }
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
