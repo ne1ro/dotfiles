@@ -42,7 +42,7 @@ DEFAULT_USER="neiro"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler debian github node npm rails4 rake rvm ruby vundle)
+plugins=(git bundler debian github rails4 rake ruby vundle)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,6 +53,3 @@ export PATH=$PATH:/home/neiro/.rbenv/shims:/home/neiro/.rbenv/bin:/usr/lib/light
 function gt() {
      git add . && git commit -am "$1" && git push
 }
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source ~/.profile
