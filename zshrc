@@ -42,7 +42,7 @@ DEFAULT_USER="neiro"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler debian github rails4 rake ruby vundle)
+plugins=(git bundler debian github rails4 rake ruby vundle node npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -54,4 +54,5 @@ function gt() {
      git add . && git commit -am "$1" && git push
 }
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="./node_modules/.bin:$PATH"
 eval "$(rbenv init -)"
