@@ -14,7 +14,6 @@ set rtp+=~/.vim/bundle/vundle/
 
   Bundle 'gmarik/vundle'
   Bundle 'tpope/vim-fugitive'
-  Bundle 'tpope/vim-rails'
   Bundle 'tpope/vim-endwise'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Raimondi/delimitMate'
@@ -28,17 +27,16 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'skammer/vim-css-color'
   Bundle 'Valloric/YouCompleteMe' 
-  Bundle 'slim-template/vim-slim' 
   Bundle 'elzr/vim-json'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'kchmck/vim-coffee-script'
-  Bundle 'tpope/vim-haml'
   Bundle 'digitaltoad/vim-jade'
   Bundle 'jelera/vim-javascript-syntax'
   Bundle 'pangloss/vim-javascript'
   Bundle 'moll/vim-node'
   Bundle 'wavded/vim-stylus'
+  Bundle 'chriskempson/base16-vim'
 
 set t_Co=256
 set ttyfast
