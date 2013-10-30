@@ -30,7 +30,6 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'elzr/vim-json'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'altercation/vim-colors-solarized'
-  Bundle 'kchmck/vim-coffee-script'
   Bundle 'digitaltoad/vim-jade'
   Bundle 'jelera/vim-javascript-syntax'
   Bundle 'pangloss/vim-javascript'
