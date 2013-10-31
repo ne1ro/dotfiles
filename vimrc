@@ -36,6 +36,10 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'moll/vim-node'
   Bundle 'wavded/vim-stylus'
   Bundle 'chriskempson/base16-vim'
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'tpope/vim-haml'
+  Bundle 'slim-template/vim-slim' 
+  Bundle 'tpope/vim-rails'
 
 set t_Co=256
 set ttyfast
