@@ -29,7 +29,6 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'Valloric/YouCompleteMe' 
   Bundle 'elzr/vim-json'
   Bundle 'nathanaelkane/vim-indent-guides'
-  Bundle 'altercation/vim-colors-solarized'
   Bundle 'digitaltoad/vim-jade'
   Bundle 'jelera/vim-javascript-syntax'
   Bundle 'pangloss/vim-javascript'
@@ -79,7 +78,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'tomorrow'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_dont_split = 'nerdtree'
