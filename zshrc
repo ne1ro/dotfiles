@@ -60,7 +60,7 @@ function gts() {
 }
 
 # Commit to git and push to production
-function gts() {
+function gtp() {
      git add . && git commit -am "$1" && git push && cap production update
 }
 export PATH="./node_modules/.bin:$PATH"
