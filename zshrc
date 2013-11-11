@@ -42,7 +42,7 @@ DEFAULT_USER="neiro"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git debian github vundle node npm rake ruby rails4 bundler)
+plugins=(git debian github vundle node npm rake ruby rails4 capistrano coffee last-working-dir)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -52,5 +52,15 @@ export PATH=$PATH:/home/neiro/.rbenv/shims:/home/neiro/.rbenv/bin:/usr/lib/light
 # Commit and push in one command
 function gt() {
      git add . && git commit -am "$1" && git push
+}
+
+# Commit to git and push to staging
+function gts() {
+     git add . && git commit -am "$1" && git push && cap staging update
+}
+
+# Commit to git and push to production
+function gts() {
+     git add . && git commit -am "$1" && git push && cap production update
 }
 export PATH="./node_modules/.bin:$PATH"
