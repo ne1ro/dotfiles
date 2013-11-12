@@ -56,7 +56,7 @@ function gt() {
 
 # Commit to git and push to staging
 function gts() {
-     git add . && git commit -am "$1" && git push && cap staging update
+     git add . && git commit -am "$1" && grunt build && git push && cap staging update
 }
 
 # Commit to git and push to production
