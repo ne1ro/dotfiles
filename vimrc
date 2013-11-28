@@ -11,7 +11,8 @@ set antialias
 let g:Powerline_symbols = 'fancy'
 set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
-
+  
+  Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'gmarik/vundle'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-endwise'
