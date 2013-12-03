@@ -35,11 +35,11 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'pangloss/vim-javascript'
   Bundle 'moll/vim-node'
   Bundle 'wavded/vim-stylus'
-  Bundle 'chriskempson/base16-vim'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'tpope/vim-haml'
   Bundle 'slim-template/vim-slim' 
   Bundle 'tpope/vim-rails'
+  Bundle 'altercation/vim-colors-solarized'
 
 set t_Co=256
 set ttyfast
@@ -79,7 +79,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'solarized'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 let g:ctrlp_dont_split = 'nerdtree'
