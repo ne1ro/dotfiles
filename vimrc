@@ -30,16 +30,14 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'Valloric/YouCompleteMe' 
   Bundle 'elzr/vim-json'
   Bundle 'nathanaelkane/vim-indent-guides'
-  Bundle 'digitaltoad/vim-jade'
   Bundle 'jelera/vim-javascript-syntax'
   Bundle 'pangloss/vim-javascript'
-  Bundle 'moll/vim-node'
-  Bundle 'wavded/vim-stylus'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'tpope/vim-haml'
   Bundle 'slim-template/vim-slim' 
   Bundle 'tpope/vim-rails'
   Bundle 'altercation/vim-colors-solarized'
+  Bundle 'mattn/emmet-vim'
 
 set t_Co=256
 set ttyfast
@@ -149,4 +147,6 @@ endfunction
 
 set tabline=%!MyTabLine()
 
-au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<C-Z>'
