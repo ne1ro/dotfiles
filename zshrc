@@ -64,3 +64,4 @@ function gtp() {
      git add . && git commit -am "$1" && git push && cap production update
 }
 export PATH="./node_modules/.bin:$PATH"
+alias rake='noglob rake'
