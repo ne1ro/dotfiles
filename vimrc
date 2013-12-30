@@ -150,3 +150,7 @@ set tabline=%!MyTabLine()
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<C-Z>'
+
+autocmd FileType ruby set commentstring=#\ %s
+autocmd FileType coffee set commentstring=#\ %s
+autocmd FileType html set commentstring=<!-- %s -->
