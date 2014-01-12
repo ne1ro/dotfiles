@@ -38,6 +38,7 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'tpope/vim-rails'
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'mattn/emmet-vim'
+  Bundle 'mileszs/ack.vim'
 
 set t_Co=256
 set ttyfast
