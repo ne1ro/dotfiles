@@ -21,7 +21,6 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'tpope/vim-commentary'
   Bundle 'scrooloose/syntastic'
   Bundle 'mattn/zencoding-vim'
-  Bundle 'scrooloose/nerdtree'
   Bundle 'ZoomWin'
   Bundle 'bling/vim-airline'
   Bundle 'majutsushi/tagbar'
@@ -43,7 +42,6 @@ set rtp+=~/.vim/bundle/vundle/
 set t_Co=256
 set ttyfast
 set noswapfile
-let NERDTreeShowHidden=1
 set mousehide
 
 " Key mappings
@@ -81,7 +79,6 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'solarized'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
-let g:ctrlp_dont_split = 'nerdtree'
 
 function ToggleFullScreen()
     if &go =~ 'e'
