@@ -11,6 +11,4 @@ set go-=B
 set go-=t
 set go-=b
 set go-=l
-autocmd vimenter * NERDTree /home/neiro/Projects/
-autocmd BufEnter * NERDTreeMirror
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
