@@ -78,7 +78,7 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'solarized'
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*
 
 function ToggleFullScreen()
     if &go =~ 'e'
