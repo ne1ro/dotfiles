@@ -12,3 +12,4 @@ set go-=t
 set go-=b
 set go-=l
 set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+autocmd VimEnter * call ToggleFullScreen()
