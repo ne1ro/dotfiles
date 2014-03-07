@@ -150,6 +150,9 @@ autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<C-Z>'
 
 autocmd FileType ruby set commentstring=#\ %s
+autocmd FileType python set commentstring=#\ %s
 autocmd FileType coffee set commentstring=#\ %s
 autocmd FileType javascript set commentstring=//\ %s
 autocmd FileType html set commentstring=<!--\ %s\ -->
+
+autocmd FileType html :setlocal sw=4 ts=4 sts=4
