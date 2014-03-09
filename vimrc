@@ -156,3 +156,4 @@ autocmd FileType javascript set commentstring=//\ %s
 autocmd FileType html set commentstring=<!--\ %s\ -->
 
 autocmd FileType html :setlocal sw=4 ts=4 sts=4
+autocmd FileType python :setlocal sw=4 ts=4 sts=4
