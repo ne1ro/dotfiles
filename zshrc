@@ -66,3 +66,6 @@ function gtp() {
 export PATH="./node_modules/.bin:$PATH"
 alias rake='noglob rake'
 alias gulp='gulp --require coffee-script'
+
+export PATH=$PATH:~/adt/sdk/tools
+export PATH=$PATH:~/adt/sdk/platform-tools

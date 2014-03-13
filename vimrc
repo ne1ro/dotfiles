@@ -12,6 +12,8 @@ let g:Powerline_symbols = 'fancy'
 set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
   
+  Bundle 'digitaltoad/vim-jade'
+  Bundle 'wavded/vim-stylus'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'gmarik/vundle'
   Bundle 'tpope/vim-fugitive'
@@ -153,6 +155,7 @@ autocmd FileType ruby set commentstring=#\ %s
 autocmd FileType python set commentstring=#\ %s
 autocmd FileType coffee set commentstring=#\ %s
 autocmd FileType javascript set commentstring=//\ %s
+autocmd FileType jade set commentstring=//\ %s
 autocmd FileType html set commentstring=<!--\ %s\ -->
 
 autocmd FileType html :setlocal sw=4 ts=4 sts=4
