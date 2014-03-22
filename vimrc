@@ -13,8 +13,8 @@ set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
   
   Bundle 'digitaltoad/vim-jade'
-  Bundle 'wavded/vim-stylus'
   Bundle 'xolox/vim-session'
+  Bundle 'xolox/vim-misc'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'gmarik/vundle'
   Bundle 'tpope/vim-fugitive'
