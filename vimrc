@@ -13,6 +13,7 @@ set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
   
   Bundle 'digitaltoad/vim-jade'
+  Bundle 'dag/vim2hs'
   Bundle 'xolox/vim-session'
   Bundle 'xolox/vim-misc'
   Bundle 'nathanaelkane/vim-indent-guides'
@@ -158,3 +159,41 @@ autocmd FileType html set commentstring=<!--\ %s\ -->
 
 autocmd FileType html :setlocal sw=4 ts=4 sts=4
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
+autocmd FileType haskell :setlocal tabstop=8 softtabstop=4  shiftwidth=4  smarttab shiftround nojoinspaces
+
+let s:width = 80
+
+" Haskell settings
+let g:haskell_conceal_wide = 1
+
+let s:width = 80
+
+function! HaskellModuleHeader(...)
+    let name = 0 < a:0 ? a:1 : inputdialog("Module: ")
+    let note = 1 < a:0 ? a:2 : inputdialog("Note: ")
+    let description = 2 < a:0 ? a:3 : inputdialog("Describe this module: ")
+    
+    return  repeat('-', s:width) . "\n" 
+    \       . "-- | \n" 
+    \       . "-- Module      : " . name . "\n"
+    \       . "-- Note        : " . note . "\n"
+    \       . "-- \n"
+    \       . "-- " . description . "\n"
+    \       . "-- \n"
+    \       . repeat('-', s:width) . "\n"
+    \       . "\n"
+
+endfunction
+
+nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
+
+function! HaskellModuleSection(...)
+    let name = 0 < a:0 ? a:1 : inputdialog("Section name: ")
+
+    return  repeat('-', s:width) . "\n"
+    \       . "--  " . name . "\n"
+    \       . "\n"
+
+endfunction
+
+nmap <silent> --s "=HaskellModuleSection()<CR>gp
