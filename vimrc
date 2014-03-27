@@ -1,17 +1,10 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
-set tabstop=2 shiftwidth=2 expandtab
-set number
-set autoindent
-set nowrap
-set cursorline
-set mousehide
-set showmatch
-set antialias
-let g:Powerline_symbols = 'fancy'
+" -----------------------------------------------------------------------------
+" Vundle bundle
+" -----------------------------------------------------------------------------
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
-  
   Bundle 'digitaltoad/vim-jade'
   Bundle 'dag/vim2hs'
   Bundle 'xolox/vim-session'
@@ -27,7 +20,6 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'bling/vim-airline'
   Bundle 'majutsushi/tagbar'
   Bundle 'kien/rainbow_parentheses.vim'
-  Bundle 'skammer/vim-css-color'
   Bundle 'Valloric/YouCompleteMe' 
   Bundle 'elzr/vim-json'
   Bundle 'jelera/vim-javascript-syntax'
@@ -40,47 +32,68 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'mattn/emmet-vim'
   Bundle 'mileszs/ack.vim'
 
+" -----------------------------------------------------------------------------
+" Set default params
+" -----------------------------------------------------------------------------
+set tabstop=2 shiftwidth=2 expandtab
+set number
+set autoindent
+set nowrap
+set cursorline
+set mousehide
+set showmatch
+set antialias
 set t_Co=256
 set ttyfast
 set noswapfile
 set mousehide
-
-" Key mappings
-nmap <F8> :TagbarToggle<CR>
-imap jj <ESC>
-
 set expandtab
 set relativenumber
-
 set smartcase
 set gdefault
-
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*
 set wrap
 
-nnoremap &lt;up> &lt;nop>
-nnoremap &lt;down> &lt;nop>
-nnoremap &lt;left> &lt;nop>
-nnoremap &lt;right> &lt;nop>
-inoremap &lt;up> &lt;nop>
-inoremap &lt;down> &lt;nop>
-inoremap &lt;left> &lt;nop>
-inoremap &lt;right> &lt;nop>
-nnoremap j gj
-nnoremap k gk
-
-let mapleader = ","
+" Enable syntax by default
 syntax enable
 
+" -----------------------------------------------------------------------------
+" Set custom configuration
+" -----------------------------------------------------------------------------
+let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
+let mapleader = ","
+let g:airline_theme = 'solarized'
+let g:haskell_conceal_wide = 1
+let s:width = 80
+let g:user_emmet_install_global = 0
+let g:user_emmet_leader_key='<C-Z>'
+
+" Rainbow Parentheses settings
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'solarized'
+" -----------------------------------------------------------------------------
+" File types settings
+" -----------------------------------------------------------------------------
+autocmd FileType html,css EmmetInstall
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*
+autocmd FileType ruby set commentstring=#\ %s
+autocmd FileType python set commentstring=#\ %s
+autocmd FileType coffee set commentstring=#\ %s
+autocmd FileType javascript set commentstring=//\ %s
+autocmd FileType jade set commentstring=//\ %s
+autocmd FileType html set commentstring=<!--\ %s\ -->
 
+autocmd FileType html :setlocal sw=4 ts=4 sts=4
+autocmd FileType python :setlocal sw=4 ts=4 sts=4
+autocmd FileType haskell :setlocal tabstop=8 softtabstop=4  shiftwidth=4  smarttab shiftround nojoinspaces
+
+" -----------------------------------------------------------------------------
+" Custom functions
+" -----------------------------------------------------------------------------
 function ToggleFullScreen()
     if &go =~ 'e'
         exec('silent !wmctrl -r :ACTIVE: -b add,fullscreen')
@@ -90,9 +103,6 @@ function ToggleFullScreen()
         exec('set go+=e')
     endif 
 endfunction
-
-nnoremap <F11> :call ToggleFullScreen()<CR>
-inoremap <F11> :call ToggleFullScreen()<CR>
 
 function MyTabLine()
   let s = ''
@@ -146,28 +156,6 @@ endfunction
 
 set tabline=%!MyTabLine()
 
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-let g:user_emmet_leader_key='<C-Z>'
-
-autocmd FileType ruby set commentstring=#\ %s
-autocmd FileType python set commentstring=#\ %s
-autocmd FileType coffee set commentstring=#\ %s
-autocmd FileType javascript set commentstring=//\ %s
-autocmd FileType jade set commentstring=//\ %s
-autocmd FileType html set commentstring=<!--\ %s\ -->
-
-autocmd FileType html :setlocal sw=4 ts=4 sts=4
-autocmd FileType python :setlocal sw=4 ts=4 sts=4
-autocmd FileType haskell :setlocal tabstop=8 softtabstop=4  shiftwidth=4  smarttab shiftround nojoinspaces
-
-let s:width = 80
-
-" Haskell settings
-let g:haskell_conceal_wide = 1
-
-let s:width = 80
-
 function! HaskellModuleHeader(...)
     let name = 0 < a:0 ? a:1 : inputdialog("Module: ")
     let note = 1 < a:0 ? a:2 : inputdialog("Note: ")
@@ -185,8 +173,6 @@ function! HaskellModuleHeader(...)
 
 endfunction
 
-nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
-
 function! HaskellModuleSection(...)
     let name = 0 < a:0 ? a:1 : inputdialog("Section name: ")
 
@@ -196,4 +182,12 @@ function! HaskellModuleSection(...)
 
 endfunction
 
+" -----------------------------------------------------------------------------
+" Key mappings
+" -----------------------------------------------------------------------------
+nmap <F8> :TagbarToggle<CR>
+imap jj <ESC>
+nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
 nmap <silent> --s "=HaskellModuleSection()<CR>gp
+nnoremap <F11> :call ToggleFullScreen()<CR>
+inoremap <F11> :call ToggleFullScreen()<CR>
