@@ -68,6 +68,7 @@ let g:haskell_conceal_wide = 1
 let s:width = 80
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-Z>'
+let g:LargeFile=10
 
 " Rainbow Parentheses settings
 au VimEnter * RainbowParenthesesToggle
