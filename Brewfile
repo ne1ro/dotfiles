@@ -16,5 +16,3 @@ install nginx
 install sqlite
 install postgresql
 install redis
-install midnight-commander
-install htop-osx
