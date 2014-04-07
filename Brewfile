@@ -1,11 +1,8 @@
-update
-doctor
 install vim --override-system-vi
 install rbenv
 install zsh
 install pngquant
 install imagemagick
-install openssh
 install openvpn
 install ack
 install wget
