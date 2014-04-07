@@ -16,3 +16,4 @@ install nginx
 install sqlite
 install postgresql
 install redis
+install git-flow
