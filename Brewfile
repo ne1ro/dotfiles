@@ -1,5 +1,6 @@
 install vim --override-system-vi
 install rbenv
+install ruby-build
 install zsh
 install pngquant
 install imagemagick
@@ -10,7 +11,6 @@ install bcrypt
 install haskell-platform
 install xz
 install node
-install mtr --no-gtk
 install autojump
 install nginx
 install sqlite

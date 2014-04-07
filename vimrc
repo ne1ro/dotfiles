@@ -7,7 +7,6 @@ set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
   Bundle 'digitaltoad/vim-jade'
   Bundle 'dag/vim2hs'
-  Bundle 'xolox/vim-session'
   Bundle 'xolox/vim-misc'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'gmarik/vundle'
