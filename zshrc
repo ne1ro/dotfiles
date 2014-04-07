@@ -63,3 +63,4 @@ function gtp() {
 export PATH="./node_modules/.bin:$PATH"
 alias rake='noglob rake'
 alias gulp='gulp --require coffee-script'
+eval "$(rbenv init - --no-rehash)"
