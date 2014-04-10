@@ -2,7 +2,7 @@
 
 # Set dotfiles list
 DOT_DIR=~/dotfiles
-Dotfiles=('gitconfig' 'gvimrc' 'vimrc' 'zshrc');
+Dotfiles=('gitconfig' 'gvimrc' 'vimrc' 'zshrc' 'amethyst');
 
 # Check for old dotfiles dir
 OLD_DIR=~/.old_dotfiles
