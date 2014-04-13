@@ -11,5 +11,13 @@ set go-=B
 set go-=t
 set go-=b
 set go-=l
-set guifont=Menlo:12
+set guifont=Menlo:h14
+set encoding=utf8
+set noerrorbells
+set novisualbell
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1"
+set lines=1000
+set columns=1000
 autocmd VimEnter * call ToggleFullScreen()

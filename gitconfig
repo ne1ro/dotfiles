@@ -3,3 +3,5 @@
 	name = neiro
 [push]
 	default = current
+[core]
+	autocrlf = input

@@ -60,7 +60,6 @@ syntax enable
 " Set custom configuration
 " -----------------------------------------------------------------------------
 let g:Powerline_symbols = 'fancy'
-let g:airline_powerline_fonts = 1
 let mapleader = ","
 let g:airline_theme = 'solarized'
 let g:haskell_conceal_wide = 1
