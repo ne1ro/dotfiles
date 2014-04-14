@@ -7,6 +7,7 @@ set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
   Bundle 'digitaltoad/vim-jade'
   Bundle 'dag/vim2hs'
+  Bundle "Chiel92/vim-autoformat"
   Bundle 'xolox/vim-misc'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'gmarik/vundle'
@@ -191,3 +192,4 @@ nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
 nmap <silent> --s "=HaskellModuleSection()<CR>gp
 nnoremap <F11> :call ToggleFullScreen()<CR>
 inoremap <F11> :call ToggleFullScreen()<CR>
+noremap <F3> :Autoformat<CR><CR>
