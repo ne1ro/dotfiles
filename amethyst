@@ -1,7 +1,8 @@
 {
-    "MISC": "----------------------",
-    "float-small-windows": true,
-    "mouse-follows-focus": true,
-    "enables-layout-hud": false,
-    "enables-layout-hud-on-space-change": false
+  "enables-layout-hud-on-space-change": false,
+  "mouse-follows-focus": true,
+  "layouts": [
+      "tall",
+      "fullscreen"
+  ]
 }
