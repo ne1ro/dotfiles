@@ -6,7 +6,6 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
   Bundle 'digitaltoad/vim-jade'
-  Bundle 'dag/vim2hs'
   Bundle "Chiel92/vim-autoformat"
   Bundle 'xolox/vim-misc'
   Bundle 'nathanaelkane/vim-indent-guides'
@@ -64,7 +63,6 @@ let g:Powerline_symbols = 'fancy'
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let mapleader = ","
 let g:airline_theme = 'solarized'
-let g:haskell_conceal_wide = 1
 let s:width = 80
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-Z>'
@@ -92,7 +90,6 @@ autocmd FileType html set commentstring=<!--\ %s\ -->
 autocmd FileType html :setlocal sw=4 ts=4 sts=4
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType javascript :setlocal sw=4 ts=4 sts=4
-autocmd FileType haskell :setlocal tabstop=8 softtabstop=4  shiftwidth=4  smarttab shiftround nojoinspaces
 
 " -----------------------------------------------------------------------------
 " Custom functions
@@ -159,39 +156,11 @@ endfunction
 
 set tabline=%!MyTabLine()
 
-function! HaskellModuleHeader(...)
-    let name = 0 < a:0 ? a:1 : inputdialog("Module: ")
-    let note = 1 < a:0 ? a:2 : inputdialog("Note: ")
-    let description = 2 < a:0 ? a:3 : inputdialog("Describe this module: ")
-    
-    return  repeat('-', s:width) . "\n" 
-    \       . "-- | \n" 
-    \       . "-- Module      : " . name . "\n"
-    \       . "-- Note        : " . note . "\n"
-    \       . "-- \n"
-    \       . "-- " . description . "\n"
-    \       . "-- \n"
-    \       . repeat('-', s:width) . "\n"
-    \       . "\n"
-
-endfunction
-
-function! HaskellModuleSection(...)
-    let name = 0 < a:0 ? a:1 : inputdialog("Section name: ")
-
-    return  repeat('-', s:width) . "\n"
-    \       . "--  " . name . "\n"
-    \       . "\n"
-
-endfunction
-
 " -----------------------------------------------------------------------------
 " Key mappings
 " -----------------------------------------------------------------------------
 nmap <F8> :TagbarToggle<CR>
 imap jj <ESC>
-nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
-nmap <silent> --s "=HaskellModuleSection()<CR>gp
 nnoremap <F11> :call ToggleFullScreen()<CR>
 inoremap <F11> :call ToggleFullScreen()<CR>
 noremap <F3> :Autoformat<CR><CR>

@@ -64,3 +64,5 @@ export PATH="./node_modules/.bin:$PATH"
 alias rake='noglob rake'
 alias gulp='gulp --require coffee-script'
 eval "$(rbenv init - --no-rehash)"
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
