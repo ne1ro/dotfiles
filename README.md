@@ -1,4 +1,4 @@
 My dotfiles
 ============
 
-Type `$ ./link.sh` to link dotfiles
+Install Ruby and type `./link.rb`
