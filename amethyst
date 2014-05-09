@@ -1,8 +1,0 @@
-{
-  "enables-layout-hud-on-space-change": false,
-  "mouse-follows-focus": true,
-  "layouts": [
-      "tall",
-      "fullscreen"
-  ]
-}

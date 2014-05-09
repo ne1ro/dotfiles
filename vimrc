@@ -35,6 +35,7 @@ set rtp+=~/.vim/bundle/vundle/
 " Set default params
 " -----------------------------------------------------------------------------
 set tabstop=2 shiftwidth=2 expandtab
+set laststatus=2
 set number
 set autoindent
 set nowrap
