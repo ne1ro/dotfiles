@@ -53,6 +53,7 @@ set smartcase
 set gdefault
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*
 set wrap
+set encoding=utf-8
 
 " Enable syntax by default
 syntax enable
@@ -60,8 +61,8 @@ syntax enable
 " -----------------------------------------------------------------------------
 " Set custom configuration
 " -----------------------------------------------------------------------------
-let g:Powerline_symbols = 'fancy'
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:airline_powerline_fonts = 1
 let mapleader = ","
 let g:airline_theme = 'solarized'
 let s:width = 80
