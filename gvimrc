@@ -11,7 +11,7 @@ set go-=B
 set go-=t
 set go-=b
 set go-=l
-set guifont=Menlo\ for\ Powerline:h14
+set guifont=Menlo\ for\ Powerline:h13
 set encoding=utf8
 set noerrorbells
 set novisualbell

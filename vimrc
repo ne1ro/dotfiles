@@ -36,6 +36,7 @@ set rtp+=~/.vim/bundle/vundle/
 " -----------------------------------------------------------------------------
 set tabstop=2 shiftwidth=2 expandtab
 set laststatus=2
+set textwidth=80
 set number
 set autoindent
 set nowrap
@@ -51,7 +52,7 @@ set expandtab
 set relativenumber
 set smartcase
 set gdefault
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/eggs/*,*.pyc
 set wrap
 set encoding=utf-8
 
