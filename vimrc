@@ -5,12 +5,11 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
  call vundle#rc()
-  Bundle 'digitaltoad/vim-jade'
   Bundle "Chiel92/vim-autoformat"
   Bundle 'xolox/vim-misc'
+  Bundle 'scrooloose/nerdtree'
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'gmarik/vundle'
-  Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-endwise'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Raimondi/delimitMate'
@@ -24,19 +23,18 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'jelera/vim-javascript-syntax'
   Bundle 'pangloss/vim-javascript'
   Bundle 'kchmck/vim-coffee-script'
-  Bundle 'tpope/vim-haml'
   Bundle 'slim-template/vim-slim' 
   Bundle 'tpope/vim-rails'
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'mattn/emmet-vim'
   Bundle 'mileszs/ack.vim'
+  Bundle 'digitaltoad/vim-jade'
 
 " -----------------------------------------------------------------------------
 " Set default params
 " -----------------------------------------------------------------------------
 set tabstop=2 shiftwidth=2 expandtab
 set laststatus=2
-set textwidth=80
 set number
 set autoindent
 set nowrap
@@ -93,6 +91,7 @@ autocmd FileType html set commentstring=<!--\ %s\ -->
 autocmd FileType html :setlocal sw=4 ts=4 sts=4
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType javascript :setlocal sw=4 ts=4 sts=4
+autocmd FileType jade :setlocal sw=4 ts=4 sts=4
 
 " -----------------------------------------------------------------------------
 " Custom functions

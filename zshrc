@@ -62,7 +62,6 @@ function gtp() {
 }
 export PATH="./node_modules/.bin:$PATH"
 alias rake='noglob rake'
-alias gulp='gulp --require coffee-script'
 alias gitstatus='git status -sb'
 alias gitlog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 eval "$(rbenv init - --no-rehash)"
