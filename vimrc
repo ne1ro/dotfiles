@@ -29,6 +29,7 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'mattn/emmet-vim'
   Bundle 'mileszs/ack.vim'
   Bundle 'digitaltoad/vim-jade'
+  Bundle 'fatih/vim-go'
 
 " -----------------------------------------------------------------------------
 " Set default params
