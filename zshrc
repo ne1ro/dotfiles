@@ -60,6 +60,12 @@ function gts() {
 function gtp() {
      git add . && git commit -am "$1" && git push && cap production update
 }
+
+# Mercurial gt
+function hgt() {
+    hg addremove . && hg commit -m "$1" && hg push
+}
+
 export PATH="./node_modules/.bin:$PATH"
 alias rake='noglob rake'
 alias gitstatus='git status -sb'
