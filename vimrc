@@ -29,6 +29,7 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'mattn/emmet-vim'
   Bundle 'mileszs/ack.vim'
   Bundle 'digitaltoad/vim-jade'
+  Bundle 'mhinz/vim-startify'
   Bundle 'fatih/vim-go'
 
 " -----------------------------------------------------------------------------
@@ -70,6 +71,7 @@ let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-Z>'
 let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
+let g:startify_bookmarks = ['~/Projects/control_panel/server/app.coffee', '~/Projects/flycats/app/app.coffee', '~/Projects/modatracker/app/controllers/application_controller.rb', '~/Projects/reviews/src/reviews/static/js/main.js']
 
 " Rainbow Parentheses settings
 au VimEnter * RainbowParenthesesToggle

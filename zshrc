@@ -73,3 +73,4 @@ alias gitlog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%
 eval "$(rbenv init - --no-rehash)"
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+export GOPATH=~/Projects/go
