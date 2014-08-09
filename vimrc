@@ -20,8 +20,8 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'Valloric/YouCompleteMe' 
   Bundle 'elzr/vim-json'
-  Bundle 'jelera/vim-javascript-syntax'
-  Bundle 'pangloss/vim-javascript'
+  " Bundle 'jelera/vim-javascript-syntax'
+  " Bundle 'pangloss/vim-javascript'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'slim-template/vim-slim' 
   Bundle 'tpope/vim-rails'
@@ -83,7 +83,7 @@ au Syntax * RainbowParenthesesLoadBraces
 " File types settings
 " -----------------------------------------------------------------------------
 autocmd FileType html,css EmmetInstall
-
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 autocmd FileType ruby set commentstring=#\ %s
 autocmd FileType python set commentstring=#\ %s
 autocmd FileType coffee set commentstring=#\ %s

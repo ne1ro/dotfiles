@@ -42,7 +42,7 @@ DEFAULT_USER="neiro"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vundle git-flow gitignore node npm rake ruby rails capistrano coffee last-working-dir cabal osx brew)
+plugins=(git vundle git-flow gitignore node npm rake ruby rails capistrano coffee last-working-dir cabal osx brew colorize go postgres rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,6 +69,8 @@ function hgt() {
 export PATH="./node_modules/.bin:$PATH"
 alias rake='noglob rake'
 alias gitstatus='git status -sb'
+alias bex='bundle exec'
+alias http='http -v --pretty=all'
 alias gitlog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 eval "$(rbenv init - --no-rehash)"
 export PATH=/usr/local/bin:$PATH
