@@ -61,9 +61,13 @@ function gtp() {
      git add . && git commit -am "$1" && git push && cap production update
 }
 
-# Mercurial gt
 function hgt() {
     hg addremove . && hg commit -m "$1" && hg push
+}
+
+# Commit, push and deploy in mercurial
+function hgts {
+    hg addremove . && hg commit -m "$1" && hg push && npm run deploy
 }
 
 export PATH="./node_modules/.bin:$PATH"
