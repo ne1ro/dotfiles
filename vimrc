@@ -11,6 +11,7 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'nathanaelkane/vim-indent-guides'
   Bundle 'gmarik/vundle'
   Bundle 'tpope/vim-endwise'
+  Bundle 'tpope/vim-jdaddy'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Raimondi/delimitMate'
   Bundle 'tpope/vim-commentary'
