@@ -21,6 +21,8 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'kien/rainbow_parentheses.vim'
   Bundle 'Valloric/YouCompleteMe' 
   Bundle 'elzr/vim-json'
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'ludovicchabant/vim-lawrencium'
   " Bundle 'jelera/vim-javascript-syntax'
   " Bundle 'pangloss/vim-javascript'
   Bundle 'kchmck/vim-coffee-script'
