@@ -17,3 +17,5 @@ install sqlite
 install postgresql
 install redis
 install git-flow
+install tmux
+install mongodb
