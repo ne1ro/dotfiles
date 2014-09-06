@@ -73,10 +73,9 @@ function hgts {
 export PATH="./node_modules/.bin:$PATH"
 alias rake='noglob rake'
 alias gitstatus='git status -sb'
-alias bex='bundle exec'
+alias be='bundle exec'
 alias http='http -v --pretty=all'
 alias gitlog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 eval "$(rbenv init - --no-rehash)"
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-export GOPATH=~/Projects/go
