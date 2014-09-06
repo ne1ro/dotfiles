@@ -28,12 +28,11 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'slim-template/vim-slim' 
   Bundle 'tpope/vim-rails'
-  " Bundle 'altercation/vim-colors-solarized'
+  Bundle 'altercation/vim-colors-solarized'
   Bundle 'mattn/emmet-vim'
   Bundle 'mileszs/ack.vim'
   Bundle 'digitaltoad/vim-jade'
   Bundle 'mhinz/vim-startify'
-  Plugin 'chriskempson/base16-vim'
   " Bundle 'fatih/vim-go'
 
 " -----------------------------------------------------------------------------
@@ -69,7 +68,7 @@ syntax enable
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:airline_powerline_fonts = 1
 let mapleader = ","
-let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'solarized'
 let s:width = 80
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-Z>'
