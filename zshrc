@@ -42,7 +42,7 @@ DEFAULT_USER="neiro"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vundle git-flow gitignore node npm rake ruby rails capistrano coffee last-working-dir cabal osx brew colorize go postgres rbenv)
+plugins=(git vundle git-flow gitignore node npm rake-fast bundler ruby rails capistrano coffee last-working-dir cabal osx brew colorize go postgres rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -54,11 +54,6 @@ function gt() {
 # Commit to git and push to staging
 function gts() {
      git add . && git commit -am "$1" && git push && cap staging update
-}
-
-# Commit to git and push to production
-function gtp() {
-     git add . && git commit -am "$1" && git push && cap production update
 }
 
 function hgt() {
