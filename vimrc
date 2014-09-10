@@ -41,6 +41,7 @@ set rtp+=~/.vim/bundle/vundle/
 set tabstop=2 shiftwidth=2 expandtab
 set laststatus=2
 set number
+set colorcolumn=80
 set autoindent
 set nowrap
 set cursorline
@@ -94,10 +95,10 @@ autocmd FileType javascript set commentstring=//\ %s
 autocmd FileType jade set commentstring=//\ %s
 autocmd FileType html set commentstring=<!--\ %s\ -->
 
-autocmd FileType html :setlocal sw=4 ts=4 sts=4
+autocmd FileType html :setlocal sw=2 ts=2 sts=2
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
-autocmd FileType javascript :setlocal sw=4 ts=4 sts=4
-autocmd FileType jade :setlocal sw=4 ts=4 sts=4
+autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
+autocmd FileType jade :setlocal sw=2 ts=2 sts=2
 
 " -----------------------------------------------------------------------------
 " Custom functions
