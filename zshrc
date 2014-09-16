@@ -8,6 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sorin"
 
 DEFAULT_USER="neiro"
+EDITOR="vim"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
