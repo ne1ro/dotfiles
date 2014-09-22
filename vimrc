@@ -83,6 +83,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" Load Rabl syntax
+au BufRead,BufNewFile *.rabl setf ruby
+
 " -----------------------------------------------------------------------------
 " File types settings
 " -----------------------------------------------------------------------------
