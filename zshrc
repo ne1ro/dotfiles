@@ -68,6 +68,7 @@ function hgts {
 
 export PATH="./node_modules/.bin:$PATH"
 alias rake='noglob rake'
+alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
 alias gitstatus='git status -sb'
 alias be='bundle exec'
 alias http='http -v --pretty=all'
