@@ -1,0 +1,20 @@
+install caskroom/cask/brew-cask
+tap caskroom/versions
+
+cask install google-chrome
+cask install macvim
+cask install torbrowser
+cask install vlc
+cask install multibit
+cask install robomongo
+cask install tomighty
+cask install gimp
+cask install seil
+cask install transmission
+cask install alfred
+cask install iterm2
+cask install flash
+
+cask alfred link
+
+cask cleanup

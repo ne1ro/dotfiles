@@ -33,6 +33,7 @@ set rtp+=~/.vim/bundle/vundle/
   Bundle 'mileszs/ack.vim'
   Bundle 'digitaltoad/vim-jade'
   Bundle 'mhinz/vim-startify'
+  Bundle 'editorconfig/editorconfig-vim'
   " Bundle 'fatih/vim-go'
 
 " -----------------------------------------------------------------------------
