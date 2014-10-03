@@ -8,7 +8,6 @@ install openvpn
 install ack
 install wget
 install bcrypt
-install haskell-platform
 install xz
 install node
 install autojump
@@ -19,3 +18,6 @@ install redis
 install git-flow
 install tmux
 install mongodb
+install mackup
+install tor
+install go
