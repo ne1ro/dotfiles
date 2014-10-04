@@ -17,6 +17,7 @@ cask install flash
 cask install skype
 cask install bittorrent-sync
 cask install the-unarchiver
+cask install clementine
 
 cask alfred link
 

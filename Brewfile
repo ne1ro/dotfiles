@@ -23,4 +23,3 @@ install mongodb
 install mackup
 install tor
 install go
-install mpd
