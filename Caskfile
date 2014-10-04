@@ -15,6 +15,7 @@ cask install alfred
 cask install iterm2
 cask install flash
 cask install skype
+cask install bittorrent-sync
 
 cask alfred link
 

@@ -1,4 +1,6 @@
 install vim --override-system-vi
+install coreutils
+install findutils
 install rbenv
 install ruby-build
 install zsh
@@ -21,3 +23,4 @@ install mongodb
 install mackup
 install tor
 install go
+install mpd
