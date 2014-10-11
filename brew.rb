@@ -50,7 +50,7 @@ apps = %w[
 `brew update && brew upgrade && brew install caskroom/cask/brew-cask && \
   brew tap caskroom/versions`
 
-packages.each { |package| exec "brew install #{ package } &"}
-apps.each { |app| exec "brew cask install #{ app } &"}
+packages.each { |package| exec "brew install #{ package }"}
+apps.each { |app| exec "brew cask install #{ app }"}
 
 `brew cleanup && brew cask cleanup && brew cask alfred link`

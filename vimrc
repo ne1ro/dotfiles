@@ -1,40 +1,37 @@
 " -----------------------------------------------------------------------------
 " Vundle bundle
 " -----------------------------------------------------------------------------
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
-  Bundle "Chiel92/vim-autoformat"
-  Bundle 'xolox/vim-misc'
-  Bundle 'scrooloose/nerdtree'
-  Bundle 'nathanaelkane/vim-indent-guides'
-  Bundle 'gmarik/vundle'
-  Bundle 'tpope/vim-endwise'
-  Bundle 'tpope/vim-jdaddy'
-  Bundle 'kien/ctrlp.vim'
-  Bundle 'Raimondi/delimitMate'
-  Bundle 'tpope/vim-commentary'
-  Bundle 'scrooloose/syntastic'
-  Bundle 'bling/vim-airline'
-  Bundle 'majutsushi/tagbar'
-  Bundle 'kien/rainbow_parentheses.vim'
-  Bundle 'Valloric/YouCompleteMe' 
-  Bundle 'elzr/vim-json'
-  Bundle 'tpope/vim-fugitive'
-  Bundle 'ludovicchabant/vim-lawrencium'
-  " Bundle 'jelera/vim-javascript-syntax'
-  " Bundle 'pangloss/vim-javascript'
-  Bundle 'kchmck/vim-coffee-script'
-  Bundle 'slim-template/vim-slim' 
-  Bundle 'tpope/vim-rails'
-  Bundle 'altercation/vim-colors-solarized'
-  Bundle 'mattn/emmet-vim'
-  Bundle 'mileszs/ack.vim'
-  Bundle 'digitaltoad/vim-jade'
-  Bundle 'mhinz/vim-startify'
-  Bundle 'editorconfig/editorconfig-vim'
-  " Bundle 'fatih/vim-go'
+set nocompatible " Use local vim mode
+filetype off " Turn off file type detection
+call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
+  Plug 'Chiel92/vim-autoformat' " Code formatting
+  Plug 'xolox/vim-misc' " Miscellaneous auto-load Vim scripts
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File browser
+  Plug 'nathanaelkane/vim-indent-guides' " Show indents
+  Plug 'tpope/vim-endwise' " End certain structures automatically
+  Plug 'tpope/vim-jdaddy', { 'for': 'json' } " JSON formatting
+  Plug 'kien/ctrlp.vim' " File and buffers navigation
+  Plug 'Raimondi/delimitMate' " Closing of quotes, parenthesis, brackets
+  Plug 'tpope/vim-commentary' " Easy comments
+  Plug 'scrooloose/syntastic' " Syntax checker
+  Plug 'bling/vim-airline' " Custom status line
+  Plug 'majutsushi/tagbar' " Tags navigation
+  Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
+  Plug 'Valloric/YouCompleteMe'  " Auto-completion
+  Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
+  Plug 'tpope/vim-fugitive' " Git
+  Plug 'ludovicchabant/vim-lawrencium' " Mercurial
+  Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' } " Coffee-script syntax
+  Plug 'slim-template/vim-slim', { 'for': 'slim' }  " Slim syntax
+  Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
+  Plug 'altercation/vim-colors-solarized' " Color scheme
+  Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
+  Plug 'mileszs/ack.vim' " File search
+  Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade syntax
+  Plug 'mhinz/vim-startify' " Start screen
+  Plug 'editorconfig/editorconfig-vim' " Default project settings
+  Plug 'Keithbsmiley/investigate.vim' " Documentation
+call plug#end() " End of vim-plug list
 
 " -----------------------------------------------------------------------------
 " Set default params
