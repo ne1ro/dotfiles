@@ -1,5 +1,5 @@
 " -----------------------------------------------------------------------------
-" Vundle bundle
+" Plugins
 " -----------------------------------------------------------------------------
 set nocompatible " Use local vim mode
 filetype off " Turn off file type detection
@@ -17,7 +17,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'bling/vim-airline' " Custom status line
   Plug 'majutsushi/tagbar' " Tags navigation
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-  Plug 'Valloric/YouCompleteMe'  " Auto-completion
+  Plug 'Shougo/neocomplete'  " Auto-completion
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
   Plug 'tpope/vim-fugitive' " Git
   Plug 'ludovicchabant/vim-lawrencium' " Mercurial
@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'editorconfig/editorconfig-vim' " Default project settings
   Plug 'Keithbsmiley/investigate.vim' " Documentation
 call plug#end() " End of vim-plug list
+
 
 " -----------------------------------------------------------------------------
 " Set default params
@@ -61,10 +62,30 @@ set encoding=utf-8
 " Enable syntax by default
 syntax enable
 
+
 " -----------------------------------------------------------------------------
 " Set custom configuration
 " -----------------------------------------------------------------------------
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:acp_enableAtStartup = 0 " Disable AutoComplPop
+let g:neocomplete#enable_at_startup = 1 " Use neocomplete
+let g:neocomplete#enable_smart_case = 1 " Use smartcase
+let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*' " Lock buffer
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
 let g:airline_powerline_fonts = 1
 let mapleader = ","
 let g:airline_theme = 'solarized'
@@ -81,8 +102,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" Load Rabl syntax
-au BufRead,BufNewFile *.rabl setf ruby
 
 " -----------------------------------------------------------------------------
 " File types settings
@@ -100,6 +119,7 @@ autocmd FileType html :setlocal sw=2 ts=2 sts=2
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType jade :setlocal sw=2 ts=2 sts=2
+
 
 " -----------------------------------------------------------------------------
 " Custom functions
@@ -166,6 +186,7 @@ endfunction
 
 set tabline=%!MyTabLine()
 
+
 " -----------------------------------------------------------------------------
 " Key mappings
 " -----------------------------------------------------------------------------
@@ -174,3 +195,7 @@ imap jj <ESC>
 nnoremap <F11> :call ToggleFullScreen()<CR>
 inoremap <F11> :call ToggleFullScreen()<CR>
 noremap <F3> :Autoformat<CR><CR>
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
