@@ -6,7 +6,7 @@ class Linker
 
   def initialize()
     @dotfiles_dir = Dir.pwd
-    @dotfiles = ['gitconfig', 'gvimrc', 'vimrc', 'zshrc', 'amethyst']
+    @dotfiles = ['gitconfig', 'gvimrc', 'vimrc', 'zshrc']
   end
 
   def link()
