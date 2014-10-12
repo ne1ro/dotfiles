@@ -21,7 +21,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
   Plug 'tpope/vim-fugitive' " Git
   Plug 'ludovicchabant/vim-lawrencium' " Mercurial
-  Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' } " Coffee-script syntax
+  Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
   Plug 'slim-template/vim-slim', { 'for': 'slim' }  " Slim syntax
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
   Plug 'altercation/vim-colors-solarized' " Color scheme
