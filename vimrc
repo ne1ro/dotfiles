@@ -31,16 +31,19 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'mhinz/vim-startify' " Start screen
   Plug 'editorconfig/editorconfig-vim' " Default project settings
   Plug 'Keithbsmiley/investigate.vim' " Documentation
+  Plug 'Shougo/neosnippet' " Vim snippets support
+  Plug 'Shougo/neosnippet-snippets' " Vim-neocomplete snippets
+  Plug 'honza/vim-snippets' " Vim snippets
 call plug#end() " End of vim-plug list
 
 
 " -----------------------------------------------------------------------------
 " Set default params
 " -----------------------------------------------------------------------------
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=2 shiftwidth=2 expandtab " Default tab params
 set laststatus=2
 set number
-set colorcolumn=80
+set colorcolumn=80 " Highlight 80 column to view max length of line
 set autoindent
 set nowrap
 set cursorline
@@ -50,17 +53,15 @@ set antialias
 set t_Co=256
 set ttyfast
 set noswapfile
-set mousehide
 set expandtab
-set relativenumber
+set relativenumber " Show relative line number
 set smartcase
 set gdefault
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/eggs/*,*.pyc
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/eggs/*,*.pyc,*bower_components*
 set wrap
-set encoding=utf-8
+set encoding=utf-8 " Set default encoding to UTF-8
 
-" Enable syntax by default
-syntax enable
+syntax enable " Enable syntax highlighting by default
 
 
 " -----------------------------------------------------------------------------
@@ -86,15 +87,31 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1 " Use powerline font with vim-airline
 let mapleader = ","
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'solarized' " Set solarized vim-airline color scheme
 let s:width = 80
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-Z>'
 let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
-let g:startify_bookmarks = ['~/Projects/control_panel/app.coffee', '~/Projects/flycats/app/app.coffee', '~/Projects/control_panel_iodocs/public/data/installbundle.json', '~/Projects/good_deeds/app/controllers/application_controller.rb']
+let g:startify_bookmarks = ['~/Projects/control_panel/app.coffee', '~/Projects/flycats/app/app.coffee', '~/Projects/good_deeds/app/controllers/application_controller.rb', '~/dotfiles']
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+" Syntastic symbols and checkers
+let g:syntastic_auto_jump           = 1
+let g:syntastic_error_symbol        = '✖'
+let g:syntastic_warning_symbol      = '►'
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_html_checkers       = ['jshint']
+let g:syntastic_css_checkers        = ['csslint']
+let g:syntastic_css_checkers        = ['mri', 'rubocop']
+let g:syntastic_coffee_checkers     = ['coffeelint']
 
 " Rainbow Parentheses settings
 au VimEnter * RainbowParenthesesToggle
@@ -131,7 +148,7 @@ function ToggleFullScreen()
     else
         exec('silent !wmctrl -r :ACTIVE: -b remove,fullscreen')
         exec('set go+=e')
-    endif 
+    endif
 endfunction
 
 function MyTabLine()
@@ -196,6 +213,22 @@ nnoremap <F11> :call ToggleFullScreen()<CR>
 inoremap <F11> :call ToggleFullScreen()<CR>
 noremap <F3> :Autoformat<CR><CR>
 
-" Plugin key-mappings.
+" Vim neocomplete key-mappings
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
