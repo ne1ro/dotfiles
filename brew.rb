@@ -40,11 +40,13 @@ apps = %w[
   seil
   transmission
   iterm2
-  flash
   skype
   bittorrent-sync
   the-unarchiver
   hr
+  google-chrome
+  amethyst
+  dash
 ]
 
 `brew update && brew upgrade && brew install caskroom/cask/brew-cask && \

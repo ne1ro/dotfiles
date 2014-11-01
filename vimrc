@@ -101,7 +101,7 @@ let g:startify_bookmarks = ['~/Projects/control_panel/app.coffee', '~/Projects/f
 let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
 
 " Syntastic symbols and checkers
 let g:syntastic_auto_jump           = 1
