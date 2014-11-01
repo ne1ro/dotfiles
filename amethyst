@@ -1,0 +1,15 @@
+{
+  "layouts": [
+    "tall",
+    "fullscreen",
+    "wide",
+    "floating"
+  ],
+  "mouse-follows-focus": true,
+  "floating": [
+    "com.apple.systempreferences",
+    "com.apple.finder"
+  ],
+  "enables-layout-hud": false,
+  "enables-layout-hud-on-space-change": false
+}
