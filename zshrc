@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="sorin"
+ZSH_THEME="norm"
 
 DEFAULT_USER="neiro"
 EDITOR="vim"
@@ -43,7 +43,7 @@ alias zshconfig="macvim ~/.zshrc"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow gitignore node npm rake-fast bundler ruby rails capistrano coffee last-working-dir osx brew colorize go postgres rbenv)
+plugins=(git git-flow gitignore node npm rake-fast bower bundler ruby rails capistrano coffee last-working-dir osx brew colorize postgres rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -52,10 +52,6 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
 alias rake='noglob rake'
-alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
-alias gitstatus='git status -sb'
-alias be='bundle exec'
 alias http='http -v --pretty=all'
-alias gitlog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 eval "$(rbenv init - --no-rehash)"

@@ -47,6 +47,7 @@ apps = %w[
   google-chrome
   amethyst
   dash
+  calibre
 ]
 
 `brew update && brew upgrade && brew install caskroom/cask/brew-cask && \
