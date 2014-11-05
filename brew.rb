@@ -21,6 +21,7 @@ packages = %w[
   postgresql
   redis
   git-flow
+  hg-flow
   tmux
   mongodb
   mackup
