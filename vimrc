@@ -24,7 +24,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
   Plug 'slim-template/vim-slim', { 'for': 'slim' }  " Slim syntax
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
-  Plug 'altercation/vim-colors-solarized' " Color scheme
+  Plug 'jordwalke/flatlandia' " Color scheme
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
   Plug 'mileszs/ack.vim' " File search
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade syntax
