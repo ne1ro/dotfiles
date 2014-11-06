@@ -50,6 +50,7 @@ apps = %w[
   amethyst
   dash
   calibre
+  xmind
 ]
 
 `brew update && brew upgrade && brew install caskroom/cask/brew-cask && \
