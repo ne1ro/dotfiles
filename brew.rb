@@ -45,6 +45,7 @@ apps = %w[
   bittorrent-sync
   the-unarchiver
   hr
+  tomighty
   google-chrome
   amethyst
   dash
