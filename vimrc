@@ -42,6 +42,7 @@ call plug#end() " End of vim-plug list
 set tabstop=2 shiftwidth=2 expandtab " Default tab params
 set laststatus=2
 set number
+colorscheme default
 set colorcolumn=80 " Highlight 80 column to view max length of line
 set autoindent
 set nowrap
