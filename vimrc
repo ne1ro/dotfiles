@@ -30,10 +30,9 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade syntax
   Plug 'mhinz/vim-startify' " Start screen
   Plug 'editorconfig/editorconfig-vim' " Default project settings
-  Plug 'Keithbsmiley/investigate.vim' " Documentation
+  Plug 'rizzatti/dash.vim' " Documentation
   Plug 'Shougo/neosnippet' " Vim snippets support
   Plug 'Shougo/neosnippet-snippets' " Vim-neocomplete snippets
-  Plug 'honza/vim-snippets' " Vim snippets
 call plug#end() " End of vim-plug list
 
 
@@ -96,9 +95,6 @@ let g:user_emmet_leader_key='<C-Z>'
 let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
 let g:startify_bookmarks = ['~/Projects/control_panel/app.coffee', '~/Projects/flycats/app/app.coffee', '~/Projects/good_deeds/app/controllers/application_controller.rb', '~/dotfiles']
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
@@ -208,6 +204,7 @@ set tabline=%!MyTabLine()
 " Key mappings
 " -----------------------------------------------------------------------------
 nmap <F8> :TagbarToggle<CR>
+nmap <silent> <leader>d <Plug>DashSearch
 imap jj <ESC>
 nnoremap <F11> :call ToggleFullScreen()<CR>
 inoremap <F11> :call ToggleFullScreen()<CR>
