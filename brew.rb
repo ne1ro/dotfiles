@@ -51,6 +51,7 @@ apps = %w[
   dash
   calibre
   xmind
+  flux
 ]
 
 `brew update && brew upgrade && brew install caskroom/cask/brew-cask && \
