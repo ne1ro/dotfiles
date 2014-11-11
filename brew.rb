@@ -52,6 +52,7 @@ apps = %w[
   calibre
   xmind
   flux
+  worksnaps-client
 ]
 
 `brew update && brew upgrade && brew install caskroom/cask/brew-cask && \
