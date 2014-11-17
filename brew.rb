@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 # Install / update Homebrew and Cask packages
-packages = %w[
+packages = %w(
   vim
   coreutils
   findutils
@@ -27,10 +27,10 @@ packages = %w[
   mackup
   go
   nmap
-]
+)
 packages[0] += ' --override-system-vi --with-lua'
 
-apps = %w[
+apps = %w(
   alfred
   torbrowser
   vlc
@@ -52,12 +52,12 @@ apps = %w[
   xmind
   flux
   worksnaps-client
-]
+)
 
 `brew update && brew upgrade && brew install caskroom/cask/brew-cask && \
   brew tap caskroom/versions`
 
-packages.each { |package| exec "brew install #{ package }"}
-apps.each { |app| exec "brew cask install #{ app }"}
+packages.each { |package| exec "brew install #{ package }" }
+apps.each { |app| exec "brew cask install #{ app }" }
 
 `brew cleanup && brew cask cleanup && brew cask alfred link`
