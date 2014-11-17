@@ -113,7 +113,10 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-
+" Fix indent guides colors
+au Syntax * let indent_guides_auto_colors = 0
+au Syntax * autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey   ctermbg=black
+au Syntax * autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey   ctermbg=10
 " -----------------------------------------------------------------------------
 " File types settings
 " -----------------------------------------------------------------------------
