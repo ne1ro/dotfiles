@@ -32,7 +32,6 @@ packages[0] += ' --override-system-vi --with-lua'
 
 apps = %w[
   alfred
-  macvim
   torbrowser
   vlc
   multibit

@@ -6,13 +6,11 @@ class Linker
 
   def initialize()
     @dotfiles_dir = Dir.pwd
-    @dotfiles = ['gitconfig', 'gvimrc', 'vimrc', 'zshrc', 'amethyst']
+    @dotfiles = %w[gitconfig vimrc zshrc amethyst gitignore_global]
   end
 
   def link()
-    puts "======================================================================================================="
     puts "Start linking files: #{ @dotfiles.join(',') } from #{ dotfiles_dir }"
-    puts "======================================================================================================="
 
     @dotfiles.each do |file|
       linking_file = "#{ Dir.home }/.#{ file }"
