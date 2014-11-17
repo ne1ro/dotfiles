@@ -104,7 +104,7 @@ let g:syntastic_warning_symbol      = '►'
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_html_checkers       = ['jshint']
 let g:syntastic_css_checkers        = ['csslint']
-let g:syntastic_css_checkers        = ['mri', 'rubocop']
+let g:syntastic_ruby_checkers       = ['mri', 'rubocop']
 let g:syntastic_coffee_checkers     = ['coffeelint']
 
 " Rainbow Parentheses settings
