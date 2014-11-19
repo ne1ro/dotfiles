@@ -6,7 +6,7 @@ filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'Chiel92/vim-autoformat', { 'for': ['jade', 'json', 'html'] } " Code formatting
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File browser
-  Plug 'Yggdroot/indentLine' " Show indents
+  Plug 'nathanaelkane/vim-indent-guides' " Show indents
   Plug 'tpope/vim-endwise' " End certain structures automatically
   Plug 'tpope/vim-jdaddy', { 'for': 'json' } " JSON formatting
   Plug 'kien/ctrlp.vim' " File and buffers navigation
@@ -36,19 +36,18 @@ call plug#end() " End of vim-plug list
 " -----------------------------------------------------------------------------
 " Set default params
 " -----------------------------------------------------------------------------
-colorscheme solarized " Set default color scheme
 set tabstop=2 shiftwidth=2 expandtab " Default tab params
 set laststatus=2 " Display status line status
 set number " Show line number
+colorscheme solarized " Set default color scheme
 set colorcolumn=80 " Highlight 80 column to view max length of line
-set list lcs=tab:\|\ " Indent lines
 set autoindent
 set nowrap
 set cursorline
 set mousehide
 set showmatch
 set antialias
-set t_Co=256 " 256 colors
+set t_Co=256
 set ttyfast
 set noswapfile
 set expandtab
@@ -93,6 +92,7 @@ let s:width = 80
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-Z>'
 let g:LargeFile=10
+let g:indent_guides_enable_on_vim_startup = 1
 let g:startify_bookmarks = ['~/Projects/control_panel/app.coffee', '~/Projects/flycats/app/app.coffee', '~/Projects/good_deeds/app/controllers/application_controller.rb', '~/dotfiles']
 
 " Tell Neosnippet about the other snippets
@@ -114,7 +114,10 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-
+" Fix indent guides colors
+au Syntax * let indent_guides_auto_colors = 0
+au Syntax * autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey   ctermbg=black
+au Syntax * autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey   ctermbg=10
 " -----------------------------------------------------------------------------
 " File types settings
 " -----------------------------------------------------------------------------
