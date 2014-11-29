@@ -29,7 +29,6 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'rizzatti/dash.vim' " Documentation
   Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby'] } " Vim snippets support
   Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby'] }" Vim-neocomplete snippets
-  Plug 'suan/vim-instant-markdown', { 'for': 'markdown' } " Markdown live compiling
 call plug#end() " End of vim-plug list
 
 

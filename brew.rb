@@ -34,7 +34,6 @@ apps = %w(
   alfred
   torbrowser
   vlc
-  multibit
   robomongo
   gimp
   seil

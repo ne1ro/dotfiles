@@ -55,3 +55,4 @@ alias rake='noglob rake'
 alias http='http -v --pretty=all'
 
 eval "$(rbenv init - --no-rehash)"
+stty -ixon -ixoff # Hack for <c-s> in ITerm
