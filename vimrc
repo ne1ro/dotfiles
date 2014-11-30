@@ -4,18 +4,18 @@
 set nocompatible " Use local vim mode
 filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
-  Plug 'Chiel92/vim-autoformat', { 'for': ['jade', 'json', 'html'] } " Code formatting
+  Plug 'Chiel92/vim-autoformat', { 'for': ['jade', 'json', 'html', 'javascript', 'go'] } " Code formatting
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File browser
   Plug 'nathanaelkane/vim-indent-guides' " Show indents
   Plug 'tpope/vim-endwise' " End certain structures automatically
   Plug 'tpope/vim-jdaddy', { 'for': 'json' } " JSON formatting
   Plug 'kien/ctrlp.vim' " File and buffers navigation
-  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby'] } " Closing of quotes, parenthesis, brackets
+  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'go'] } " Closing of quotes, parenthesis, brackets
   Plug 'tpope/vim-commentary' " Easy comments
-  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee'] } " Syntax checker
+  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'go'] } " Syntax checker
   Plug 'bling/vim-airline' " Custom status line
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee'] }  " Auto-completion
+  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'go', 'javascript'] }  " Auto-completion
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
   Plug 'tpope/vim-fugitive' " Git
   Plug 'ludovicchabant/vim-lawrencium' " Mercurial
@@ -27,8 +27,11 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade syntax
   Plug 'mhinz/vim-startify' " Start screen
   Plug 'rizzatti/dash.vim' " Documentation
-  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby'] } " Vim snippets support
-  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby'] }" Vim-neocomplete snippets
+  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'go', 'javascript'] } " Vim snippets support
+  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'go', 'javascript'] } " Vim-neocomplete snippets
+  Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
+  Plug 'fatih/vim-go', { 'for': ['go'] } " Go support
+  Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
 call plug#end() " End of vim-plug list
 
 
