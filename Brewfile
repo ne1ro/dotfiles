@@ -4,7 +4,7 @@ brew upgrade
 brew install 'caskroom/cask/brew-cask'
 
 # Homebrew packages
-brew install 'vim --override-system-vi --with-lua'
+brew install  vim --override-system-vi --with-lua
 brew install 'coreutils'
 brew install 'findutils'
 brew install 'rbenv'
@@ -36,7 +36,6 @@ brew cask install 'alfred'
 brew cask install 'torbrowser'
 brew cask install 'vlc'
 brew cask install 'robomongo'
-brew cask install 'gimp'
 brew cask install 'seil'
 brew cask install 'transmission'
 brew cask install 'iterm2'
@@ -51,6 +50,7 @@ brew cask install 'dash'
 brew cask install 'calibre'
 brew cask install 'flux'
 brew cask install 'worksnaps-client'
+brew cask install 'xmind'
 
 brew cleanup
 brew cask cleanup
