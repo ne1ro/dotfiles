@@ -30,6 +30,7 @@ brew install 'mongodb'
 brew install 'mackup'
 brew install 'go'
 brew install 'nmap'
+brew install 'fswatch'
 
 # Cask packages
 brew cask install 'alfred'
