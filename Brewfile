@@ -32,6 +32,8 @@ brew install 'go'
 brew install 'nmap'
 brew install 'fswatch'
 brew install 'hg'
+brew install 'hg-flow'
+brew install 'ghc'
 
 # Cask packages
 brew cask install 'alfred'
@@ -53,6 +55,7 @@ brew cask install 'calibre'
 brew cask install 'flux'
 brew cask install 'worksnaps-client'
 brew cask install 'xmind'
+brew cask install 'haskell-platform'
 
 brew cleanup
 brew cask cleanup

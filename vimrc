@@ -10,12 +10,12 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-endwise' " End certain structures automatically
   Plug 'tpope/vim-jdaddy', { 'for': 'json' } " JSON formatting
   Plug 'kien/ctrlp.vim' " File and buffers navigation
-  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'go'] } " Closing of quotes, parenthesis, brackets
+  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'go', 'haskell'] } " Closing of quotes, parenthesis, brackets
   Plug 'tpope/vim-commentary' " Easy comments
-  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'go'] } " Syntax checker
+  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'go', 'haskell'] } " Syntax checker
   Plug 'bling/vim-airline' " Custom status line
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'go', 'javascript'] }  " Auto-completion
+  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'go', 'javascript', 'haskell'] }  " Auto-completion
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
   Plug 'tpope/vim-fugitive' " Git
   Plug 'ludovicchabant/vim-lawrencium' " Mercurial
@@ -27,8 +27,8 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade syntax
   Plug 'mhinz/vim-startify' " Start screen
   Plug 'rizzatti/dash.vim' " Documentation
-  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'go', 'javascript'] } " Vim snippets support
-  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'go', 'javascript'] } " Vim-neocomplete snippets
+  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'go', 'javascript', 'haskell'] } " Vim snippets support
+  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'go', 'javascript', 'haskell'] } " Vim-neocomplete snippets
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'fatih/vim-go', { 'for': ['go'] } " Go support
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
