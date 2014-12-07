@@ -6,7 +6,7 @@ class Linker
 
   def initialize
     @dotfiles_dir = Dir.pwd
-    @dotfiles = %w(gitconfig vimrc zshrc amethyst gitignore_global)
+    @dotfiles = %w(gitconfig vimrc zshrc amethyst gitignore_global mackup.cfg)
   end
 
   def link
