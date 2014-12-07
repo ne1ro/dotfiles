@@ -31,6 +31,7 @@ brew install 'mackup'
 brew install 'go'
 brew install 'nmap'
 brew install 'fswatch'
+brew install 'hg'
 
 # Cask packages
 brew cask install 'alfred'
