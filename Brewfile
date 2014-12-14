@@ -35,6 +35,7 @@ brew install 'hg'
 brew install 'hg-flow'
 brew install 'ghc'
 brew install 'terminal-notifier'
+brew install 'htop'
 
 # Cask packages
 brew cask install 'alfred'
