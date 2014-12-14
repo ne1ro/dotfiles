@@ -26,7 +26,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'mileszs/ack.vim' " File search
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade syntax
   Plug 'mhinz/vim-startify' " Start screen
-  Plug 'rizzatti/dash.vim' " Documentation
+  Plug 'Keithbsmiley/investigate.vim' " Documentation
   Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'go', 'javascript', 'haskell'] } " Vim snippets support
   Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'go', 'javascript', 'haskell'] } " Vim-neocomplete snippets
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
@@ -208,7 +208,6 @@ set tabline=%!MyTabLine()
 " -----------------------------------------------------------------------------
 " Key mappings
 " -----------------------------------------------------------------------------
-nmap <silent> <leader>d <Plug>DashSearch
 imap jj <ESC>
 nnoremap <F11> :call ToggleFullScreen()<CR>
 inoremap <F11> :call ToggleFullScreen()<CR>
