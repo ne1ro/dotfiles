@@ -61,5 +61,6 @@ brew cask install 'xmind'
 brew cask install 'haskell-platform'
 
 brew cleanup
+brew doctor
 brew cask cleanup
 brew cask alfred link
