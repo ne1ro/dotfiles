@@ -21,7 +21,6 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'ludovicchabant/vim-lawrencium' " Mercurial
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
-  Plug 'altercation/vim-colors-solarized' " Color scheme
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
   Plug 'mileszs/ack.vim' " File search
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade syntax
@@ -32,16 +31,18 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'fatih/vim-go', { 'for': ['go'] } " Go support
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
+  Plug 'morhetz/gruvbox' " Color scheme
 call plug#end() " End of vim-plug list
 
 
 " -----------------------------------------------------------------------------
 " Set default params
 " -----------------------------------------------------------------------------
+colorscheme gruvbox " Set default color scheme
+set background=dark
 set tabstop=2 shiftwidth=2 expandtab " Default tab params
 set laststatus=2 " Display status line status
 set number " Show line number
-colorscheme solarized " Set default color scheme
 set colorcolumn=80 " Highlight 80 column to view max length of line
 set autoindent
 set nowrap
@@ -89,13 +90,12 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 let g:airline_powerline_fonts = 1 " Use powerline font with vim-airline
 let mapleader = ","
-let g:airline_theme = 'solarized' " Set solarized vim-airline color scheme
 let s:width = 80
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-Z>'
 let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
-let g:startify_bookmarks = ['~/Projects/control_panel/app.coffee', '~/Projects/flycats/app/app.coffee', '~/Projects/good_deeds/app/controllers/application_controller.rb', '~/dotfiles']
+let g:startify_bookmarks = ['~/Projects/control_panel/app.coffee', '~/Projects/flycats/app/app.coffee', '~/dotfiles']
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
@@ -109,6 +109,8 @@ let g:syntastic_html_checkers       = ['jshint']
 let g:syntastic_css_checkers        = ['csslint']
 let g:syntastic_ruby_checkers       = ['mri', 'rubocop']
 let g:syntastic_coffee_checkers     = ['coffeelint']
+
+let g:gruvbox_italic=0 " Color scheme fix
 
 " Rainbow Parentheses settings
 au VimEnter * RainbowParenthesesToggle
@@ -238,3 +240,8 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
+
+augroup reload_vimrc " {
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
