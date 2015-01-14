@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'go', 'javascript', 'haskell'] } " Vim-neocomplete snippets
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'fatih/vim-go', { 'for': ['go'] } " Go support
+  Plug 'peterhoeg/vim-qml', { 'for': ['qml'] } " QML support
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
 call plug#end() " End of vim-plug list
 
