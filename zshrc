@@ -43,13 +43,15 @@ alias zshconfig="macvim ~/.zshrc"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow gitignore node npm rake-fast bower bundler ruby rails capistrano coffee last-working-dir osx brew colorize postgres rbenv common-aliases vi-mode)
+plugins=(git git-flow gitignore node npm rake-fast bower bundler ruby rails capistrano coffee last-working-dir osx brew colorize postgres rbenv common-aliases vi-mode nvm)
 
 source $ZSH/oh-my-zsh.sh
+source $(brew --prefix nvm)/nvm.sh
 
 export PATH="./node_modules/.bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+export NVM_DIR=~/.nvm
 
 alias rake='noglob rake'
 alias http='http -v --pretty=all'
