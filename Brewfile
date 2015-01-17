@@ -5,7 +5,6 @@ brew install 'caskroom/cask/brew-cask'
 
 # Homebrew packages
 brew install  vim --override-system-vi --with-lua
-brew install  macvim --override-system-vi --with-lua
 brew install 'coreutils'
 brew install 'findutils'
 brew install 'rbenv'

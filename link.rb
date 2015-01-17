@@ -9,7 +9,6 @@ class Linker
     @dotfiles = %w(
       gitconfig
       vimrc
-      gvimrc
       zshrc
       amethyst
       gitignore_global
