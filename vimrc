@@ -26,13 +26,14 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'mileszs/ack.vim' " File search
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade syntax
   Plug 'mhinz/vim-startify' " Start screen
-  Plug 'Keithbsmiley/investigate.vim' " Documentation
+  Plug 'rizzatti/dash.vim' " Documentation
   Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'go', 'javascript', 'haskell'] } " Vim snippets support
   Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'go', 'javascript', 'haskell'] } " Vim-neocomplete snippets
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'fatih/vim-go', { 'for': ['go'] } " Go support
   Plug 'peterhoeg/vim-qml', { 'for': ['qml'] } " QML support
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
+  Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
 call plug#end() " End of vim-plug list
 
 

@@ -38,6 +38,9 @@ brew install 'ghc'
 brew install 'terminal-notifier'
 brew install 'htop'
 brew install 'nvm'
+brew install 'the_silver_searcher'
+brew install 'ctags'
+
 
 # Cask packages
 brew cask install 'alfred'
@@ -57,8 +60,8 @@ brew cask install 'calibre'
 brew cask install 'flux'
 brew cask install 'worksnaps-client'
 brew cask install 'xmind'
+brew cask install 'dash'
 
 brew cleanup
 brew doctor
 brew cask cleanup
-brew cask alfred link
