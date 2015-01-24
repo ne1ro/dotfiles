@@ -52,6 +52,7 @@ export PATH="./node_modules/.bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export GOPATH=~/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export NVM_DIR=~/.nvm
 
 alias rake='noglob rake'
