@@ -60,6 +60,7 @@ brew cask install 'flux'
 brew cask install 'worksnaps-client'
 brew cask install 'xmind'
 brew cask install 'dash'
+brew cask install 'mou'
 
 brew cleanup
 brew cask cleanup
