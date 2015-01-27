@@ -62,5 +62,6 @@ brew cask install 'xmind'
 brew cask install 'dash'
 
 brew cleanup
-brew doctor
 brew cask cleanup
+brew doctor
+brew prune
