@@ -63,6 +63,7 @@ brew cask install 'dash'
 brew cask install 'mou'
 
 brew cleanup
-brew cask cleanup
 brew doctor
 brew prune
+brew cask doctor
+brew cask cleanup
