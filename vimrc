@@ -49,6 +49,7 @@ set autoindent
 set nowrap
 set cursorline
 set mousehide
+set mouse=nicr
 set showmatch
 set antialias
 set t_Co=256
@@ -111,6 +112,7 @@ let g:syntastic_html_checkers       = ['jshint']
 let g:syntastic_css_checkers        = ['csslint']
 let g:syntastic_ruby_checkers       = ['mri', 'rubocop']
 let g:syntastic_coffee_checkers     = ['coffeelint']
+let g:syntastic_go_checkers         = ['golint']
 
 " Rainbow Parentheses settings
 au VimEnter * RainbowParenthesesToggle

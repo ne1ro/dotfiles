@@ -45,9 +45,6 @@ alias zshconfig="macvim ~/.zshrc"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git git-flow gitignore node npm rake-fast bower bundler ruby rails capistrano coffee last-working-dir osx brew colorize postgres rbenv common-aliases vi-mode nvm)
 
-source $ZSH/oh-my-zsh.sh
-source $(brew --prefix nvm)/nvm.sh
-
 export PATH="./node_modules/.bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
@@ -55,6 +52,10 @@ export GOPATH=~/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export NVM_DIR=~/.nvm
 export KEYTIMEOUT=1
+export HOMEBREW_BREWFILE="/Users/neiro/dotfiles/Brewfile"
+
+source $ZSH/oh-my-zsh.sh
+source $(brew --prefix nvm)/nvm.sh
 
 alias rake='noglob rake'
 alias http='http -v --pretty=all'
@@ -63,4 +64,4 @@ alias http='http -v --pretty=all'
 eval "$(rbenv init - --no-rehash)"
 stty -ixon -ixoff # Hack for <c-s> in ITerm
 
-export HOMEBREW_BREWFILE="/Users/neiro/dotfiles/Brewfile"
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
