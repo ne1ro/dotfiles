@@ -144,6 +144,10 @@ autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType jade :setlocal sw=2 ts=2 sts=2
 
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
 
 " -----------------------------------------------------------------------------
 " Custom functions

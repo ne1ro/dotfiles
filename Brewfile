@@ -4,7 +4,7 @@ brew upgrade
 brew install 'caskroom/cask/brew-cask'
 
 # Homebrew packages
-brew install  vim --override-system-vi --with-lua
+brew install  vim --override-system-vi --with-lua --with-ruby
 brew install 'coreutils'
 brew install 'findutils'
 brew install 'rbenv'
