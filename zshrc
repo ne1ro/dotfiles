@@ -48,6 +48,7 @@ plugins=(git git-flow gitignore node npm rake-fast bower bundler ruby rails capi
 export PATH="./node_modules/.bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=~/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export NVM_DIR=~/.nvm
