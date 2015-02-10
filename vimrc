@@ -59,7 +59,7 @@ set expandtab
 set relativenumber " Show relative line number
 set smartcase
 set gdefault
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/eggs/*,*.pyc,*bower_components*,*/_workspace/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/eggs/*,*.pyc,*bower_components*,*/_workspace/*,*/.sass_cache/*
 set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
 
