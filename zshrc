@@ -60,7 +60,6 @@ source $(brew --prefix nvm)/nvm.sh
 
 alias rake='noglob rake'
 alias http='http -v --pretty=all'
-# alias gulp='iojs --harmony_classes --harmony_templates --harmony_object_literals --harmony_numeric_literals /usr/local/bin/gulp'
 
 eval "$(rbenv init - --no-rehash)"
 stty -ixon -ixoff # Hack for <c-s> in ITerm
