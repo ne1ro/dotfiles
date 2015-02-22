@@ -39,6 +39,7 @@ brew install 'htop'
 brew install 'nvm'
 brew install 'the_silver_searcher'
 brew install 'ctags'
+brew install 'mplayer'
 
 
 # Cask packages
