@@ -60,8 +60,6 @@ brew cask install 'worksnaps-client'
 brew cask install 'xmind'
 brew cask install 'dash'
 brew cask install 'mou'
-brew cask install 'blender'
-brew cask install 'unity'
 
 brew cleanup
 brew doctor
