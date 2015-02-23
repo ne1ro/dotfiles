@@ -39,6 +39,7 @@ brew install 'ansible'
 brew install 'docker'
 brew install 'vagrant'
 brew install 'hub'
+brew install 'tree'
 
 # Cask packages
 brew cask install 'alfred'
