@@ -30,6 +30,8 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
   Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
+  Plug 'OmniSharp/omnisharp-vim', { 'for': 'cs' } " C# support
+  Plug 'tpope/vim-dispatch', { 'for': 'cs' } " Async build and test dispatcher
 call plug#end() " End of vim-plug list
 
 
