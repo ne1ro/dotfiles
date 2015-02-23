@@ -4,18 +4,18 @@
 set nocompatible " Use local vim mode
 filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
-  Plug 'Chiel92/vim-autoformat', { 'for': ['jade', 'json', 'html', 'javascript', 'go'] } " Code formatting
+  Plug 'Chiel92/vim-autoformat', { 'for': ['json', 'html', 'javascript'] } " Code formatting
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File browser
   Plug 'nathanaelkane/vim-indent-guides' " Show indents
   Plug 'tpope/vim-endwise' " End certain structures automatically
   Plug 'tpope/vim-jdaddy', { 'for': 'json' } " JSON formatting
   Plug 'kien/ctrlp.vim' " File and buffers navigation
-  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'go', 'haskell'] } " Closing of quotes, parenthesis, brackets
+  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'haskell'] } " Closing of quotes, parenthesis, brackets
   Plug 'tpope/vim-commentary' " Easy comments
-  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'go', 'haskell'] } " Syntax checker
+  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'haskell'] } " Syntax checker
   Plug 'bling/vim-airline' " Custom status line
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'go', 'javascript', 'haskell'] }  " Auto-completion
+  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'haskell'] }  " Auto-completion
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
   Plug 'tpope/vim-fugitive' " Git
   Plug 'ludovicchabant/vim-lawrencium' " Mercurial
@@ -23,15 +23,11 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
   Plug 'altercation/vim-colors-solarized' " Color scheme
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
-  Plug 'mileszs/ack.vim' " File search
-  Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade syntax
-  Plug 'mhinz/vim-startify' " Start screen
+  Plug 'rking/ag.vim' " File searching
   Plug 'rizzatti/dash.vim' " Documentation
-  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'go', 'javascript', 'haskell'] } " Vim snippets support
-  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'go', 'javascript', 'haskell'] } " Vim-neocomplete snippets
+  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'haskell'] } " Vim snippets support
+  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'haskell'] } " Vim-neocomplete snippets
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
-  Plug 'fatih/vim-go', { 'for': ['go'] } " Go support
-  Plug 'peterhoeg/vim-qml', { 'for': ['qml'] } " QML support
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
   Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
 call plug#end() " End of vim-plug list
@@ -98,7 +94,6 @@ let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-Z>'
 let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
-let g:startify_bookmarks = ['~/Projects/control_panel/app.coffee', '~/Projects/flycats/app/app.coffee', '~/Projects/good_deeds/app/controllers/application_controller.rb', '~/dotfiles']
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
@@ -112,7 +107,6 @@ let g:syntastic_html_checkers       = ['jshint']
 let g:syntastic_css_checkers        = ['csslint']
 let g:syntastic_ruby_checkers       = ['mri', 'rubocop']
 let g:syntastic_coffee_checkers     = ['coffeelint']
-let g:syntastic_go_checkers         = ['golint']
 
 " Rainbow Parentheses settings
 au VimEnter * RainbowParenthesesToggle
@@ -136,91 +130,21 @@ autocmd FileType ruby set commentstring=#\ %s
 autocmd FileType python set commentstring=#\ %s
 autocmd FileType coffee set commentstring=#\ %s
 autocmd FileType javascript set commentstring=//\ %s
-autocmd FileType jade set commentstring=//\ %s
 autocmd FileType html set commentstring=<!--\ %s\ -->
 
 autocmd FileType html :setlocal sw=2 ts=2 sts=2
 autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
-autocmd FileType jade :setlocal sw=2 ts=2 sts=2
 
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-
-
-" -----------------------------------------------------------------------------
-" Custom functions
-" -----------------------------------------------------------------------------
-function ToggleFullScreen()
-    if &go =~ 'e'
-        exec('silent !wmctrl -r :ACTIVE: -b add,fullscreen')
-        exec('set go-=e')
-    else
-        exec('silent !wmctrl -r :ACTIVE: -b remove,fullscreen')
-        exec('set go+=e')
-    endif
-endfunction
-
-function MyTabLine()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    " select the highlighting
-    if i + 1 == tabpagenr()
-      let s .= '%#TabLineSel#'
-    else
-      let s .= '%#TabLine#'
-    endif
-
-" set the tab page number (for mouse clicks)
-    let s .= '%' . (i + 1) . 'T'
-
-" the label is made by MyTabLabel()
-    let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-  endfor
-
-" after the last tab fill with TabLineFill and reset tab page nr
-  let s .= '%#TabLineFill#%T'
-
-" right-align the label to close the current tab page
-  if tabpagenr('$') > 1
-    let s .= '%=%#TabLine#%999Xclose'
-  endif
-
-return s
-endfunction
-
-function MyTabLabel(n)
-    let buflist = tabpagebuflist(a:n)
-    let winnr = tabpagewinnr(a:n)
-    let label = fnamemodify(bufname(buflist[winnr - 1]), ':t')
-
-if label == ''
-        if &buftype == 'quickfix'
-          let label = '[Quickfix List]'
-        else
-          let label = 'NoName'
-        endif
-    endif
-
-if getbufvar(buflist[winnr - 1], "&modified")
-        let label = "+".label
-    endif
-
-let label = a:n.":".label
-
-return label
-endfunction
-
-set tabline=%!MyTabLine()
 
 
 " -----------------------------------------------------------------------------
 " Key mappings
 " -----------------------------------------------------------------------------
 imap jj <ESC>
-nnoremap <F11> :call ToggleFullScreen()<CR>
-inoremap <F11> :call ToggleFullScreen()<CR>
 noremap <F3> :Autoformat<CR><CR>
 
 " Vim neocomplete key-mappings
