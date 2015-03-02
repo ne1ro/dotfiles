@@ -40,6 +40,7 @@ brew install 'docker'
 brew install 'vagrant'
 brew install 'hub'
 brew install 'tree'
+brew install 'rename'
 
 # Cask packages
 brew cask install 'alfred'
