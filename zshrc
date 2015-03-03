@@ -25,3 +25,6 @@ source $(brew --prefix nvm)/nvm.sh
 # iTerm hack
 # Disables quit by Ctrl-S and Ctrl-Q
 stty -ixon
+
+# Node.js local executables
+export PATH="./node_modules/.bin:$PATH"
