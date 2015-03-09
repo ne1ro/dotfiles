@@ -8,7 +8,7 @@ dotfiles = %w(
   amethyst
   gitignore_global
   mackup.cfg
-  zprestorc
+  zpreztorc
 )
 
 # Link dotfiles
