@@ -65,13 +65,13 @@ apps=(
 
 # Cask fonts
 fonts=(
-  font-m-plus
   font-roboto
   font-droid-sans
   font-open-sans
   font-pt-sans
   font-source-code-pro-for-powerline
   font-fira-mono-for-powerline
+  font-fantasque-sans-mono
 )
 
 brew update
