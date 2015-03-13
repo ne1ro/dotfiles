@@ -10,12 +10,12 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-endwise' " End certain structures automatically
   Plug 'tpope/vim-jdaddy', { 'for': 'json' } " JSON formatting
   Plug 'kien/ctrlp.vim' " File and buffers navigation
-  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'haskell', 'go'] } " Closing of quotes, parenthesis, brackets
+  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'haskell', 'go', 'cs'] } " Closing of quotes, parenthesis, brackets
   Plug 'tpope/vim-commentary' " Easy comments
-  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'go'] } " Syntax checker
+  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'go', 'cs'] } " Syntax checker
   Plug 'bling/vim-airline' " Custom status line
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'go'] }  " Auto-completion
+  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'go', 'cs'] }  " Auto-completion
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
   Plug 'tpope/vim-fugitive' " Git
   Plug 'ludovicchabant/vim-lawrencium' " Mercurial
@@ -25,8 +25,8 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
   Plug 'rking/ag.vim' " File searching
   Plug 'rizzatti/dash.vim' " Documentation
-  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'haskell', 'go'] } " Vim snippets support
-  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'haskell', 'go'] } " Vim-neocomplete snippets
+  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'haskell', 'go', 'cs'] } " Vim snippets support
+  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'haskell', 'go', 'cs'] } " Vim-neocomplete snippets
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
   Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
