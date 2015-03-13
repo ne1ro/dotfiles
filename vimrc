@@ -4,7 +4,7 @@
 set nocompatible " Use local vim mode
 filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
-  Plug 'Chiel92/vim-autoformat', { 'for': ['json', 'html', 'javascript', 'eruby'] } " Code formatting
+  Plug 'Chiel92/vim-autoformat', { 'for': ['json', 'html', 'javascript', 'eruby', 'go'] } " Code formatting
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File browser
   Plug 'nathanaelkane/vim-indent-guides' " Show indents
   Plug 'tpope/vim-endwise' " End certain structures automatically
