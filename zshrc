@@ -28,3 +28,7 @@ stty -ixon
 
 # Node.js local executables
 export PATH="./node_modules/.bin:$PATH"
+
+# Go PATH
+export GOPATH="~/Projects/go"
+export PATH=$PATH:$GOPATH/bin

@@ -39,6 +39,7 @@ packages=(
   tree
   rename
   syncthing
+  go
 )
 
 # Cask packages
