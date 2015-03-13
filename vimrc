@@ -10,12 +10,12 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-endwise' " End certain structures automatically
   Plug 'tpope/vim-jdaddy', { 'for': 'json' } " JSON formatting
   Plug 'kien/ctrlp.vim' " File and buffers navigation
-  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'haskell'] } " Closing of quotes, parenthesis, brackets
+  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'haskell', 'go'] } " Closing of quotes, parenthesis, brackets
   Plug 'tpope/vim-commentary' " Easy comments
-  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'haskell'] } " Syntax checker
+  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'go'] } " Syntax checker
   Plug 'bling/vim-airline' " Custom status line
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'haskell'] }  " Auto-completion
+  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'go'] }  " Auto-completion
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
   Plug 'tpope/vim-fugitive' " Git
   Plug 'ludovicchabant/vim-lawrencium' " Mercurial
@@ -25,8 +25,8 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
   Plug 'rking/ag.vim' " File searching
   Plug 'rizzatti/dash.vim' " Documentation
-  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'haskell'] } " Vim snippets support
-  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'haskell'] } " Vim-neocomplete snippets
+  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'haskell', 'go'] } " Vim snippets support
+  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'haskell', 'go'] } " Vim-neocomplete snippets
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
   Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
@@ -107,6 +107,12 @@ let g:syntastic_ruby_checkers       = ['mri', 'rubocop']
 let g:syntastic_coffee_checkers     = ['coffeelint']
 let g:syntastic_coffee_checkers     = ['gofmt']
 
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
+
 " Rainbow Parentheses settings
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -154,6 +160,7 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: pumvisible() ? "\<C-n>" : "\<TAB>"
