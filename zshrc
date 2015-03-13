@@ -31,4 +31,4 @@ export PATH="./node_modules/.bin:$PATH"
 
 # Go PATH
 export GOPATH="~/Projects/go"
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
