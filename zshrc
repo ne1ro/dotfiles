@@ -14,8 +14,10 @@ fi
 export EDITOR="vim"
 export VISUAL="vim"
 
+# Aliases
 alias be='bundle exec'
 alias h='history'
+alias http='http -v'
 
 # NVM
 export NVM_DIR=~/.nvm
