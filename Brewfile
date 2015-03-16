@@ -38,7 +38,6 @@ packages=(
   hub
   tree
   rename
-  syncthing
 )
 
 # Cask packages
@@ -61,6 +60,7 @@ apps=(
   xmind
   dash
   mou
+  bittorrent-sync
 )
 
 # Cask fonts
