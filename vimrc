@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
   Plug 'OmniSharp/omnisharp-vim', { 'for': 'cs' } " C# support
   Plug 'tpope/vim-dispatch', { 'for': 'cs' } " Async build and test dispatcher
+  Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade support
 call plug#end() " End of vim-plug list
 
 
