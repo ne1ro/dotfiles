@@ -60,7 +60,6 @@ apps=(
   xmind
   dash
   mou
-  bittorrent-sync
 )
 
 # Cask fonts
