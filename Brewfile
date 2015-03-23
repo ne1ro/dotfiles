@@ -61,6 +61,7 @@ apps=(
   dash
   mou
   bittorrent-sync
+  google-drive
 )
 
 # Cask fonts
