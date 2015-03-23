@@ -60,8 +60,11 @@ apps=(
   xmind
   dash
   mou
+<<<<<<< HEAD
   bittorrent-sync
   google-drive
+=======
+>>>>>>> 977bc387dc2b9e55eb8aa0701ba967f81c9155ee
 )
 
 # Cask fonts
