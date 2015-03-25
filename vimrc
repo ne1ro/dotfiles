@@ -33,6 +33,8 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'OmniSharp/omnisharp-vim', { 'for': 'cs' } " C# support
   Plug 'tpope/vim-dispatch', { 'for': 'cs' } " Async build and test dispatcher
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade support
+  Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'javascript', 'coffee', 'haskell'] } " Vim with REPL
+  Plug 'benmills/vimux' " Tmux integration
 call plug#end() " End of vim-plug list
 
 
