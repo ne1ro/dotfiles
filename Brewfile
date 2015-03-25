@@ -43,7 +43,6 @@ packages=(
 # Cask packages
 apps=(
   alfred
-  torbrowser
   vlc
   jeromelebel-mongohub
   seil
