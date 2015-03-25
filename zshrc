@@ -16,7 +16,7 @@ export VISUAL="vim"
 
 # Aliases
 alias be='bundle exec'
-alias h='history'
+alias h='history 0'
 alias http='http -v'
 
 # NVM
