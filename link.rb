@@ -7,7 +7,6 @@ dotfiles = %w(
   zshrc
   amethyst
   gitignore_global
-  mackup.cfg
   zpreztorc
 )
 
