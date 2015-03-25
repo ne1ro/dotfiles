@@ -32,7 +32,6 @@ packages=(
   nvm
   the_silver_searcher
   mplayer
-  ansible
   docker
   vagrant
   hub
