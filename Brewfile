@@ -22,7 +22,6 @@ packages=(
   hg-flow
   tmux
   mongodb
-  mackup
   nmap
   hg
   flow
