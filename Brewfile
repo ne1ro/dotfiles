@@ -31,8 +31,6 @@ packages=(
   nvm
   the_silver_searcher
   mplayer
-  docker
-  vagrant
   hub
   tree
   rename
@@ -67,8 +65,6 @@ fonts=(
   font-open-sans
   font-pt-sans
   font-source-code-pro-for-powerline
-  font-fira-mono-for-powerline
-  font-fantasque-sans-mono
 )
 
 brew update

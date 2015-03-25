@@ -4,6 +4,7 @@
 set nocompatible " Use local vim mode
 filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
+  Plug 'altercation/vim-colors-solarized' " Color scheme
   Plug 'Chiel92/vim-autoformat', { 'for': ['json', 'html', 'javascript', 'eruby'] } " Code formatting
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File browser
   Plug 'nathanaelkane/vim-indent-guides' " Show indents
@@ -39,12 +40,14 @@ call plug#end() " End of vim-plug list
 
 
 " -----------------------------------------------------------------------------
-" Set default params
+" Set custom params
 " -----------------------------------------------------------------------------
+set background=dark " Dark background
+set t_Co=256 " Use 256 colors scheme
+colorscheme solarized " Set default color scheme
 set tabstop=2 shiftwidth=2 expandtab " Default tab params
 set laststatus=2 " Display status line status
 set number " Show line number
-colorscheme solarized " Set default color scheme
 set colorcolumn=80 " Highlight 80 column to view max length of line
 set autoindent
 set nowrap
@@ -53,7 +56,6 @@ set mousehide
 set mouse=nicr
 set showmatch
 set antialias
-set t_Co=256
 set ttyfast
 set noswapfile
 set expandtab
@@ -93,7 +95,7 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 let g:airline_powerline_fonts = 1 " Use powerline font with vim-airline
 let mapleader = ","
-let g:airline_theme = 'solarized' " Set solarized vim-airline color scheme
+let g:airline_theme = 'solarized' " Set vim-airline color scheme
 let s:width = 80
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-Z>'
