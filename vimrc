@@ -36,6 +36,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade support
   Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'javascript', 'coffee', 'haskell'] } " Vim with REPL
   Plug 'benmills/vimux' " Tmux integration
+  Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
 call plug#end() " End of vim-plug list
 
 
