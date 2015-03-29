@@ -61,7 +61,6 @@ apps=(
 # Cask fonts
 fonts=(
   font-roboto
-  font-droid-sans
   font-open-sans
   font-pt-sans
   font-source-code-pro-for-powerline
