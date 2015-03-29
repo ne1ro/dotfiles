@@ -45,6 +45,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Ruby, Rails
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
+  Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby completion
 
   " Javascript, Node.js
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
@@ -103,6 +104,10 @@ let g:neocomplete#enable_at_startup = 1 " Use neocomplete
 let g:neocomplete#enable_smart_case = 1 " Use smartcase
 let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*' " Lock buffer
+" Vim-monster ruby code completion
+let g:neocomplete#sources#omni#input_patterns = {
+  \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+  \}
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
@@ -134,7 +139,6 @@ let g:syntastic_auto_jump           = 1
 let g:syntastic_error_symbol        = '✖'
 let g:syntastic_warning_symbol      = '►'
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_html_checkers       = ['jshint']
 let g:syntastic_css_checkers        = ['csslint']
 let g:syntastic_ruby_checkers       = ['mri', 'rubocop']
 let g:syntastic_coffee_checkers     = ['coffeelint']
