@@ -4,39 +4,62 @@
 set nocompatible " Use local vim mode
 filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
-  Plug 'altercation/vim-colors-solarized' " Color scheme
-  Plug 'Chiel92/vim-autoformat', { 'for': ['json', 'html', 'javascript', 'eruby'] } " Code formatting
+  " Navigation
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File browser
-  Plug 'nathanaelkane/vim-indent-guides' " Show indents
-  Plug 'tpope/vim-endwise' " End certain structures automatically
-  Plug 'tpope/vim-jdaddy', { 'for': 'json' } " JSON formatting
   Plug 'kien/ctrlp.vim' " File and buffers navigation
-  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'haskell', 'cs'] } " Closing of quotes, parenthesis, brackets
-  Plug 'tpope/vim-commentary' " Easy comments
-  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'cs'] } " Syntax checker
-  Plug 'bling/vim-airline' " Custom status line
-  Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'cs'] }  " Auto-completion
-  Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
-  Plug 'tpope/vim-fugitive' " Git
-  Plug 'ludovicchabant/vim-lawrencium' " Mercurial
-  Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
-  Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
-  Plug 'altercation/vim-colors-solarized' " Color scheme
-  Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
   Plug 'rking/ag.vim' " File searching
-  Plug 'rizzatti/dash.vim' " Documentation
-  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'haskell', 'cs'] } " Vim snippets support
-  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'haskell', 'cs'] } " Vim-neocomplete snippets
-  Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
+  Plug 'bling/vim-airline' " Custom status line
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
   Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
+
+  " Completion
+  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'cs'] }  " Auto-completion
+  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'haskell', 'cs'] } " Vim snippets support
+  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'haskell', 'cs'] } " Vim-neocomplete snippets
+
+  " Code style
+  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'cs'] } " Syntax checker
+  Plug 'tpope/vim-endwise' " End certain structures automatically
+  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'haskell', 'cs'] } " Closing of quotes, parenthesis, brackets
+  Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
+  Plug 'Chiel92/vim-autoformat', { 'for': ['json', 'html', 'javascript', 'eruby'] } " Code formatting
+  Plug 'nathanaelkane/vim-indent-guides' " Show indents
+  Plug 'tpope/vim-commentary' " Easy comments
+  Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
+
+  " Documentation
+  Plug 'rizzatti/dash.vim'
+
+  " Color scheme
+  Plug 'altercation/vim-colors-solarized'
+
+  " VCS integration
+  Plug 'tpope/vim-fugitive' " Git
+  Plug 'ludovicchabant/vim-lawrencium' " Mercurial
+
+  " Tmux integration
+  Plug 'benmills/vimux' " Tmux integration
+  Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'javascript', 'coffee', 'haskell'] } " Vim with REPL
+  Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes and tmux splits
+
+  " Ruby, Rails
+  Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
+  Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
+
+  " Javascript, Node.js
+  Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
+  Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
+  Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
+  Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
+
+  " Frontend
+  Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
+  Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade support
+  Plug 'tpope/vim-haml', { 'for': ['sass', 'scss'] } " SASS / SCSS support
+
+  " C# and builds
   Plug 'OmniSharp/omnisharp-vim', { 'for': 'cs' } " C# support
   Plug 'tpope/vim-dispatch', { 'for': 'cs' } " Async build and test dispatcher
-  Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade support
-  Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'javascript', 'coffee', 'haskell'] } " Vim with REPL
-  Plug 'benmills/vimux' " Tmux integration
-  Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
 call plug#end() " End of vim-plug list
 
 
