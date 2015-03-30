@@ -130,6 +130,7 @@ let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<C-Z>'
 let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
+let g:slime_target = "tmux" " Use vim-slime with tmux
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
