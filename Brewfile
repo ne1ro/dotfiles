@@ -34,6 +34,8 @@ packages=(
   hub
   tree
   rename
+  syncthing
+  reattach-to-user-namespace
 )
 
 # Cask packages
@@ -47,7 +49,6 @@ apps=(
   skype
   the-unarchiver
   hr
-  google-chrome
   amethyst
   calibre
   flux
@@ -55,7 +56,6 @@ apps=(
   xmind
   dash
   mou
-  google-drive
 )
 
 # Cask fonts
