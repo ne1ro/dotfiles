@@ -97,6 +97,7 @@ syntax enable " Enable syntax highlighting by default
 " -----------------------------------------------------------------------------
 " Set custom parameters
 " -----------------------------------------------------------------------------
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:ctrlp_show_hidden = 1 " Show hidden files in CtrlP
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
