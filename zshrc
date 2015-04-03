@@ -30,3 +30,4 @@ stty -ixon
 
 # Node.js local executables
 export PATH="./node_modules/.bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"

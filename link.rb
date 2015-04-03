@@ -8,6 +8,7 @@ dotfiles = %w(
   amethyst
   gitignore_global
   zpreztorc
+  tmux.conf
 )
 
 # Link dotfiles
