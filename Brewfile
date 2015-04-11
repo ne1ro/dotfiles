@@ -35,6 +35,7 @@ packages=(
   tree
   rename
   reattach-to-user-namespace
+  syncthing
 )
 
 # Cask packages
@@ -55,7 +56,6 @@ apps=(
   xmind
   dash
   mou
-  bittorrent-sync
 )
 
 # Cask fonts
