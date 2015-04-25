@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'benmills/vimux' " Tmux integration
   Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'javascript', 'coffee', 'haskell'] } " Vim with REPL
   Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes and tmux splits
+  Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 
   " Ruby, Rails
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
