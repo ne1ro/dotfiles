@@ -36,6 +36,7 @@ packages=(
   rename
   reattach-to-user-namespace
   syncthing
+  boot2docker
 )
 
 # Cask packages
