@@ -57,6 +57,7 @@ apps=(
   xmind
   dash
   mou
+  vagrant
 )
 
 # Cask fonts
