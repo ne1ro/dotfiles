@@ -13,9 +13,9 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
 
   " Completion
-  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'haskell'] }  " Auto-completion
-  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'haskell'] } " Vim snippets support
-  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'haskell'] } " Vim-neocomplete snippets
+  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'sass'] }  " Auto-completion
+  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'haskell', 'sass'] } " Vim snippets support
+  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'haskell', 'sass'] } " Vim-neocomplete snippets
 
   " Code style
   Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'haskell'] } " Syntax checker
@@ -46,6 +46,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Ruby, Rails
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
+  Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' } " Lightweight RSpec runner for Vim
   " Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby completion
 
   " Javascript, Node.js
