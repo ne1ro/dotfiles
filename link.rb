@@ -9,6 +9,7 @@ dotfiles = %w(
   gitignore_global
   zpreztorc
   tmux.conf
+  tmuxinator
 )
 
 # Link dotfiles
