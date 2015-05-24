@@ -13,14 +13,14 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
 
   " Completion
-  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'haskell', 'sass'] }  " Auto-completion
-  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'haskell', 'sass'] } " Vim snippets support
-  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'haskell', 'sass'] } " Vim-neocomplete snippets
+  Plug 'Shougo/neocomplete', { 'for': ['ruby', 'coffee', 'javascript', 'sass'] }  " Auto-completion
+  Plug 'Shougo/neosnippet', { 'for': ['coffee', 'ruby', 'javascript', 'sass'] } " Vim snippets support
+  Plug 'Shougo/neosnippet-snippets', { 'for':  ['coffee', 'ruby', 'javascript', 'sass'] } " Vim-neocomplete snippets
 
   " Code style
-  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript', 'haskell'] } " Syntax checker
+  Plug 'scrooloose/syntastic', { 'for': ['ruby', 'coffee', 'javascript'] } " Syntax checker
   Plug 'tpope/vim-endwise' " End certain structures automatically
-  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript', 'haskell'] } " Closing of quotes, parenthesis, brackets
+  Plug 'Raimondi/delimitMate', { 'for': ['json', 'coffee', 'ruby', 'javascript'] } " Closing of quotes, parenthesis, brackets
   Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
   Plug 'Chiel92/vim-autoformat', { 'for': ['json', 'html', 'javascript', 'eruby'] } " Code formatting
   Plug 'nathanaelkane/vim-indent-guides' " Show indents
@@ -39,15 +39,12 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
   " Tmux integration
   Plug 'benmills/vimux' " Tmux integration
-  Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'javascript', 'coffee', 'haskell'] } " Vim with REPL
+  Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'javascript', 'coffee'] } " Vim with REPL
   Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes and tmux splits
   Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 
-  " Ruby, Rails
-  Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
+  " Ruby
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
-  Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' } " Lightweight RSpec runner for Vim
-  " Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby completion
 
   " Javascript, Node.js
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
