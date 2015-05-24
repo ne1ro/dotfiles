@@ -48,6 +48,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
   " Javascript, Node.js
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
+  Plug 'jelera/vim-javascript-syntax', {'for': 'javascript' } " Imroved JS syntax support
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
@@ -151,6 +152,9 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" JS code folding
+au FileType javascript call JavaScriptFold()
 
 " Fix indent guides colors
 if !has("gui_running")
