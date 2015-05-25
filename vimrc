@@ -154,7 +154,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " JS code folding
-au FileType javascript call JavaScriptFold()
+" au FileType javascript call JavaScriptFold()
 
 " Fix indent guides colors
 if !has("gui_running")
