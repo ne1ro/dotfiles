@@ -26,7 +26,7 @@ windows:
       layout: main-vertical
       panes:
         - vim
-        - nvm use && iojs --es_staging --harmony_arrow_functions
+        - nvm use && babel-node
   - gulp:
       layout: main-vertical
       panes:
