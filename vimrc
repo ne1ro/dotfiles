@@ -90,6 +90,8 @@ set gdefault
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/eggs/*,*.pyc,*bower_components*,*/_workspace/*,*/.sass-cache/*,*/coverage/*,*/vendor/*
 set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
+set cole=1
+set foldmethod=indent " Fold by indents
 
 syntax enable " Enable syntax highlighting by default
 
@@ -101,6 +103,7 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vi
 let g:ctrlp_show_hidden = 1 " Show hidden files in CtrlP
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
+let g:javascript_conceal = 1 " Conceal javascript
 let g:neocomplete#enable_at_startup = 1 " Use neocomplete
 let g:neocomplete#enable_smart_case = 1 " Use smartcase
 let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length
@@ -156,9 +159,6 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-" JS code folding
-au FileType javascript call JavaScriptFold()
 
 " Fix indent guides colors
 if !has("gui_running")
