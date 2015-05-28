@@ -27,7 +27,7 @@ windows:
       panes:
         - vim
         - nvm use && babel-node
-  - gulp:
+  - make:
       layout: main-vertical
       panes:
         - nvm use && make run
