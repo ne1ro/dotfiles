@@ -58,6 +58,7 @@ apps=(
   dash
   mou
   vagrant
+  steam
 )
 
 # Cask fonts
