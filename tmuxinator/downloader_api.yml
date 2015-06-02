@@ -30,7 +30,7 @@ windows:
   - make:
       layout: main-vertical
       panes:
-        - nvm use && make run
+        - nvm use && ./bin/gulp
         - logstash -f config/logstash.conf
   - misc:
       layout: main-horizontal
