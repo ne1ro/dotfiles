@@ -34,3 +34,4 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Go PATH
 export GOPATH=$HOME/Projects/go
+export PATH=$PATH:$GOPATH/bin
