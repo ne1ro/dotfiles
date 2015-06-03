@@ -1,7 +1,7 @@
 # ~/.tmuxinator/binaries_distributor.yml
 
 name: binaries_distributor
-root: ~/Projects/go/installbundle.com/devliery_system/binaries_distributor
+root: ~/Projects/go/installbundle.com/delivery_system/binaries_distributor
 
 # Optional tmux socket
 # socket_name: foo
