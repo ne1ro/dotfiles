@@ -37,6 +37,7 @@ packages=(
   reattach-to-user-namespace
   syncthing
   boot2docker
+  go
 )
 
 # Cask packages
