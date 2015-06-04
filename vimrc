@@ -22,7 +22,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-endwise' " End certain structures automatically
   Plug 'Raimondi/delimitMate' " Closing of quotes, parenthesis, brackets
   Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
-  Plug 'Chiel92/vim-autoformat', { 'for': ['json', 'go','html', 'javascript', 'eruby'] } " Code formatting
+  Plug 'Chiel92/vim-autoformat', { 'for': ['json', 'html', 'javascript', 'eruby'] } " Code formatting
   Plug 'nathanaelkane/vim-indent-guides' " Show indents
   Plug 'tpope/vim-commentary' " Easy comments
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
@@ -39,7 +39,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
   " Tmux integration
   Plug 'benmills/vimux' " Tmux integration
-  Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'javascript', 'coffee', 'go'] } " Vim with REPL
+  Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'javascript', 'coffee'] } " Vim with REPL
   Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes and tmux splits
   Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 
@@ -56,9 +56,6 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
-
-  " Go
-  Plug 'fatih/vim-go', {'for': 'go'} " Go support
 
   " Frontend
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
