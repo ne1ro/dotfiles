@@ -1,7 +1,7 @@
 # ~/.tmuxinator/binaries_distributor.yml
 
 name: binaries_distributor
-root: ~/Projects/go/src/installbundle.com/delivery_system/binaries_distributor
+root: ~/Projects/binaries_distributor
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,11 +25,12 @@ windows:
   - editor:
       layout: main-vertical
       panes:
-        - vim
-  - make:
+        - nvm use && vim
+        - nvm use && babel-node
+  - gulp:
       layout: main-vertical
       panes:
-        - make
+        - ./bin/gulp
   - misc:
       layout: main-horizontal
       panes:
