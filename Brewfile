@@ -35,9 +35,7 @@ packages=(
   tree
   rename
   reattach-to-user-namespace
-  syncthing
   boot2docker
-  go
 )
 
 # Cask packages
@@ -59,7 +57,6 @@ apps=(
   dash
   mou
   vagrant
-  steam
 )
 
 # Cask fonts
