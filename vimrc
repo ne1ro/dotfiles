@@ -64,7 +64,6 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-haml', { 'for': ['sass', 'scss'] } " SASS / SCSS support
 
   " Misc
-  Plug '907th/vim-auto-save' " Auto-save
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
 call plug#end() " End of vim-plug list
 
@@ -104,8 +103,6 @@ syntax enable " Enable syntax highlighting by default
 " -----------------------------------------------------------------------------
 " Set custom parameters
 " -----------------------------------------------------------------------------
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:auto_save_in_insert_mode = 0
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:ctrlp_show_hidden = 1 " Show hidden files in CtrlP
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
