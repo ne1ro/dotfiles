@@ -65,6 +65,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
   " Misc
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
+  Plug 'solarnz/thrift.vim' " Thrift syntax support
 call plug#end() " End of vim-plug list
 
 
