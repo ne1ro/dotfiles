@@ -174,7 +174,7 @@ end
 " -----------------------------------------------------------------------------
 " File types settings
 " -----------------------------------------------------------------------------
-autocmd FileType make setlocal noexpandtab " Use tab in makefile
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0 " Use tab in makefile
 autocmd FileType html,css EmmetInstall
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Disable automatic comment insertion
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
