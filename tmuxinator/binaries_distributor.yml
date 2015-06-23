@@ -30,7 +30,7 @@ windows:
   - gulp:
       layout: main-vertical
       panes:
-        - ./bin/gulp
+        - gulp
   - misc:
       layout: main-horizontal
       panes:
