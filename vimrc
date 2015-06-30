@@ -150,7 +150,7 @@ let g:syntastic_error_symbol        = '✖'
 let g:syntastic_warning_symbol      = '►'
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_css_checkers        = ['csslint']
-let g:syntastic_ruby_checkers       = ['mri', 'rubocop']
+let g:syntastic_ruby_checkers       = ['rubocop', 'mri']
 let g:syntastic_coffee_checkers     = ['coffeelint']
 
 " Enable snipMate compatibility feature.
@@ -174,7 +174,7 @@ end
 " -----------------------------------------------------------------------------
 " File types settings
 " -----------------------------------------------------------------------------
-autocmd FileType make setlocal noexpandtab " Use tab in makefile
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0 " Use tab in makefile
 autocmd FileType html,css EmmetInstall
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Disable automatic comment insertion
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
