@@ -21,16 +21,16 @@ root: ~/Projects/logistics
 
 windows:
   - editor:
-      layout: main-vertical
+      layout: 6705,238x58,0,0{180x58,0,0,0,57x58,181,0,3}
       panes:
         - vim
-        - be rails c
+        - rbenv local && be rails c
   - guard:
       layout: main-vertical
       panes:
-        - be guard
+        - rbenv local && be guard
   - misc:
-      layout: main-horizontal
+      layout: 1a14,238x58,0,0[238x2,0,0,2,238x55,0,3{118x55,0,3,4,119x55,119,3,5}]
       panes:
         - caffeinate -u -t 547584758
         - ls .
