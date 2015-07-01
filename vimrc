@@ -62,6 +62,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade support
   Plug 'tpope/vim-haml', { 'for': ['sass', 'scss'] } " SASS / SCSS support
+  Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
 
   " Misc
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
