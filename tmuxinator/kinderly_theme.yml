@@ -24,11 +24,11 @@ windows:
       layout: 6705,238x58,0,0{180x58,0,0,0,57x58,181,0,3}
       panes:
         - vim
-        - node
+        - nvm use && node
   - gulp:
       layout: main-vertical
       panes:
-        - gulp
+        - nvm use && gulp
         - cd build
   - misc:
       layout: 1a14,238x58,0,0[238x2,0,0,2,238x55,0,3{118x55,0,3,4,119x55,119,3,5}]
