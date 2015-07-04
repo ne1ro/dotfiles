@@ -36,7 +36,6 @@ packages=(
   rename
   reattach-to-user-namespace
   boot2docker
-  thrift
 )
 
 # Cask packages
