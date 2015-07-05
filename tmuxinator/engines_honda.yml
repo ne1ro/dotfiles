@@ -25,10 +25,11 @@ windows:
       panes:
         - vim
         - be rails c
-  - guard:
+  - dev:
       layout: main-vertical
       panes:
         - be guard
+        - nvm use && webpack -d -w
   - misc:
       layout: 1a14,238x58,0,0[238x2,0,0,2,238x55,0,3{118x55,0,3,4,119x55,119,3,5}]
       panes:
