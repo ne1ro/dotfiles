@@ -21,7 +21,6 @@ packages=(
   git-flow
   hg-flow
   tmux
-  mongodb
   nmap
   hg
   flow
@@ -42,7 +41,6 @@ packages=(
 apps=(
   alfred
   vlc
-  jeromelebel-mongohub
   seil
   transmission
   iterm2
