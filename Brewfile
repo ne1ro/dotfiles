@@ -19,12 +19,9 @@ packages=(
   postgresql
   redis
   git-flow
-  hg-flow
   tmux
   nmap
-  hg
   flow
-  ghc
   terminal-notifier
   htop
   nvm
@@ -35,6 +32,7 @@ packages=(
   rename
   reattach-to-user-namespace
   boot2docker
+  go
 )
 
 # Cask packages
@@ -50,11 +48,11 @@ apps=(
   amethyst
   calibre
   flux
-  worksnaps-client
   xmind
   dash
   mou
   vagrant
+  evernote
 )
 
 # Cask fonts
