@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'Shougo/neosnippet-snippets' " Vim-neocomplete snippets
 
   " Code style
+  Plug 'editorconfig/editorconfig-vim'
   Plug 'scrooloose/syntastic' " Syntax checker
   Plug 'tpope/vim-endwise' " End certain structures automatically
   Plug 'Raimondi/delimitMate' " Closing of quotes, parenthesis, brackets
