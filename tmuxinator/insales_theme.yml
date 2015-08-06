@@ -25,19 +25,17 @@ windows:
       root: ~/Projects/theme
       panes:
         - cd ~/Projects/theme && vim
-        - nvm use && coffee
   - guard:
       layout: main-vertical
       panes:
         - be guard
-        - be zeus s
         - be rake jobs:work
   - watch:
       layout: main-vertical
       root: ~/Projects/theme
       panes:
         - nvm use && gulp
-        - cd build && insup
+        - cd build && sleep 10 && insup
   - misc:
       layout: 1a14,238x58,0,0[238x2,0,0,2,238x55,0,3{118x55,0,3,4,119x55,119,3,5}]
       panes:
