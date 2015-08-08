@@ -32,7 +32,6 @@ packages=(
   rename
   reattach-to-user-namespace
   boot2docker
-  go
 )
 
 # Cask packages
