@@ -26,7 +26,7 @@ windows:
       panes:
         - cd ~/Projects/theme && vim
   - guard:
-      layout: main-vertical
+      layout: f391,238x58,0,0{235x58,0,0,1,2x58,236,0,4}]
       panes:
         - be guard
         - be rake jobs:work
