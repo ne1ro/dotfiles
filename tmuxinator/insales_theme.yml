@@ -25,8 +25,9 @@ windows:
       root: ~/Projects/theme
       panes:
         - cd ~/Projects/theme && vim
+        - be rails c
   - guard:
-      layout: f391,238x58,0,0{235x58,0,0,1,2x58,236,0,4}]
+      layout: c792,238x58,0,0[238x55,0,0,1,238x2,0,56,4]]
       panes:
         - be guard
         - be rake jobs:work
