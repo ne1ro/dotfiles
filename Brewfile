@@ -51,7 +51,6 @@ apps=(
   dash
   mou
   vagrant
-  evernote
 )
 
 # Cask fonts
