@@ -1,4 +1,4 @@
-name: engines_honda
+name: gpe
 root: ~/Projects/engines_honda
 
 # Optional tmux socket
