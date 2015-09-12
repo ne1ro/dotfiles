@@ -192,6 +192,7 @@ autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript " ES6 support
 
 
 " -----------------------------------------------------------------------------
