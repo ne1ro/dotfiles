@@ -58,6 +58,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
+  Plug 'mxw/vim-jsx', { 'for': 'jsx' } " React JSX syntax
 
   " Frontend
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
