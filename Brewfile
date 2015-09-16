@@ -56,7 +56,6 @@ apps=(
 # Cask fonts
 fonts=(
   font-source-code-pro-for-powerline
-  font-hack
 )
 
 brew update
