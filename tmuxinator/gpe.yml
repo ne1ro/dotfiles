@@ -1,5 +1,5 @@
 name: gpe
-root: ~/Projects/engines_honda
+root: ~/Projects/gpe
 
 # Optional tmux socket
 # socket_name: foo
