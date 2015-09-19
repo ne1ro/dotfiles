@@ -146,14 +146,15 @@ let g:slime_target = "tmux" " Use vim-slime with tmux
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
 
 " Syntastic symbols and checkers
-let g:syntastic_auto_jump           = 1
-let g:syntastic_error_symbol        = '✖'
-let g:syntastic_warning_symbol      = '►'
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_css_checkers        = ['csslint']
-let g:syntastic_scss_checkers       = ['scss_lint']
-let g:syntastic_ruby_checkers       = ['rubocop', 'mri']
-let g:syntastic_coffee_checkers     = ['coffeelint']
+let g:syntastic_auto_jump               = 1
+let g:syntastic_error_symbol            = '✖'
+let g:syntastic_warning_symbol          = '►'
+let g:syntastic_javascript_checkers     = ['eslint']
+let g:syntastic_css_checkers            = ['csslint']
+let g:syntastic_scss_checkers           = ['scss_lint']
+let g:syntastic_ruby_checkers           = ['rubocop', 'mri']
+let g:syntastic_coffee_checkers         = ['coffeelint']
+let g:syntastic_javascript_eslint_args  = ['-c ./config/eslintrc']
 
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
