@@ -47,10 +47,8 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Ruby
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
-  Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
-  Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' } " Lightweight RSpec runner for Vim
   Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby completion
-  Plug 'jgdavey/vim-turbux', { 'for': 'ruby' } " TDD for Ruby
+  Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' } " Ruby code blocks
 
   " Javascript, Node.js
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
@@ -58,13 +56,13 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
   Plug 'moll/vim-node', { 'for': ['coffee', 'javascript'] } " Node.js support
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
-  Plug 'mxw/vim-jsx', { 'for': 'jsx' } " React JSX syntax
 
   " Frontend
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade support
   Plug 'tpope/vim-haml', { 'for': ['sass', 'scss', 'haml'] } " SASS / SCSS support
   Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
+  Plug 'mxw/vim-jsx', { 'for': 'jsx' } " React JSX syntax
 
   " Misc
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
