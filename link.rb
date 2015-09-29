@@ -10,6 +10,7 @@ dotfiles = %w(
   zpreztorc
   tmux.conf
   tmuxinator
+  pryrc
 )
 
 # Link dotfiles
