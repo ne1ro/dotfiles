@@ -66,6 +66,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
   " Misc
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
+  Plug 'kana/vim-textobj-user' " Text objects
 call plug#end() " End of vim-plug list
 
 
