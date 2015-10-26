@@ -23,7 +23,7 @@ windows:
   - editor:
       layout: 6705,238x58,0,0{180x58,0,0,0,57x58,181,0,3}
       panes:
-        - vim
+        - rbenv local && rbenv shell 2.1.7 && vim
         - rbenv local && be rails c
   - guard:
       layout: main-vertical
