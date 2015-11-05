@@ -1,4 +1,4 @@
-name: insales_theme
+name: theme
 root: ~/Projects/insales
 
 # Optional tmux socket

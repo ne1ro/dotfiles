@@ -1,4 +1,4 @@
-name: insales
+name: base
 root: ~/Projects/insales
 
 # Optional tmux socket
