@@ -63,6 +63,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-haml', { 'for': ['sass', 'scss', 'haml'] } " SASS / SCSS support
   Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
   Plug 'mxw/vim-jsx', { 'for': 'jsx' } " React JSX syntax
+  Plug 'gaogao1030/vim-slimbars' " Slimbars
 
   " Misc
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
