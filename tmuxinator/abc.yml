@@ -33,5 +33,5 @@ windows:
       layout: 1a14,238x58,0,0[238x2,0,0,2,238x55,0,3{118x55,0,3,4,119x55,119,3,5}]
       panes:
         - caffeinate -u -t 547584758
-        - ls .
+        - bin/rake ts:rebuild && ls .
         - ls .
