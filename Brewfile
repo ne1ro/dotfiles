@@ -31,7 +31,6 @@ packages=(
   tree
   rename
   reattach-to-user-namespace
-  boot2docker
 )
 
 # Cask packages
@@ -50,12 +49,10 @@ apps=(
   xmind
   dash
   mou
-  vagrant
 )
 
 # Cask fonts
 fonts=(
-  font-source-code-pro-for-powerline
   font-hack
 )
 
