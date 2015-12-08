@@ -155,7 +155,6 @@ let g:syntastic_css_checkers            = ['csslint']
 let g:syntastic_scss_checkers           = ['scss_lint']
 let g:syntastic_ruby_checkers           = ['rubocop', 'mri']
 let g:syntastic_coffee_checkers         = ['coffeelint']
-let g:syntastic_javascript_eslint_args  = "-c ./config/eslintrc"
 
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
