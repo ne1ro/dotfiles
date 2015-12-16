@@ -1,5 +1,5 @@
-name: gpe
-root: ~/Projects/gpe
+name: power_product
+root: ~/Projects/power_product
 
 # Optional tmux socket
 # socket_name: foo
