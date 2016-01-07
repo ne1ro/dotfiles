@@ -43,7 +43,6 @@ apps=(
   iterm2
   skype
   the-unarchiver
-  hr
   amethyst
   calibre
   flux
