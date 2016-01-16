@@ -50,6 +50,7 @@ apps=(
   dash
   mou
   torbrowser
+  darktable
 )
 
 # Cask fonts
