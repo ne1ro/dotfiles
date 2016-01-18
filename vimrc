@@ -109,7 +109,6 @@ syntax enable " Enable syntax highlighting by default
 " -----------------------------------------------------------------------------
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:ctrlp_show_hidden = 1 " Show hidden files in CtrlP
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
 let g:javascript_conceal = 1 " Conceal javascript
 let g:neocomplete#enable_at_startup = 1 " Use neocomplete
@@ -126,8 +125,9 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
+  let g:neocomplete#keyword_patterns = {}
 endif
+
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 let g:airline_powerline_fonts = 1 " Use powerline font with vim-airline
@@ -146,7 +146,7 @@ let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnipp
 let g:syntastic_auto_jump               = 1
 let g:syntastic_error_symbol            = '✖'
 let g:syntastic_warning_symbol          = '►'
-let g:syntastic_javascript_checkers     = ['eslint', 'jshint']
+let g:syntastic_javascript_checkers     = ['eslint']
 let g:syntastic_css_checkers            = ['csslint']
 let g:syntastic_scss_checkers           = ['scss_lint']
 let g:syntastic_ruby_checkers           = ['rubocop', 'mri']
@@ -180,13 +180,11 @@ autocmd FileType html,css EmmetInstall
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Disable automatic comment insertion
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 autocmd FileType ruby set commentstring=#\ %s
-autocmd FileType python set commentstring=#\ %s
 autocmd FileType coffee set commentstring=#\ %s
 autocmd FileType javascript set commentstring=//\ %s
 autocmd FileType html set commentstring=<!--\ %s\ -->
 
 autocmd FileType html :setlocal sw=2 ts=2 sts=2
-autocmd FileType python :setlocal sw=4 ts=4 sts=4
 autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
