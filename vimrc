@@ -47,6 +47,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Ruby
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
+  Plug 'tpope/vim-bundler', { 'for': 'ruby' } " Bundler integration
   Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' } " Ruby code blocks
 
   " Javascript, Node.js
