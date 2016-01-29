@@ -48,7 +48,7 @@ apps=(
   xmind
   dash
   mou
-  tor-browser
+  torbrowser
 )
 
 # Cask fonts
