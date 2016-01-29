@@ -43,11 +43,11 @@ apps=(
   skype
   the-unarchiver
   amethyst
-  calibre
   flux
   xmind
   dash
   mou
+  tor-browser
 )
 
 # Cask fonts
