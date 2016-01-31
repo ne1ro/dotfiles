@@ -8,7 +8,8 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File browser
   Plug 'kien/ctrlp.vim' " File and buffers navigation
   Plug 'rking/ag.vim' " File searching
-  Plug 'bling/vim-airline' " Custom status line
+  Plug 'vim-airline/vim-airline' " Custom status line
+  Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
   Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
 
