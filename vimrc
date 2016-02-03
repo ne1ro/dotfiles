@@ -52,17 +52,13 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Javascript, Node.js
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
   Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' } " Imroved JS syntax support
-  Plug 'moll/vim-node', { 'for': 'javascript' } " Node.js support
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
-  Plug 'heavenshell/vim-jsdoc', { 'for': 'javascript' } " JSDocs support
 
   " Frontend
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
-  Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade support
   Plug 'tpope/vim-haml', { 'for': ['sass', 'scss', 'haml'] } " SASS / SCSS support
   Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
-  Plug 'mxw/vim-jsx', { 'for': 'jsx' } " React JSX syntax
   Plug 'gaogao1030/vim-slimbars' " Slimbars
 
   " Misc
