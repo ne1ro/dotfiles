@@ -32,6 +32,7 @@ packages=(
   rename
   reattach-to-user-namespace
   mongodb
+  elixir
 )
 
 # Cask packages
