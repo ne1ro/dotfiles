@@ -31,7 +31,6 @@ packages=(
   tree
   rename
   reattach-to-user-namespace
-  mongodb
   elixir
 )
 
