@@ -62,7 +62,6 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'digitaltoad/vim-jade', { 'for': 'jade' } " Jade support
   Plug 'tpope/vim-haml', { 'for': ['sass', 'scss', 'haml'] } " SASS / SCSS support
   Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
-  Plug 'mxw/vim-jsx', { 'for': 'jsx' } " React JSX syntax
   Plug 'gaogao1030/vim-slimbars' " Slimbars
 
   " Misc
