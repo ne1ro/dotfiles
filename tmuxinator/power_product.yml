@@ -24,7 +24,7 @@ windows:
       layout: 6705,238x58,0,0{180x58,0,0,0,57x58,181,0,3}
       panes:
         - vim
-        - bin/rails c
+        - bin/spring rails c
   - dev:
       layout: main-vertical
       panes:
