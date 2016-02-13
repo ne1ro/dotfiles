@@ -32,6 +32,7 @@ packages=(
   rename
   reattach-to-user-namespace
   elixir
+  node
 )
 
 # Cask packages
@@ -53,7 +54,7 @@ apps=(
 
 # Cask fonts
 fonts=(
-  font-source-code-pro-for-powerline
+  font-source-code-pro
 )
 
 brew update
