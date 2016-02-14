@@ -51,6 +51,7 @@ apps=(
   dash
   mou
   torbrowser
+  java
 )
 
 # Cask fonts
