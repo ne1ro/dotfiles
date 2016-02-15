@@ -48,6 +48,8 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
   Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' } " Ruby code blocks
+  Plug 'tpope/vim-cucumber', { 'for': ['cucumber', 'ruby'] } " Cucumber
+  Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby autocomplete
 
   " Elixir
   Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
@@ -129,6 +131,9 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+let g:neocomplete#sources#omni#input_patterns = {
+\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+\}
 
 let g:airline_powerline_fonts = 1 " Use powerline font with vim-airline
 let mapleader = ","
