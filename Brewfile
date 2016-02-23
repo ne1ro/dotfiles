@@ -52,6 +52,7 @@ apps=(
   mou
   torbrowser
   java
+  android-file-transfer
 )
 
 # Cask fonts
