@@ -53,7 +53,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Elixir
   Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 
-  " Javascript, Node.js
+  " Javascript
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
   Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' } " Imroved JS syntax support
   Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
@@ -64,6 +64,9 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-haml', { 'for': ['sass', 'scss', 'haml'] } " SASS / SCSS support
   Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
   Plug 'gaogao1030/vim-slimbars' " Slimbars
+
+  " Docker
+  Plug 'ekalinin/Dockerfile.vim' " Docker integration
 
   " Misc
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
