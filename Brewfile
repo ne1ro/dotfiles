@@ -49,7 +49,6 @@ apps=(
   flux
   xmind
   dash
-  mou
   torbrowser
   java
   android-file-transfer
