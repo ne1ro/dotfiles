@@ -40,7 +40,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
   " Tmux integration
   Plug 'benmills/vimux' " Tmux integration
-  Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'javascript', 'coffee'] } " Vim with REPL
+  Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'elixir'] } " Vim with REPL
   Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes and tmux splits
   Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 
@@ -157,6 +157,7 @@ let g:syntastic_javascript_checkers     = ['eslint']
 let g:syntastic_css_checkers            = ['csslint']
 let g:syntastic_scss_checkers           = ['scss_lint']
 let g:syntastic_ruby_checkers           = ['rubocop', 'mri']
+let g:syntastic_elixir_checkers         = ['credo']
 let g:syntastic_coffee_checkers         = ['coffeelint']
 
 " Enable snipMate compatibility feature.
