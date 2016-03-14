@@ -34,6 +34,7 @@ packages=(
   elixir
   elasticsearch
   node
+  phantomjs
 )
 
 # Cask packages
