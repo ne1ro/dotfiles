@@ -157,7 +157,7 @@ let g:syntastic_javascript_checkers     = ['eslint']
 let g:syntastic_css_checkers            = ['csslint']
 let g:syntastic_scss_checkers           = ['scss_lint']
 let g:syntastic_ruby_checkers           = ['rubocop', 'mri']
-let g:syntastic_elixir_checkers         = ['credo']
+let g:syntastic_elixir_checkers         = ['mix credo']
 let g:syntastic_coffee_checkers         = ['coffeelint']
 
 " Enable snipMate compatibility feature.
