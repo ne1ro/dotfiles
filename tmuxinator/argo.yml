@@ -32,5 +32,5 @@ windows:
   - misc:
       layout: main-vertical
       panes:
-        - caffeinate -u -t 547584758 &
+        - caffeinate -u -t 547584758 & phantomjs --wd
         - tree -L 1
