@@ -24,11 +24,10 @@ windows:
       layout: 6705,238x58,0,0{180x58,0,0,0,57x58,181,0,3}
       panes:
         - vim
-        - iex
   - dev:
       layout: main-vertical
       panes:
-        - mix phoenix.server
+        - iex -S mix phoenix.server
   - misc:
       layout: main-vertical
       panes:
