@@ -53,6 +53,7 @@ apps=(
   torbrowser
   java
   android-file-transfer
+  hipchat
 )
 
 # Cask fonts
