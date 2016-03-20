@@ -35,6 +35,7 @@ packages=(
   elasticsearch
   node
   phantomjs
+  exercism
 )
 
 # Cask packages
