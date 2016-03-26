@@ -26,7 +26,6 @@ packages=(
   htop
   nvm
   the_silver_searcher
-  mplayer
   hub
   tree
   rename
