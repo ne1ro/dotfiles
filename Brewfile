@@ -54,7 +54,6 @@ apps=(
   java
   android-file-transfer
   hipchat
-  telegram
 )
 
 # Cask fonts
