@@ -24,7 +24,6 @@ packages=(
   flow
   terminal-notifier
   htop
-  nvm
   the_silver_searcher
   hub
   tree
