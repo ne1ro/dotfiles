@@ -34,6 +34,7 @@ packages=(
   node
   phantomjs
   exercism
+  ansible
 )
 
 # Cask packages
