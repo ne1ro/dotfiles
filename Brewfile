@@ -35,6 +35,7 @@ packages=(
   phantomjs
   exercism
   ansible
+  docker
 )
 
 # Cask packages
