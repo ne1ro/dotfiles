@@ -70,6 +70,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'ekalinin/Dockerfile.vim' " Docker integration
 
   " Misc
+  Plug 'tpope/vim-cucumber', { 'for': 'cucumber' } " Cucumber syntax
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
   Plug 'kana/vim-textobj-user' " Text objects
   Plug 'tpope/vim-surround' " Surroundings
