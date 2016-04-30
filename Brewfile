@@ -33,7 +33,6 @@ packages=(
   elasticsearch
   node
   phantomjs
-  exercism
   ansible
   docker
 )
