@@ -49,7 +49,6 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
   Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' } " Ruby code blocks
   Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby autocomplete
-  Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' } " Run RSpec tests
 
   " Elixir
   Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
