@@ -70,8 +70,8 @@ brew install ${packages[@]}
 brew cask install ${apps[@]}
 brew cask install ${fonts[@]}
 
-brew cleanup
 brew doctor
+brew cleanup
 brew prune
 brew cask doctor
 brew cask cleanup
