@@ -32,9 +32,8 @@ packages=(
   elixir
   elasticsearch
   node
-  phantomjs
-  ansible
   docker
+  ansible
 )
 
 # Cask packages
