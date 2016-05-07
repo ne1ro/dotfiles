@@ -37,6 +37,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
   " VCS integration
   Plug 'tpope/vim-fugitive' " Git
+  Plug 'airblade/vim-gitgutter' " Git diff
 
   " Tmux integration
   Plug 'benmills/vimux' " Tmux integration
