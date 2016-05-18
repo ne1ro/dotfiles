@@ -66,8 +66,9 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
   Plug 'gaogao1030/vim-slimbars' " Slimbars
 
-  " Docker
+  " DevOps
   Plug 'ekalinin/Dockerfile.vim' " Docker integration
+  Plug 'chase/vim-ansible-yaml' " Ansible support
 
   " Misc
   Plug 'tpope/vim-cucumber', { 'for': 'cucumber' } " Cucumber syntax
