@@ -53,6 +53,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
   " Elixir
   Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
+  Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
 
   " Javascript
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
