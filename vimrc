@@ -5,7 +5,7 @@ set nocompatible " Use local vim mode
 filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Navigation
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " File browser
+  Plug 'tpope/vim-vinegar' " File browsing
   Plug 'kien/ctrlp.vim' " File and buffers navigation
   Plug 'rking/ag.vim' " File searching
   Plug 'vim-airline/vim-airline' " Custom status line
@@ -58,14 +58,12 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Javascript
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
   Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' } " Imroved JS syntax support
-  Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' } " Coffee-script syntax
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
 
   " Frontend
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
   Plug 'tpope/vim-haml', { 'for': ['sass', 'scss', 'haml'] } " SASS / SCSS support
   Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
-  Plug 'gaogao1030/vim-slimbars' " Slimbars
 
   " DevOps
   Plug 'ekalinin/Dockerfile.vim' " Docker integration
