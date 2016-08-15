@@ -64,6 +64,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
   Plug 'tpope/vim-haml', { 'for': ['sass', 'scss', 'haml'] } " SASS / SCSS support
   Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
+  Plug 'mxw/vim-jsx' " JSX syntax
 
   " DevOps
   Plug 'ekalinin/Dockerfile.vim' " Docker integration
@@ -101,7 +102,7 @@ set expandtab
 set relativenumber " Show relative line number
 set smartcase
 set gdefault
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/_build/*,*bower_components*,*/_workspace/*,*/.sass-cache/*,*/coverage/*,*/vendor/*,*/deps/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/_build/*,*bower_components*,*/_workspace/*,*/.sass-cache/*,*/coverage/*,*/vendor/*,*/deps/*,*/.bundle/*
 set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
 set cole=1
