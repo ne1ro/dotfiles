@@ -1,5 +1,5 @@
 name: pdp
-root: ~/Projects/pdp_junior_ruby_v2
+root: ~/Projects/pdp_senior_ruby
 
 # Optional tmux socket
 # socket_name: foo
