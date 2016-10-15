@@ -32,7 +32,6 @@ packages=(
   elixir
   elasticsearch
   node
-  docker
   ansible
 )
 

@@ -67,7 +67,6 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'mxw/vim-jsx' " JSX syntax
 
   " DevOps
-  Plug 'ekalinin/Dockerfile.vim' " Docker integration
   Plug 'chase/vim-ansible-yaml' " Ansible support
 
   " Misc
