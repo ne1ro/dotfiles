@@ -105,6 +105,7 @@ set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
 set cole=1
 set foldmethod=syntax " Fold by syntax
+set foldlevel=1 " Do not fold top level
 
 syntax enable " Enable syntax highlighting by default
 
