@@ -104,7 +104,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/_
 set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
 set cole=1
-set foldmethod=indent " Fold by indents
+set foldmethod=syntax " Fold by syntax
 
 syntax enable " Enable syntax highlighting by default
 
@@ -188,7 +188,6 @@ end
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0 " Use tab in makefile
 autocmd FileType html,css EmmetInstall
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Disable automatic comment insertion
-autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 autocmd FileType ruby set commentstring=#\ %s
 autocmd FileType coffee set commentstring=#\ %s
 autocmd FileType javascript set commentstring=//\ %s
