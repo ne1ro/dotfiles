@@ -11,6 +11,7 @@ dotfiles = %w(
   tmux.conf
   tmuxinator
   pryrc
+  thymerc
 )
 
 # Link dotfiles
