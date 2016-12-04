@@ -114,6 +114,13 @@ syntax enable " Enable syntax highlighting by default
 " Set custom parameters
 " -----------------------------------------------------------------------------
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
+let g:tmuxline_preset = {
+      \'a'       : '#S',
+      \'y'       : [ '%d-%m', '%H:%M' ],
+      \'z'       : [ '⧗ #(cat ~/.thyme-tmux)' ],
+      \'win'     : [ '#I', '#W' ],
+      \'cwin'    : [ '#I', '#W' ],
+      \'options' : { 'status-justify': 'left'} }
 let g:ctrlp_show_hidden = 1 " Show hidden files in CtrlP
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
 let g:javascript_conceal = 1 " Conceal javascript
@@ -235,3 +242,5 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
+
+nmap <leader>t :!thyme -d<cr>
