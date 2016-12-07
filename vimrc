@@ -243,4 +243,4 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
-nmap <leader>t :!thyme -d<cr>
+nmap <leader>t :!thyme -d -r 16<cr>
