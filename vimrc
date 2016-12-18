@@ -64,6 +64,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
   Plug 'tpope/vim-haml', { 'for': ['sass', 'scss', 'haml'] } " SASS / SCSS support
   Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
+  Plug 'slime-lang/vim-slime-syntax', { 'for': 'slime' } " Slime
   Plug 'mxw/vim-jsx' " JSX syntax
 
   " DevOps
