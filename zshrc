@@ -18,6 +18,7 @@ export VISUAL="vim"
 alias be='bundle exec'
 alias h='history 0'
 alias http='http -v'
+alias mux='tmuxinator start'
 
 # NVM
 export NVM_DIR=~/.nvm
@@ -32,3 +33,5 @@ stty -ixon
 export PATH="./node_modules/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 eval "$(rbenv init -)"
+
+eval "$(fs init -)"
