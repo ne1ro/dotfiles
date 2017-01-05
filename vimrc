@@ -59,6 +59,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
   Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' } " Imroved JS syntax support
   Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
+  Plug 'moll/vim-node', { 'for': 'javascript' } " Node.js support
 
   " Frontend
   Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
