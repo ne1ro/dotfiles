@@ -76,6 +76,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'kana/vim-textobj-user' " Text objects
   Plug 'tpope/vim-surround' " Surroundings
   Plug 'mattn/gist-vim' " Github gist
+  Plug 'tpope/vim-dispatch' " Async
 call plug#end() " End of vim-plug list
 
 
