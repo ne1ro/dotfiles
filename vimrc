@@ -24,7 +24,6 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-endwise' " End certain structures automatically
   Plug 'Raimondi/delimitMate' " Closing of quotes, parenthesis, brackets
   Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
-  Plug 'Chiel92/vim-autoformat', { 'for': ['json', 'html', 'javascript', 'eruby'] } " Code formatting
   Plug 'nathanaelkane/vim-indent-guides' " Show indents
   Plug 'tpope/vim-commentary' " Easy comments
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
@@ -48,28 +47,12 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Ruby
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
-  Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' } " Ruby code blocks
+  Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'elixir'] } " Ruby code blocks
   Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby autocomplete
 
   " Elixir
   Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
   Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
-
-  " Javascript
-  Plug 'pangloss/vim-javascript', { 'for': 'javascript' } " Improved JS support
-  Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' } " Imroved JS syntax support
-  Plug 'elzr/vim-json', { 'for': 'json' } " JSON syntax and formatting
-  Plug 'moll/vim-node', { 'for': 'javascript' } " Node.js support
-
-  " Frontend
-  Plug 'mattn/emmet-vim', { 'for': 'html' } " HTML snippets
-  Plug 'tpope/vim-haml', { 'for': ['sass', 'scss', 'haml'] } " SASS / SCSS support
-  Plug 'slim-template/vim-slim', { 'for': 'slim' } " Slim templates support
-  Plug 'slime-lang/vim-slime-syntax', { 'for': 'slime' } " Slime
-  Plug 'mxw/vim-jsx' " JSX syntax
-
-  " DevOps
-  Plug 'chase/vim-ansible-yaml' " Ansible support
 
   " Misc
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
@@ -103,7 +86,7 @@ set expandtab
 set relativenumber " Show relative line number
 set smartcase
 set gdefault
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/_build/*,*bower_components*,*/_workspace/*,*/.sass-cache/*,*/coverage/*,*/vendor/*,*/deps/*,*/.bundle/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/_build/*,*/_workspace/*,*/coverage/*,*/vendor/*,*/deps/*,*/.bundle/*
 set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
 set cole=1
@@ -126,7 +109,6 @@ let g:tmuxline_preset = {
       \'options' : { 'status-justify': 'left'} }
 let g:ctrlp_show_hidden = 1 " Show hidden files in CtrlP
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
-let g:javascript_conceal = 1 " Conceal javascript
 let g:neocomplete#enable_at_startup = 1 " Use neocomplete
 let g:neocomplete#enable_smart_case = 1 " Use smartcase
 let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length
@@ -154,7 +136,6 @@ let g:airline_powerline_fonts = 1 " Use powerline font with vim-airline
 let mapleader = ","
 let g:airline_theme = 'solarized' " Set vim-airline color scheme
 let s:width = 80
-let g:user_emmet_install_global = 0
 let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
 let g:slime_target = "tmux" " Use vim-slime with tmux
@@ -166,11 +147,7 @@ let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnipp
 let g:syntastic_auto_jump               = 1
 let g:syntastic_error_symbol            = '✖'
 let g:syntastic_warning_symbol          = '►'
-let g:syntastic_javascript_checkers     = ['eslint']
-let g:syntastic_css_checkers            = ['csslint']
-let g:syntastic_scss_checkers           = ['scss_lint']
 let g:syntastic_ruby_checkers           = ['rubocop', 'mri']
-let g:syntastic_coffee_checkers         = ['coffeelint']
 
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
@@ -196,20 +173,13 @@ end
 " File types settings
 " -----------------------------------------------------------------------------
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0 " Use tab in makefile
-autocmd FileType html,css EmmetInstall
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Disable automatic comment insertion
 autocmd FileType ruby set commentstring=#\ %s
-autocmd FileType coffee set commentstring=#\ %s
-autocmd FileType javascript set commentstring=//\ %s
-autocmd FileType html set commentstring=<!--\ %s\ -->
-
-autocmd FileType html :setlocal sw=2 ts=2 sts=2
-autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
+autocmd FileType elixir set commentstring=#\ %s
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd BufRead,BufNewFile *.es6 setfiletype javascript " ES6 support
 
 
 " -----------------------------------------------------------------------------
