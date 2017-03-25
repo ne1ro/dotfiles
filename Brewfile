@@ -32,7 +32,6 @@ packages=(
   elixir
   elasticsearch
   node
-  ansible
 )
 
 # Cask packages
@@ -51,7 +50,7 @@ apps=(
   torbrowser
   java
   android-file-transfer
-  hipchat
+  slack
 )
 
 # Cask fonts
