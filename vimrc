@@ -148,6 +148,7 @@ let g:syntastic_auto_jump               = 1
 let g:syntastic_error_symbol            = '✖'
 let g:syntastic_warning_symbol          = '►'
 let g:syntastic_ruby_checkers           = ['rubocop', 'mri']
+let g:syntastic_enable_elixir_checker   = 1
 
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
