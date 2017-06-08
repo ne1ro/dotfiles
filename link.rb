@@ -27,3 +27,5 @@ dotfiles.each do |file|
   File.symlink linked_file, linking_file
   puts "Created symlink for .#{ file }", ''
 end
+
+File.symlink("#{ dotfiles_dir }/#{ init.vim }", "#{ Dir.home }/.config/nvim")

@@ -17,6 +17,8 @@ export VISUAL="vim"
 # Aliases
 alias be='bundle exec'
 alias h='history 0'
+alias tf='terraform'
+alias ans='ansible-playbook'
 alias http='http -v'
 alias mux='tmuxinator start'
 
@@ -29,9 +31,9 @@ source $(brew --prefix nvm)/nvm.sh
 # Disables quit by Ctrl-S and Ctrl-Q
 stty -ixon
 
-# Node.js local executables
 export PATH="./node_modules/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 eval "$(rbenv init -)"
+fpath=(/usr/local/share/zsh-completions $fpath)
 
-eval "$(fs init -)"
+alias vim='nvim'

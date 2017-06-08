@@ -1,7 +1,7 @@
 #!/bin/sh
 # Homebrew packages
 packages=(
-  'vim --override-system-vi --with-lua --with-ruby'
+  nvim
   coreutils
   findutils
   rbenv
@@ -63,9 +63,10 @@ brew upgrade
 brew install 'caskroom/cask/brew-cask'
 brew tap caskroom/fonts
 
-brew install ${packages[@]}
-brew cask install ${apps[@]}
-brew cask install ${fonts[@]}
+brew install --force ${packages[@]}
+brew link --force ${packages[@]}
+brew cask install --force ${apps[@]}
+brew cask install --force ${fonts[@]}
 
 brew doctor
 brew cleanup
