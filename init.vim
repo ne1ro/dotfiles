@@ -42,17 +42,18 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes and tmux splits
   Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 
+  " Elixir
+  Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
+  Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
+
   " Ruby
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
   Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'elixir'] } " Ruby code blocks
   Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby autocomplete
 
-  " Elixir
-  Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
-  Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
-
   " Misc
+  Plug 'hashivim/vim-terraform' " Terraform support
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
   Plug 'hashivim/vim-terraform' " Vim terraform
   Plug 'kana/vim-textobj-user' " Text objects
@@ -99,6 +100,7 @@ syntax enable " Enable syntax highlighting by default
 " -----------------------------------------------------------------------------
 " Set custom parameters
 " -----------------------------------------------------------------------------
+let g:terraform_align = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:tmuxline_preset = {
       \'a'       : '#S',
