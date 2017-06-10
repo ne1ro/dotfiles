@@ -2,6 +2,7 @@
 # Homebrew packages
 packages=(
   'vim --override-system-vi --with-lua --with-ruby'
+  elixir
   coreutils
   findutils
   rbenv
@@ -29,13 +30,14 @@ packages=(
   tree
   rename
   reattach-to-user-namespace
-  elixir
   elasticsearch
   node
+  terraform
 )
 
 # Cask packages
 apps=(
+  ngrok
   alfred
   vlc
   seil
@@ -44,7 +46,6 @@ apps=(
   skype
   the-unarchiver
   amethyst
-  flux
   xmind
   dash
   torbrowser
