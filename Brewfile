@@ -33,6 +33,7 @@ packages=(
   elasticsearch
   node
   terraform
+  ansible
 )
 
 # Cask packages
