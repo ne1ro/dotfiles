@@ -13,11 +13,6 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
   Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
 
-  " Completion
-  Plug 'Shougo/neocomplete' " Auto-completion
-  Plug 'Shougo/neosnippet' " Vim snippets support
-  Plug 'Shougo/neosnippet-snippets' " Vim-neocomplete snippets
-
   " Code style
   Plug 'editorconfig/editorconfig-vim'
   Plug 'scrooloose/syntastic' " Syntax checker
@@ -28,11 +23,14 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-commentary' " Easy comments
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
 
+  " Autocomplete
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
   " Documentation
   Plug 'rizzatti/dash.vim'
 
   " Color scheme
-  Plug 'altercation/vim-colors-solarized'
+  Plug 'frankier/neovim-colors-solarized-truecolor-only'
 
   " VCS integration
   Plug 'tpope/vim-fugitive' " Git
@@ -57,6 +55,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Misc
   Plug 'hashivim/vim-terraform' " Terraform support
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
+  Plug 'hashivim/vim-terraform' " Vim terraform
   Plug 'kana/vim-textobj-user' " Text objects
   Plug 'tpope/vim-surround' " Surroundings
   Plug 'mattn/gist-vim' " Github gist
@@ -80,7 +79,8 @@ set cursorline
 set mousehide
 set mouse=nicr
 set showmatch
-set antialias
+" set antialias
+set termguicolors
 set ttyfast
 set noswapfile
 set expandtab
@@ -111,28 +111,9 @@ let g:tmuxline_preset = {
       \'options' : { 'status-justify': 'left'} }
 let g:ctrlp_show_hidden = 1 " Show hidden files in CtrlP
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
-let g:neocomplete#enable_at_startup = 1 " Use neocomplete
-let g:neocomplete#enable_smart_case = 1 " Use smartcase
-let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*' " Lock buffer
 let g:rspec_runner = "os_x_iterm" " Use Iterm2 for RSpec runner
 
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
-endif
-
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-let g:neocomplete#sources#omni#input_patterns = {
-\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-\}
+let g:terraform_align=1
 
 let g:airline_powerline_fonts = 1 " Use powerline font with vim-airline
 let mapleader = ","
@@ -152,11 +133,8 @@ let g:syntastic_warning_symbol          = '►'
 let g:syntastic_ruby_checkers           = ['rubocop', 'mri']
 let g:syntastic_enable_elixir_checker   = 1
 
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 " Rainbow Parentheses settings
 au VimEnter * RainbowParenthesesToggle
@@ -183,29 +161,16 @@ autocmd FileType elixir set commentstring=#\ %s
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType terraform setlocal commentstring=#%s
 
 
 " -----------------------------------------------------------------------------
 " Key mappings
 " -----------------------------------------------------------------------------
 imap jj <ESC>
-noremap <F3> :Autoformat<CR><CR>
-
-" Vim neocomplete key-mappings
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+inoremap <F3> :Autoformat<CR><CR>
+inoremap <silent><expr> <Tab>
+    \ pumvisible() ? "\<C-n>" : deoplete#manual_complete()
 
 " For snippet_complete marker.
 if has('conceal')
@@ -219,3 +184,4 @@ if $TERM_PROGRAM =~ "iTerm"
 endif
 
 nmap <leader>t :!thyme -d -r 16<cr>
+nmap <silent> <leader>d <Plug>DashSearch
