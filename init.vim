@@ -59,6 +59,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'tpope/vim-surround' " Surroundings
   Plug 'mattn/gist-vim' " Github gist
   Plug 'neomake/neomake' " Execute code checks, find mistakes, in the background
+  Plug 'powerman/vim-plugin-AnsiEsc' " Ansi escape sequences concealed
 call plug#end() " End of vim-plug list
 
 
