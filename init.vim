@@ -42,24 +42,23 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes and tmux splits
   Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 
-  " Elixir
-  Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
-  Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
-
   " Ruby
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
   Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
   Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'elixir'] } " Ruby code blocks
   Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby autocomplete
 
+  " Elixir
+  Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
+  Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
+
   " Misc
-  Plug 'hashivim/vim-terraform' " Terraform support
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
   Plug 'hashivim/vim-terraform' " Vim terraform
   Plug 'kana/vim-textobj-user' " Text objects
   Plug 'tpope/vim-surround' " Surroundings
   Plug 'mattn/gist-vim' " Github gist
-  Plug 'tpope/vim-dispatch' " Async
+  Plug 'neomake/neomake' " Execute code checks, find mistakes, in the background
 call plug#end() " End of vim-plug list
 
 
@@ -84,6 +83,8 @@ set termguicolors
 set ttyfast
 set noswapfile
 set expandtab
+set ignorecase
+set smartcase
 set relativenumber " Show relative line number
 set smartcase
 set gdefault
@@ -93,6 +94,7 @@ set encoding=utf-8 " Set default encoding to UTF-8
 set cole=1
 set foldmethod=syntax " Fold by syntax
 set foldlevel=1 " Do not fold top level
+set title
 
 syntax enable " Enable syntax highlighting by default
 
@@ -100,7 +102,6 @@ syntax enable " Enable syntax highlighting by default
 " -----------------------------------------------------------------------------
 " Set custom parameters
 " -----------------------------------------------------------------------------
-let g:terraform_align = 1
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:tmuxline_preset = {
       \'a'       : '#S',
@@ -123,6 +124,13 @@ let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
 let g:slime_target = "tmux" " Use vim-slime with tmux
 
+" Run Neomake when I save any buffer
+augroup localneomake
+  autocmd! BufWritePost * Neomake
+augroup END
+" Don't tell me to use smartquotes in markdown ok?
+let g:neomake_markdown_enabled_makers = []
+
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
 
@@ -135,6 +143,38 @@ let g:syntastic_enable_elixir_checker   = 1
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+
+
+" Mix and Credo setup
+" Don't tell me to use smartquotes in markdown ok?
+let g:neomake_markdown_enabled_makers = []
+
+" Configure a nice credo setup, courtesy https://github.com/neomake/neomake/pull/300
+let g:neomake_elixir_enabled_makers = ['mycredo']
+function! NeomakeCredoErrorType(entry)
+  if a:entry.type ==# 'F'      " Refactoring opportunities
+    let l:type = 'W'
+  elseif a:entry.type ==# 'D'  " Software design suggestions
+    let l:type = 'I'
+  elseif a:entry.type ==# 'W'  " Warnings
+    let l:type = 'W'
+  elseif a:entry.type ==# 'R'  " Readability suggestions
+    let l:type = 'I'
+  elseif a:entry.type ==# 'C'  " Convention violation
+    let l:type = 'W'
+  else
+    let l:type = 'M'           " Everything else is a message
+  endif
+  let a:entry.type = l:type
+endfunction
+
+let g:neomake_elixir_mycredo_maker = {
+      \ 'exe': 'mix',
+      \ 'args': ['credo', 'list', '%:p', '--format=oneline'],
+      \ 'errorformat': '[%t] %. %f:%l:%c %m,[%t] %. %f:%l %m',
+      \ 'postprocess': function('NeomakeCredoErrorType')
+      \ }
+
 
 " Rainbow Parentheses settings
 au VimEnter * RainbowParenthesesToggle
@@ -171,6 +211,9 @@ imap jj <ESC>
 inoremap <F3> :Autoformat<CR><CR>
 inoremap <silent><expr> <Tab>
     \ pumvisible() ? "\<C-n>" : deoplete#manual_complete()
+
+" Stop highlighting on Enter
+map <CR> :noh<CR>
 
 " For snippet_complete marker.
 if has('conceal')

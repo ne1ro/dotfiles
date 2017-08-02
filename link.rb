@@ -3,7 +3,6 @@
 dotfiles_dir = Dir.pwd
 dotfiles = %w(
   gitconfig
-  vimrc
   zshrc
   amethyst
   gitignore_global
@@ -28,4 +27,4 @@ dotfiles.each do |file|
   puts "Created symlink for .#{ file }", ''
 end
 
-File.symlink("#{ dotfiles_dir }/#{ init.vim }", "#{ Dir.home }/.config/nvim")
+File.symlink("#{ dotfiles_dir }/init.vim", "#{ Dir.home }/.config/nvim/init.vim")
