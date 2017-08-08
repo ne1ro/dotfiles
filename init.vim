@@ -30,7 +30,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'rizzatti/dash.vim'
 
   " Color scheme
-  Plug 'frankier/neovim-colors-solarized-truecolor-only'
+  Plug 'iCyMind/NeoSolarized'
 
   " VCS integration
   Plug 'tpope/vim-fugitive' " Git
@@ -68,7 +68,7 @@ call plug#end() " End of vim-plug list
 " -----------------------------------------------------------------------------
 set termguicolors
 set background=dark " Dark background
-colorscheme solarized " Set default color scheme
+colorscheme NeoSolarized " Set default color scheme
 set tabstop=2 shiftwidth=2 expandtab " Default tab params
 set laststatus=2 " Display status line status
 set number " Show line number
@@ -95,6 +95,8 @@ set cole=1
 set foldmethod=syntax " Fold by syntax
 set foldlevel=1 " Do not fold top level
 set title
+set t_8f=^[[38;2;%lu;%lu;%lum
+set t_8b=^[[48;2;%lu;%lu;%lum
 
 syntax enable " Enable syntax highlighting by default
 
@@ -119,6 +121,7 @@ let s:width = 80
 let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
 let g:slime_target = "tmux" " Use vim-slime with tmux
+let g:neosolarized_italic = 1
 
 " Run Neomake when I save any buffer
 augroup localneomake
