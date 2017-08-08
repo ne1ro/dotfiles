@@ -6,7 +6,7 @@ filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Navigation
   Plug 'tpope/vim-vinegar' " File browsing
-  Plug 'kien/ctrlp.vim' " File and buffers navigation
+  Plug 'Shougo/denite.nvim' " Unite all interfaces
   Plug 'rking/ag.vim' " File searching
   Plug 'vim-airline/vim-airline' " Custom status line
   Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
@@ -111,12 +111,8 @@ let g:tmuxline_preset = {
       \'win'     : [ '#I', '#W' ],
       \'cwin'    : [ '#I', '#W' ],
       \'options' : { 'status-justify': 'left'} }
-let g:ctrlp_show_hidden = 1 " Show hidden files in CtrlP
 let g:acp_enableAtStartup = 0 " Disable AutoComplPop
-let g:rspec_runner = "os_x_iterm" " Use Iterm2 for RSpec runner
-
 let g:terraform_align=1
-
 let g:airline_powerline_fonts = 1 " Use powerline font with vim-airline
 let mapleader = ","
 let g:airline_theme = 'solarized' " Set vim-airline color scheme
@@ -213,9 +209,6 @@ inoremap <F3> :Autoformat<CR><CR>
 inoremap <silent><expr> <Tab>
     \ pumvisible() ? "\<C-n>" : deoplete#manual_complete()
 
-" Stop highlighting on Enter
-map <CR> :noh<CR>
-
 " For snippet_complete marker.
 if has('conceal')
   set conceallevel=2 concealcursor=i
@@ -229,3 +222,43 @@ endif
 
 nmap <leader>t :!thyme -d -r 16<cr>
 nmap <silent> <leader>d <Plug>DashSearch
+
+call denite#custom#option('default', {
+      \ 'prompt': '❯'
+      \ })
+
+call denite#custom#var('file_rec', 'command',
+      \ ['rg', '--files', '--glob', '!.git', ''])
+call denite#custom#var('grep', 'command', ['rg'])
+call denite#custom#var('grep', 'default_opts',
+      \ ['--hidden', '--vimgrep', '--no-heading', '-S'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>',
+      \'noremap')
+call denite#custom#map('normal', '<Esc>', '<NOP>',
+      \'noremap')
+call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>',
+      \'noremap')
+call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>',
+      \'noremap')
+call denite#custom#map('normal', 'dw', '<denite:delete_word_after_caret>',
+      \'noremap')
+
+nnoremap <C-p> :<C-u>Denite file_rec<CR>
+nnoremap <leader>s :<C-u>Denite buffer<CR>
+nnoremap <leader><Space>s :<C-u>DeniteBufferDir buffer<CR>
+nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>
+nnoremap <leader><Space>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
+nnoremap <leader>d :<C-u>DeniteBufferDir file_rec<CR>
+
+hi link deniteMatchedChar Special
+
+" Denite-extra
+
+nnoremap <leader>o :<C-u>Denite location_list -mode=normal -no-empty<CR>
+nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<CR>
+nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<CR>
