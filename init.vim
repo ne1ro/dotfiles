@@ -224,7 +224,7 @@ nmap <leader>t :!thyme -d -r 16<cr>
 nmap <silent> <leader>d <Plug>DashSearch
 
 call denite#custom#option('default', {
-      \ 'prompt': '❯'
+      \ 'prompt': 'λ'
       \ })
 
 call denite#custom#var('file_rec', 'command',
