@@ -227,10 +227,10 @@ call denite#custom#option('default', {
       \ })
 
 call denite#custom#var('file_rec', 'command',
-      \ ['rg', '--files', '--glob', '!.git', ''])
-call denite#custom#var('grep', 'command', ['rg'])
+	\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#var('grep', 'command', ['ag'])
 call denite#custom#var('grep', 'default_opts',
-      \ ['--hidden', '--vimgrep', '--no-heading', '-S'])
+      \ ['--hidden', '--vimgrep', '--no-heading', '-S', '-m 10'])
 call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
@@ -242,6 +242,10 @@ call denite#custom#map('normal', '<Esc>', '<NOP>',
 call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>',
       \'noremap')
 call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>',
+      \'noremap')
+call denite#custom#map('insert', '<C-s>', '<denite:do_action:split>',
+      \'noremap')
+call denite#custom#map('normal', '<C-s>', '<denite:do_action:split>',
       \'noremap')
 call denite#custom#map('normal', 'dw', '<denite:delete_word_after_caret>',
       \'noremap')
