@@ -66,8 +66,8 @@ call plug#end() " End of vim-plug list
 " -----------------------------------------------------------------------------
 " Set custom params
 " -----------------------------------------------------------------------------
+set termguicolors
 set background=dark " Dark background
-set t_Co=256 " Use 256 colors scheme
 colorscheme solarized " Set default color scheme
 set tabstop=2 shiftwidth=2 expandtab " Default tab params
 set laststatus=2 " Display status line status
@@ -80,7 +80,6 @@ set mousehide
 set mouse=nicr
 set showmatch
 " set antialias
-set termguicolors
 set ttyfast
 set noswapfile
 set expandtab
