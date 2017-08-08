@@ -34,6 +34,7 @@ packages=(
   node
   terraform
   ansible
+  rg
 )
 
 # Cask packages
