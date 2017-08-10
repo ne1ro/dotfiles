@@ -182,11 +182,10 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " Fix indent guides colors
-if !has("gui_running")
-  au Syntax * let indent_guides_auto_colors = 0
-  au Syntax * autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey   ctermbg=black
-  au Syntax * autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey   ctermbg=10
-end
+let g:solarized_termtrans = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#103b46 ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#103b46 ctermbg=4
 
 
 " -----------------------------------------------------------------------------
