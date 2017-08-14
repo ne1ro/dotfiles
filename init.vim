@@ -182,10 +182,9 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " Fix indent guides colors
-let g:solarized_termtrans = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#103b46 ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#103b46 ctermbg=4
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#103b46 ctermbg=3
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#103b46 ctermbg=4
 
 
 " -----------------------------------------------------------------------------
@@ -248,6 +247,8 @@ call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>',
 call denite#custom#map('insert', '<C-s>', '<denite:do_action:split>',
       \'noremap')
 call denite#custom#map('normal', '<C-s>', '<denite:do_action:split>',
+      \'noremap')
+call denite#custom#map('normal', '<C-t>', '<denite:do_action:new>',
       \'noremap')
 call denite#custom#map('normal', 'dw', '<denite:delete_word_after_caret>',
       \'noremap')
