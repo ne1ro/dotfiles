@@ -27,7 +27,7 @@ windows:
   - dev:
       layout: main-vertical
       panes:
-        - iex -S mix phoenix.server
+        - iex -S mix
   - misc:
       layout: main-vertical
       panes:
