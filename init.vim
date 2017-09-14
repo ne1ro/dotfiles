@@ -54,6 +54,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
   " Misc
   Plug 'pearofducks/ansible-vim' " Ansible support
+  Plug 'martinda/Jenkinsfile-vim-syntax' " Jenkinsfile support
   Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
   Plug 'hashivim/vim-terraform' " Vim terraform
   Plug 'kana/vim-textobj-user' " Text objects
