@@ -30,16 +30,17 @@ packages=(
   tree
   rename
   reattach-to-user-namespace
-  elasticsearch
   node
   terraform
   ansible
-  rg
+  geth
 )
 
 # Cask packages
 apps=(
+  electrum
   ngrok
+  mist
   alfred
   vlc
   seil
@@ -52,7 +53,6 @@ apps=(
   dash
   torbrowser
   java
-  android-file-transfer
   slack
 )
 

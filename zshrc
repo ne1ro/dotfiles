@@ -11,9 +11,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-export EDITOR="vim"
-export VISUAL="vim"
-export ECTO_EDITOR="$EDITOR"
+alias v='nvim'
+alias vim='nvim'
+export EDITOR="nvim"
+export VISUAL="nvim"
+export ECTO_EDITOR="nvim"
 
 # Aliases
 alias be='bundle exec'
@@ -23,7 +25,6 @@ alias ans='ansible-playbook'
 alias http='http -v'
 alias tf='terraform'
 alias mux='tmuxinator start'
-alias vim='nvim'
 
 # iTerm hack
 # Disables quit by Ctrl-S and Ctrl-Q
@@ -31,6 +32,7 @@ stty -ixon
 
 export PATH="./node_modules/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export TERM=xterm-256color-italic
 
 eval "$(rbenv init -)"
 fpath=(/usr/local/share/zsh-completions $fpath)
