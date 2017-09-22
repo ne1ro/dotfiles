@@ -68,7 +68,6 @@ call plug#end() " End of vim-plug list
 " -----------------------------------------------------------------------------
 " Set custom params
 " -----------------------------------------------------------------------------
-set termguicolors
 set background=dark " Dark background
 colorscheme NeoSolarized " Set default color scheme
 set tabstop=2 shiftwidth=2 expandtab " Default tab params
@@ -101,6 +100,10 @@ set t_8f=^[[38;2;%lu;%lu;%lum
 set t_8b=^[[48;2;%lu;%lu;%lum
 
 syntax enable " Enable syntax highlighting by default
+highlight htmlArg gui=italic
+highlight htmlArg cterm=italic
+highlight Comment gui=italic
+highlight Comment cterm=italic
 
 
 " -----------------------------------------------------------------------------
