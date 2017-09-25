@@ -136,6 +136,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:slime_target = "tmux" " Use vim-slime with tmux
 let g:neosolarized_italic = 1
 let test#strategy = "neovim"
+let test#filename_modifier = ":p"
 
 " Run Neomake when I save any buffer
 augroup localneomake
