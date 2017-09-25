@@ -22,6 +22,10 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'nathanaelkane/vim-indent-guides' " Show indents
   Plug 'tpope/vim-commentary' " Easy comments
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
+  " Prettify JS
+  Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
   " Autocomplete
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -35,6 +39,10 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " VCS integration
   Plug 'tpope/vim-fugitive' " Git
   Plug 'airblade/vim-gitgutter' " Git diff
+
+  " Testing
+  Plug 'janko-m/vim-test'
+  Plug 'reinh/vim-makegreen'
 
   " Tmux integration
   Plug 'benmills/vimux' " Tmux integration
@@ -127,6 +135,7 @@ let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
 let g:slime_target = "tmux" " Use vim-slime with tmux
 let g:neosolarized_italic = 1
+let test#strategy = "neovim"
 
 " Run Neomake when I save any buffer
 augroup localneomake
@@ -227,6 +236,11 @@ endif
 
 nmap <leader>t :!thyme -d -r 16<cr>
 nmap <silent> <leader>d <Plug>DashSearch
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 call denite#custom#option('default', {
       \ 'prompt': 'λ'
@@ -273,3 +287,9 @@ hi link deniteMatchedChar Special
 nnoremap <leader>o :<C-u>Denite location_list -mode=normal -no-empty<CR>
 nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<CR>
 nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<CR>
+
+let g:prettier#exec_cmd_async = 1
+
+if has('nvim')
+  tmap <C-o> <C-\><C-n>
+end
