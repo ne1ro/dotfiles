@@ -27,4 +27,5 @@ dotfiles.each do |file|
   puts "Created symlink for .#{ file }", ''
 end
 
+File.delete("#{ Dir.home }/.config/nvim/init.vim")
 File.symlink("#{ dotfiles_dir }/init.vim", "#{ Dir.home }/.config/nvim/init.vim")
