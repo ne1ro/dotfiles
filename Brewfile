@@ -29,7 +29,6 @@ packages=(
   hub
   tree
   rename
-  reattach-to-user-namespace
   node
   terraform
   ansible

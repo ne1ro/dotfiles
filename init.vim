@@ -112,7 +112,8 @@ highlight htmlArg gui=italic
 highlight htmlArg cterm=italic
 highlight Comment gui=italic
 highlight Comment cterm=italic
-
+highligh elixirStruct gui=bold
+highligh elixirStruct cterm=bold
 
 " -----------------------------------------------------------------------------
 " Set custom parameters
@@ -197,9 +198,8 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " Fix indent guides colors
-" let g:indent_guides_auto_colors = 0
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#103b46 ctermbg=3
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#103b46 ctermbg=4
+hi IndentGuidesOdd  guibg=gray ctermbg=0
+hi IndentGuidesEven  guibg=gray ctermbg=0
 
 
 " -----------------------------------------------------------------------------
