@@ -13,7 +13,6 @@ packages=(
   openvpn
   wget
   httpie
-  pwgen
   bcrypt
   xz
   fasd
@@ -33,6 +32,9 @@ packages=(
   terraform
   ansible
   geth
+  dnsmask
+  dnscrypt
+  gnupg
 )
 
 # Cask packages
