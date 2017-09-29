@@ -102,7 +102,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/_
 set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
 set cole=1
-set foldmethod=syntax " Fold by syntax
+set foldmethod=indent " Fold by indents
 set foldlevel=1 " Do not fold top level
 set title
 set t_8f=^[[38;2;%lu;%lu;%lum
