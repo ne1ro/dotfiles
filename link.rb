@@ -11,6 +11,7 @@ dotfiles = %w(
   tmuxinator
   pryrc
   thymerc
+  curlrc
 )
 
 # Link dotfiles
