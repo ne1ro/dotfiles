@@ -295,3 +295,8 @@ let g:prettier#exec_cmd_async = 1
 if has('nvim')
   tmap <C-o> <C-\><C-n>
 end
+
+syntax match nonbreaking 'fn' conceal cchar=λ
+syntax match nonbreaking '->' conceal cchar=→
+syntax match nonbreaking '=>' conceal cchar=⇒
+syntax match nonbreaking '|>' conceal cchar=➡
