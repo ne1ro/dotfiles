@@ -25,10 +25,10 @@ end
 
 # execute hook before each pomodoro
 before do
-  `terminal-notifier -message "Let's get started!"`
+  `terminal-notifier -message "Let's get started!" -sound default`
 end
 
 # execute hook after each pomodoro
 after do |seconds_left|
-  `terminal-notifier -message "Thyme's Up!"` if seconds_left == 0
+  `terminal-notifier -message "Thyme's Up!" -sound default` if seconds_left == 0
 end
