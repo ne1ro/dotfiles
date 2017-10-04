@@ -4,8 +4,7 @@ packages=(
   nvim
   elixir
   coreutils
-  findutils
-  rbenv
+  findutils rbenv
   ruby-build
   zsh
   pngquant
@@ -59,7 +58,7 @@ apps=(
 
 # Cask fonts
 fonts=(
-  font-source-code-pro
+  hasklig
 )
 
 brew update
