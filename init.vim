@@ -15,7 +15,6 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
   " Code style
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'scrooloose/syntastic' " Syntax checker
   Plug 'tpope/vim-endwise' " End certain structures automatically
   Plug 'Raimondi/delimitMate' " Closing of quotes, parenthesis, brackets
   Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
@@ -150,16 +149,8 @@ let g:neomake_markdown_enabled_makers = []
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
 
-" Syntastic symbols and checkers
-let g:syntastic_auto_jump               = 1
-let g:syntastic_error_symbol            = '✖'
-let g:syntastic_warning_symbol          = '►'
-let g:syntastic_ruby_checkers           = ['rubocop', 'mri']
-let g:syntastic_enable_elixir_checker   = 1
-
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-
 
 " Mix and Credo setup
 " Don't tell me to use smartquotes in markdown ok?
@@ -295,8 +286,3 @@ let g:prettier#exec_cmd_async = 1
 if has('nvim')
   tmap <C-o> <C-\><C-n>
 end
-
-syntax match nonbreaking 'fn' conceal cchar=λ
-syntax match nonbreaking '->' conceal cchar=→
-syntax match nonbreaking '=>' conceal cchar=⇒
-syntax match nonbreaking '|>' conceal cchar=➡
