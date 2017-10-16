@@ -227,7 +227,7 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
-nmap <leader>h :!thyme -d -r 16<cr>
+nmap <leader>h :!thyme -d -r 9<cr>
 nmap <silent> <leader>d <Plug>DashSearch
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
