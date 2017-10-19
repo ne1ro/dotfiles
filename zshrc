@@ -36,3 +36,7 @@ export TERM=xterm-256color-italic
 
 eval "$(rbenv init -)"
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+function task {
+  git flow feature start $(echo "$1" | ruby -e "puts gets.downcase.gsub(/[^a-zA-Z0-9 ]/, '').gsub(' ', '-')")
+}
