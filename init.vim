@@ -21,6 +21,8 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   Plug 'nathanaelkane/vim-indent-guides' " Show indents
   Plug 'tpope/vim-commentary' " Easy comments
   Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
+  Plug 'Chiel92/vim-autoformat' " Autoformatter
+
   " Prettify JS
   Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -188,6 +190,9 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" Autoformat
+au BufWrite * :Autoformat
 
 " Fix indent guides colors
 hi IndentGuidesOdd  guibg=gray ctermbg=0
