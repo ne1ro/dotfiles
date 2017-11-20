@@ -4,75 +4,70 @@
 set nocompatible " Use local vim mode
 filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
-  " Navigation
-  Plug 'tpope/vim-vinegar' " File browsing
-  Plug 'Shougo/denite.nvim' " Unite all interfaces
-  Plug 'rking/ag.vim' " File searching
-  Plug 'vim-airline/vim-airline' " Custom status line
-  Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
-  Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
-  Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
+" Navigation
+Plug 'tpope/vim-vinegar' " File browsing
+Plug 'Shougo/denite.nvim' " Unite all interfaces
+Plug 'rking/ag.vim' " File searching
+Plug 'vim-airline/vim-airline' " Custom status line
+Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
+Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
+Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
 
-  " Code style
-  Plug 'editorconfig/editorconfig-vim'
-  Plug 'tpope/vim-endwise' " End certain structures automatically
-  Plug 'Raimondi/delimitMate' " Closing of quotes, parenthesis, brackets
-  Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
-  Plug 'nathanaelkane/vim-indent-guides' " Show indents
-  Plug 'tpope/vim-commentary' " Easy comments
-  Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-  Plug 'Chiel92/vim-autoformat' " Autoformatter
+" Code style
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-endwise' " End certain structures automatically
+Plug 'Raimondi/delimitMate' " Closing of quotes, parenthesis, brackets
+Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
+Plug 'nathanaelkane/vim-indent-guides' " Show indents
+Plug 'tpope/vim-commentary' " Easy comments
+Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
+Plug 'Chiel92/vim-autoformat', { 'for': ['javascript', 'html', 'css'] } " Autoformatter
 
-  " Prettify JS
-  Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+" Autocomplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-  " Autocomplete
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Documentation
+Plug 'rizzatti/dash.vim'
 
-  " Documentation
-  Plug 'rizzatti/dash.vim'
+" Color scheme
+Plug 'iCyMind/NeoSolarized'
 
-  " Color scheme
-  Plug 'iCyMind/NeoSolarized'
+" VCS integration
+Plug 'tpope/vim-fugitive' " Git
+Plug 'airblade/vim-gitgutter' " Git diff
 
-  " VCS integration
-  Plug 'tpope/vim-fugitive' " Git
-  Plug 'airblade/vim-gitgutter' " Git diff
+" Testing
+Plug 'janko-m/vim-test'
+Plug 'reinh/vim-makegreen'
 
-  " Testing
-  Plug 'janko-m/vim-test'
-  Plug 'reinh/vim-makegreen'
+" Tmux integration
+Plug 'benmills/vimux' " Tmux integration
+Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'elixir'] } " Vim with REPL
+Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes and tmux splits
+Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 
-  " Tmux integration
-  Plug 'benmills/vimux' " Tmux integration
-  Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'elixir'] } " Vim with REPL
-  Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes and tmux splits
-  Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
+" Elixir
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
+Plug 'mhinz/vim-mix-format', { 'for': 'elixir'}
 
-  " Elixir
-  Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
-  Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
-  Plug 'mhinz/vim-mix-format', { 'for': 'elixir'}
+" Ruby
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
+Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'elixir'] } " Ruby code blocks
+Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby autocomplete
 
-  " Ruby
-  Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
-  Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
-  Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'elixir'] } " Ruby code blocks
-  Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby autocomplete
-
-  " Misc
-  Plug 'pearofducks/ansible-vim' " Ansible support
-  Plug 'tomlion/vim-solidity' " Solidity support
-  Plug 'martinda/Jenkinsfile-vim-syntax' " Jenkinsfile support
-  Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
-  Plug 'hashivim/vim-terraform' " Vim terraform
-  Plug 'kana/vim-textobj-user' " Text objects
-  Plug 'tpope/vim-surround' " Surroundings
-  Plug 'mattn/gist-vim' " Github gist
-  Plug 'neomake/neomake' " Execute code checks, find mistakes, in the background
-  Plug 'powerman/vim-plugin-AnsiEsc' " Ansi escape sequences concealed
+" Misc
+Plug 'pearofducks/ansible-vim' " Ansible support
+Plug 'tomlion/vim-solidity' " Solidity support
+Plug 'martinda/Jenkinsfile-vim-syntax' " Jenkinsfile support
+Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
+Plug 'hashivim/vim-terraform' " Vim terraform
+Plug 'kana/vim-textobj-user' " Text objects
+Plug 'tpope/vim-surround' " Surroundings
+Plug 'mattn/gist-vim' " Github gist
+Plug 'neomake/neomake' " Execute code checks, find mistakes, in the background
+Plug 'powerman/vim-plugin-AnsiEsc' " Ansi escape sequences concealed
 call plug#end() " End of vim-plug list
 
 
@@ -222,7 +217,7 @@ autocmd FileType terraform setlocal commentstring=#%s
 imap jj <ESC>
 inoremap <F3> :Autoformat<CR><CR>
 inoremap <silent><expr> <Tab>
-    \ pumvisible() ? "\<C-n>" : deoplete#manual_complete()
+      \ pumvisible() ? "\<C-n>" : deoplete#manual_complete()
 
 " For snippet_complete marker.
 if has('conceal')
@@ -231,8 +226,8 @@ endif
 
 " Set Iterm2 cursors
 if $TERM_PROGRAM =~ "iTerm"
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
 nmap <leader>h :!thyme -d -r 9<cr>
@@ -248,7 +243,7 @@ call denite#custom#option('default', {
       \ })
 
 call denite#custom#var('file_rec', 'command',
-	\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+      \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 call denite#custom#var('grep', 'command', ['ag'])
 call denite#custom#var('grep', 'default_opts',
       \ ['--hidden', '--vimgrep', '--no-heading', '-S', '-m 10'])
