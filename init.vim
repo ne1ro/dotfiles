@@ -54,6 +54,7 @@ call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
   " Elixir
   Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
   Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
+  Plug 'mhinz/vim-mix-format', { 'for': 'elixir'}
 
   " Ruby
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
@@ -120,6 +121,8 @@ highligh elixirStruct cterm=bold
 " -----------------------------------------------------------------------------
 " Set custom parameters
 " -----------------------------------------------------------------------------
+let g:mix_format_on_save = 1
+autocmd User MixFormatDiff wincmd p
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:tmuxline_preset = {
       \'a'       : '#S',
