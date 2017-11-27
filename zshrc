@@ -38,5 +38,5 @@ eval "$(rbenv init -)"
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 function task {
-  git flow $($1) start $(echo "$2" | ruby -e "puts gets.downcase.gsub(/[^a-zA-Z0-9 ]/, '').gsub(' ', '-')")
+  git flow feature $($1) start $(echo "$2" | ruby -e "puts gets.downcase.gsub(/[^a-zA-Z0-9 ]/, '').gsub(' ', '-')")
 }
