@@ -100,6 +100,7 @@ set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
 set cole=1
 set foldmethod=indent " Fold by indents
+set foldlevel=3
 set title
 set t_8f=^[[38;2;%lu;%lu;%lum
 set t_8b=^[[48;2;%lu;%lu;%lum
@@ -189,7 +190,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " Autoformat
-au FileType javascript,vim,html,css BufWrite * :Autoformat
+au FileType javascript,html,css BufWrite * :Autoformat
 
 " Fix indent guides colors
 hi IndentGuidesOdd  guibg=gray ctermbg=0
