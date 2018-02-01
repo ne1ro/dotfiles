@@ -1,7 +1,7 @@
 # ~/.tmuxinator/neiroio.yml
 
 name: neiroio
-root: ~/Projects/neiro.io
+root: ~/Projects/opensource/neiro.io
 
 # Optional tmux socket
 # socket_name: foo
