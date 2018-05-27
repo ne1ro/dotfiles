@@ -21,7 +21,7 @@ Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespac
 Plug 'nathanaelkane/vim-indent-guides' " Show indents
 Plug 'tpope/vim-commentary' " Easy comments
 Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-Plug 'Chiel92/vim-autoformat', { 'for': ['javascript', 'html', 'css'] } " Autoformatter
+Plug 'Chiel92/vim-autoformat', { 'for': ['javascript', 'html', 'css', 'eelixir'] } " Autoformatter
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -138,6 +138,7 @@ let g:slime_target = "tmux" " Use vim-slime with tmux
 let g:neosolarized_italic = 1
 let test#strategy = "neovim"
 let test#filename_modifier = ":p"
+let g:alchemist#elixir_erlang_src = "~/.asdf/shims"
 
 " Run Neomake when I save any buffer
 augroup localneomake
