@@ -4,9 +4,10 @@
 set nocompatible " Use local vim mode
 filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
+
 " Navigation
 Plug 'tpope/vim-vinegar' " File browsing
-Plug 'Shougo/denite.nvim' " Unite all interfaces
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy search
 Plug 'rking/ag.vim' " File searching
 Plug 'vim-airline/vim-airline' " Custom status line
 Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
@@ -53,16 +54,14 @@ Plug 'mhinz/vim-mix-format', { 'for': 'elixir'}
 
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
-Plug 'tpope/vim-rails', { 'for': 'ruby' } " Ruby on Rails syntax, navigation
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'elixir'] } " Ruby code blocks
 Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby autocomplete
 
-" Misc
-Plug 'pearofducks/ansible-vim' " Ansible support
-Plug 'tomlion/vim-solidity' " Solidity support
-Plug 'martinda/Jenkinsfile-vim-syntax' " Jenkinsfile support
-Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
 Plug 'hashivim/vim-terraform' " Vim terraform
+Plug 'pearofducks/ansible-vim' " Ansible support
+
+" Misc
+Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
 Plug 'kana/vim-textobj-user' " Text objects
 Plug 'tpope/vim-surround' " Surroundings
 Plug 'mattn/gist-vim' " Github gist
@@ -139,6 +138,22 @@ let g:neosolarized_italic = 1
 let test#strategy = "neovim"
 let test#filename_modifier = ":p"
 let g:alchemist#elixir_erlang_src = "~/.asdf/shims"
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_switch_buffer = 'et'
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " Run Neomake when I save any buffer
 augroup localneomake
@@ -238,52 +253,6 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
-
-call denite#custom#option('default', {
-      \ 'prompt': 'λ'
-      \ })
-
-call denite#custom#var('file_rec', 'command',
-      \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('grep', 'default_opts',
-      \ ['--hidden', '--vimgrep', '--no-heading', '-S', '-m 10'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>',
-      \'noremap')
-call denite#custom#map('normal', '<Esc>', '<NOP>',
-      \'noremap')
-call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>',
-      \'noremap')
-call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>',
-      \'noremap')
-call denite#custom#map('insert', '<C-s>', '<denite:do_action:split>',
-      \'noremap')
-call denite#custom#map('normal', '<C-s>', '<denite:do_action:split>',
-      \'noremap')
-call denite#custom#map('normal', '<C-t>', '<denite:do_action:new>',
-      \'noremap')
-call denite#custom#map('normal', 'dw', '<denite:delete_word_after_caret>',
-      \'noremap')
-
-nnoremap <C-p> :<C-u>Denite file_rec<CR>
-nnoremap <leader>s :<C-u>Denite buffer<CR>
-nnoremap <leader><Space>s :<C-u>DeniteBufferDir buffer<CR>
-nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>
-nnoremap <leader><Space>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
-nnoremap <leader>d :<C-u>DeniteBufferDir file_rec<CR>
-
-hi link deniteMatchedChar Special
-
-" Denite-extra
-
-nnoremap <leader>o :<C-u>Denite location_list -mode=normal -no-empty<CR>
-nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<CR>
-nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<CR>
 
 let g:prettier#exec_cmd_async = 1
 
