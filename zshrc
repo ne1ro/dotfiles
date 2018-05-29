@@ -30,6 +30,7 @@ alias mux='tmuxinator start'
 # Disables quit by Ctrl-S and Ctrl-Q
 stty -ixon
 
+export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH="./node_modules/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export TERM=xterm-256color-italic
@@ -41,3 +42,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 function task {
   git flow feature start $(echo "$1" | ruby -e "puts gets.downcase.gsub(/[^a-zA-Z0-9 ]/, '').gsub(' ', '-')")
 }
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash

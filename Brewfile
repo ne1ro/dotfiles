@@ -1,59 +1,52 @@
 #!/bin/sh
 # Homebrew packages
 packages=(
-  nvim
-  elixir
-  coreutils
-  findutils rbenv
-  ruby-build
-  zsh
-  pngquant
-  imagemagick
-  openvpn
-  wget
-  httpie
+  ansible
+  asdf
   bcrypt
-  xz
+  coreutils
+  dnscrypt
+  dnsmask
   fasd
+  findutils
+  flow
+  git-flow
+  gnupg
+  htop
+  httpie
+  hub
+  imagemagick
+  nmap
+  nvim
   postgresql
   redis
-  git-flow
-  tmux
-  nmap
-  flow
-  terminal-notifier
-  htop
-  the_silver_searcher
-  hub
-  tree
   rename
-  node
+  terminal-notifier
   terraform
-  ansible
-  geth
-  dnsmask
-  dnscrypt
-  gnupg
+  the_silver_searcher
+  tmux
+  tree
+  wget
+  xz
+  zsh
 )
 
 # Cask packages
 apps=(
-  electrum
-  ngrok
-  mist
   alfred
-  vlc
-  seil
-  transmission
-  iterm2
-  skype
-  the-unarchiver
   amethyst
-  xmind
   dash
-  torbrowser
+  iterm2
   java
+  karabiner
+  ngrok
+  skype
   slack
+  the-unarchiver
+  torbrowser
+  transmission
+  vlc
+  xmind
 )
 
 # Cask fonts
