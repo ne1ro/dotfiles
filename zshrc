@@ -33,10 +33,11 @@ stty -ixon
 export PATH="./node_modules/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export TERM=xterm-256color-italic
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 eval "$(rbenv init -)"
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 function task {
-  git flow feature $($1) start $(echo "$2" | ruby -e "puts gets.downcase.gsub(/[^a-zA-Z0-9 ]/, '').gsub(' ', '-')")
+  git flow feature start $(echo "$1" | ruby -e "puts gets.downcase.gsub(/[^a-zA-Z0-9 ]/, '').gsub(' ', '-')")
 }
