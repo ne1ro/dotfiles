@@ -25,7 +25,6 @@ Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
 Plug 'Chiel92/vim-autoformat', { 'for': ['javascript', 'html', 'css', 'eelixir'] } " Autoformatter
 
 " Snippets
-Plug 'honza/vim-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
@@ -284,9 +283,3 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
