@@ -34,7 +34,6 @@ packages=(
 # Cask packages
 apps=(
   alfred
-  amethyst
   dash
   iterm2
   java
