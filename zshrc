@@ -32,6 +32,7 @@ stty -ixon
 
 export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH="./node_modules/.bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export TERM=xterm-256color-italic
 export ERL_AFLAGS="-kernel shell_history enabled"
