@@ -22,7 +22,7 @@ Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespac
 Plug 'nathanaelkane/vim-indent-guides' " Show indents
 Plug 'tpope/vim-commentary' " Easy comments
 Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-Plug 'Chiel92/vim-autoformat', { 'for': ['javascript', 'html', 'css', 'eelixir'] } " Autoformatter
+Plug 'Chiel92/vim-autoformat', { 'for': ['javascript', 'html', 'css', 'elixir', 'eelixir'] } " Autoformatter
 
 " Snippets
 Plug 'Shougo/neosnippet.vim'
@@ -43,7 +43,6 @@ Plug 'airblade/vim-gitgutter' " Git diff
 
 " Testing
 Plug 'janko-m/vim-test'
-Plug 'reinh/vim-makegreen'
 
 " Tmux integration
 Plug 'benmills/vimux' " Tmux integration
@@ -54,7 +53,6 @@ Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 " Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
-Plug 'mhinz/vim-mix-format', { 'for': 'elixir'}
 
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
@@ -82,7 +80,7 @@ colorscheme NeoSolarized " Set default color scheme
 set tabstop=2 shiftwidth=2 expandtab " Default tab params
 set laststatus=2 " Display status line status
 set number " Show line number
-set colorcolumn=80 " Highlight 80 column to view max length of line
+set colorcolumn=100 " Highlight 100 column to view max length of line
 set autoindent
 set nowrap
 set cursorline
@@ -98,7 +96,7 @@ set smartcase
 set relativenumber " Show relative line number
 set smartcase
 set gdefault
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/_build/*,*/_workspace/*,*/coverage/*,*/vendor/*,*/deps/*,*/.bundle/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/_build/*,*/,*/coverage/*,*/vendor/*,*/deps/*
 set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
 set cole=1
@@ -119,8 +117,7 @@ highligh elixirStruct cterm=bold
 " -----------------------------------------------------------------------------
 " Set custom parameters
 " -----------------------------------------------------------------------------
-let g:mix_format_on_save = 1
-autocmd User MixFormatDiff wincmd p
+let test#filename_modifier = ':~'
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:tmuxline_preset = {
       \'a'       : '#S',
@@ -134,13 +131,11 @@ let g:terraform_align=1
 let g:airline_powerline_fonts = 1 " Use powerline font with vim-airline
 let mapleader = ","
 let g:airline_theme = 'solarized' " Set vim-airline color scheme
-let s:width = 80
+let s:width = 100
 let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
 let g:slime_target = "tmux" " Use vim-slime with tmux
 let g:neosolarized_italic = 1
-let test#strategy = "neovim"
-let test#filename_modifier = ":p"
 let g:alchemist#elixir_erlang_src = "~/.asdf/shims"
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -159,10 +154,16 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+let test#strategy = "neovim"
+
 " Run Neomake when I save any buffer
 augroup localneomake
-  autocmd! BufWritePost * Neomake
+  autocmd! BufWrite * Neomake
+  autocmd BufWrite * if test#exists() |
+    \   TestFile |
+    \ endif
 augroup END
+
 " Don't tell me to use smartquotes in markdown ok?
 let g:neomake_markdown_enabled_makers = []
 
@@ -210,7 +211,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " Autoformat
-au FileType javascript,html,css BufWrite * :Autoformat
+au BufWrite * :Autoformat
 
 " Fix indent guides colors
 hi IndentGuidesOdd  guibg=gray ctermbg=0
