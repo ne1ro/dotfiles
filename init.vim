@@ -157,11 +157,11 @@ endif
 let test#strategy = "neovim"
 
 " Run Neomake when I save any buffer
+call neomake#configure#automake('w')
+
+autocmd! BufWritePre * Autoformat
 augroup localneomake
   autocmd! BufWrite * Neomake
-  autocmd BufWrite * if test#exists() |
-    \   TestFile |
-    \ endif
 augroup END
 
 " Don't tell me to use smartquotes in markdown ok?
@@ -209,9 +209,6 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-" Autoformat
-au BufWrite * :Autoformat
 
 " Fix indent guides colors
 hi IndentGuidesOdd  guibg=gray ctermbg=0
