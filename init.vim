@@ -22,7 +22,7 @@ Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespac
 Plug 'nathanaelkane/vim-indent-guides' " Show indents
 Plug 'tpope/vim-commentary' " Easy comments
 Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
-Plug 'Chiel92/vim-autoformat', { 'for': ['javascript', 'html', 'css', 'elixir', 'eelixir'] } " Autoformatter
+Plug 'Chiel92/vim-autoformat' " Autoformatter
 
 " Snippets
 Plug 'Shougo/neosnippet.vim'
@@ -141,6 +141,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
+let g:formatdef_terraform = '"terraform fmt"'
+let g:formatters_terraform = ['terraform']
 
 " The Silver Searcher
 if executable('ag')
@@ -159,9 +161,6 @@ let test#strategy = "neovim"
 " Run Neomake when I save any buffer
 augroup localneomake
   autocmd! BufWrite * Neomake
-  autocmd BufWrite * if test#exists() |
-    \   TestFile |
-    \ endif
 augroup END
 
 " Don't tell me to use smartquotes in markdown ok?
