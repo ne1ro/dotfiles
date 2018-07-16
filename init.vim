@@ -159,6 +159,9 @@ endif
 let test#strategy = "neovim"
 
 " Run Neomake when I save any buffer
+call neomake#configure#automake('w')
+
+autocmd! BufWritePre * Autoformat
 augroup localneomake
   autocmd! BufWrite * Neomake
 augroup END
@@ -208,9 +211,6 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-" Autoformat
-au BufWrite * :Autoformat
 
 " Fix indent guides colors
 hi IndentGuidesOdd  guibg=gray ctermbg=0
