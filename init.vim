@@ -6,13 +6,11 @@ filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
 " Navigation
-Plug 'tpope/vim-vinegar' " File browsing
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy search
 Plug 'rking/ag.vim' " File searching
 Plug 'vim-airline/vim-airline' " Custom status line
 Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
 Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
-Plug 'gorkunov/smartgf.vim' " Quick method definition lookup
 
 " Code style
 Plug 'editorconfig/editorconfig-vim'
@@ -21,7 +19,7 @@ Plug 'Raimondi/delimitMate' " Closing of quotes, parenthesis, brackets
 Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
 Plug 'nathanaelkane/vim-indent-guides' " Show indents
 Plug 'tpope/vim-commentary' " Easy comments
-Plug 'kien/rainbow_parentheses.vim' " Colorize parentheses
+Plug 'luochen1990/rainbow' " Highlight parentheses
 Plug 'Chiel92/vim-autoformat' " Autoformatter
 
 " Snippets
@@ -39,7 +37,6 @@ Plug 'iCyMind/NeoSolarized'
 
 " VCS integration
 Plug 'tpope/vim-fugitive' " Git
-Plug 'airblade/vim-gitgutter' " Git diff
 
 " Testing
 Plug 'janko-m/vim-test'
@@ -59,8 +56,10 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'elixir'] } " Ruby code blocks
 Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby autocomplete
 
-Plug 'hashivim/vim-terraform' " Vim terraform
-Plug 'pearofducks/ansible-vim' " Ansible support
+" DevOps
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' } " Vim terraform
+Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' } " Terraform completion support
+Plug 'pearofducks/ansible-vim', { 'for': ['yaml', 'ansible'] } " Ansible support
 
 " Misc
 Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
@@ -119,6 +118,7 @@ highligh elixirStruct cterm=bold
 " -----------------------------------------------------------------------------
 let test#filename_modifier = ':~'
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
+let g:autoformat_autoindent = 0
 let g:tmuxline_preset = {
       \'a'       : '#S',
       \'y'       : [ '%d-%m', '%H:%M' ],
@@ -141,8 +141,9 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
-let g:formatdef_terraform = '"terraform fmt"'
-let g:formatters_terraform = ['terraform']
+" let g:formatdef_terraform = '"terraform fmt"'
+" let g:formatters_terraform = ['terraform']
+let g:rainbow_active = 1 " Enable Rainbow parentheses
 
 " The Silver Searcher
 if executable('ag')
@@ -174,43 +175,10 @@ let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnipp
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
-
-" Mix and Credo setup
-" Don't tell me to use smartquotes in markdown ok?
-let g:neomake_markdown_enabled_makers = []
-
-" Configure a nice credo setup, courtesy https://github.com/neomake/neomake/pull/300
-let g:neomake_elixir_enabled_makers = ['mycredo']
-function! NeomakeCredoErrorType(entry)
-  if a:entry.type ==# 'F'      " Refactoring opportunities
-    let l:type = 'W'
-  elseif a:entry.type ==# 'D'  " Software design suggestions
-    let l:type = 'I'
-  elseif a:entry.type ==# 'W'  " Warnings
-    let l:type = 'W'
-  elseif a:entry.type ==# 'R'  " Readability suggestions
-    let l:type = 'I'
-  elseif a:entry.type ==# 'C'  " Convention violation
-    let l:type = 'W'
-  else
-    let l:type = 'M'           " Everything else is a message
-  endif
-  let a:entry.type = l:type
-endfunction
-
-let g:neomake_elixir_mycredo_maker = {
-      \ 'exe': 'mix',
-      \ 'args': ['credo', 'list', '%:p', '--format=oneline'],
-      \ 'errorformat': '[%t] %. %f:%l:%c %m,[%t] %. %f:%l %m',
-      \ 'postprocess': function('NeomakeCredoErrorType')
-      \ }
-
-
-" Rainbow Parentheses settings
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
+let g:deoplete#enable_at_startup = 1
+call deoplete#initialize()
 
 " Fix indent guides colors
 hi IndentGuidesOdd  guibg=gray ctermbg=0
@@ -277,7 +245,7 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 " \ neosnippet#expandable_or_jumpable() ?
 " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
