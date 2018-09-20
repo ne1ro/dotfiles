@@ -34,6 +34,7 @@ Plug 'rizzatti/dash.vim'
 
 " Color scheme
 Plug 'iCyMind/NeoSolarized'
+Plug 'blueyed/vim-diminactive'
 
 " VCS integration
 Plug 'tpope/vim-fugitive' " Git
