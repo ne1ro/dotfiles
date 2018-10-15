@@ -36,6 +36,7 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export TERM=xterm-256color-italic
 export ERL_AFLAGS="-kernel shell_history enabled"
+export LC_ALL=en_US.UTF-8
 
 eval "$(rbenv init -)"
 fpath=(/usr/local/share/zsh-completions $fpath)

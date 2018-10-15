@@ -63,11 +63,11 @@ Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' } " Terraform
 Plug 'pearofducks/ansible-vim', { 'for': ['yaml', 'ansible'] } " Ansible support
 
 " Misc
+Plug 'w0rp/ale' " Syntax linter
 Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
 Plug 'kana/vim-textobj-user' " Text objects
 Plug 'tpope/vim-surround' " Surroundings
 Plug 'mattn/gist-vim' " Github gist
-Plug 'neomake/neomake' " Execute code checks, find mistakes, in the background
 Plug 'powerman/vim-plugin-AnsiEsc' " Ansi escape sequences concealed
 call plug#end() " End of vim-plug list
 
@@ -142,9 +142,14 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
-" let g:formatdef_terraform = '"terraform fmt"'
-" let g:formatters_terraform = ['terraform']
 let g:rainbow_active = 1 " Enable Rainbow parentheses
+let b:ale_linters = {'elixir': ['credo', 'mix', 'elixir-ls']}
+let b:ale_fixers = {'elixir': ['mix_format']}
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_elixir_elixir_ls_release = '~/Projects/opensource/elixir-ls'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_lint_delay = 1000
 
 " The Silver Searcher
 if executable('ag')
@@ -159,17 +164,6 @@ if executable('ag')
 endif
 
 let test#strategy = "neovim"
-
-" Run Neomake when I save any buffer
-call neomake#configure#automake('w')
-
-autocmd! BufWritePre * Autoformat
-augroup localneomake
-  autocmd! BufWrite * Neomake
-augroup END
-
-" Don't tell me to use smartquotes in markdown ok?
-let g:neomake_markdown_enabled_makers = []
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
