@@ -143,13 +143,16 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
 let g:rainbow_active = 1 " Enable Rainbow parentheses
-let b:ale_linters = {'elixir': ['credo', 'mix', 'elixir-ls']}
-let b:ale_fixers = {'elixir': ['mix_format']}
-let g:ale_fix_on_save = 1
+let g:ale_linters = {'elixir': ['credo', 'mix']}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'elixir': ['mix_format'],
+\}
 let g:ale_completion_enabled = 1
 let g:ale_elixir_elixir_ls_release = '~/Projects/opensource/elixir-ls'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_delay = 1000
+let g:ale_fix_on_save = 1
 
 " The Silver Searcher
 if executable('ag')
