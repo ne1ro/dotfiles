@@ -143,7 +143,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
 let g:rainbow_active = 1 " Enable Rainbow parentheses
-let g:ale_linters = {'elixir': ['credo', 'mix']}
+let g:ale_linters = {'elixir': ['elixir-ls', 'credo', 'mix']}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'elixir': ['mix_format'],
