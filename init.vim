@@ -1,16 +1,25 @@
 " -----------------------------------------------------------------------------
 " Plugins
 " -----------------------------------------------------------------------------
+let g:ale_completion_enabled = 1
+let g:ale_elixir_elixir_ls_release = '/Users/neiro/Projects/opensource/elixir-ls/rel'
 set nocompatible " Use local vim mode
 filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
 " Navigation
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy search
-Plug 'rking/ag.vim' " File searching
+Plug 'mileszs/ack.vim' " File searching
 Plug 'vim-airline/vim-airline' " Custom status line
 Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
 Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
 
 " Code style
 Plug 'editorconfig/editorconfig-vim'
@@ -35,7 +44,6 @@ Plug 'rizzatti/dash.vim'
 " Color scheme
 Plug 'iCyMind/NeoSolarized'
 Plug 'blueyed/vim-diminactive'
-
 " VCS integration
 Plug 'tpope/vim-fugitive' " Git
 
@@ -118,6 +126,10 @@ highligh elixirStruct cterm=bold
 " Set custom parameters
 " -----------------------------------------------------------------------------
 let test#filename_modifier = ':~'
+let g:LanguageClient_serverCommands = {
+  \ 'elixir': ['/Users/neiro/Projects/opensource/elixir-ls/rel/language_server.sh'],
+  \ }
+
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:autoformat_autoindent = 0
 let g:tmuxline_preset = {
@@ -143,15 +155,15 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
 let g:rainbow_active = 1 " Enable Rainbow parentheses
-let g:ale_linters = {'elixir': ['elixir-ls', 'credo', 'mix']}
+let g:ale_linters = {'elixir': ['elixir-ls', 'credo'], 'sh': ['language_server'],}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'elixir': ['mix_format'],
 \}
 let g:ale_completion_enabled = 1
-let g:ale_elixir_elixir_ls_release = '~/Projects/opensource/elixir-ls'
+let g:ale_elixir_elixir_ls_release = '/Users/neiro/Projects/opensource/elixir-ls/rel'
 let g:airline#extensions#ale#enabled = 1
-let g:ale_lint_delay = 1000
+let g:ale_lint_delay = 500
 let g:ale_fix_on_save = 1
 
 " The Silver Searcher
@@ -159,11 +171,16 @@ if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 
+  let g:ackprg = 'ag --vimgrep --smart-case'
+
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  " Use Ag instead of Ack
+  cnoreabbrev ag Ack
+  cnoreabbrev aG Ack
+  cnoreabbrev Ag Ack
+  cnoreabbrev AG Ack
 endif
 
 let test#strategy = "neovim"
@@ -190,6 +207,7 @@ autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0 " Use tab in ma
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Disable automatic comment insertion
 autocmd FileType ruby set commentstring=#\ %s
 autocmd FileType elixir set commentstring=#\ %s
+autocmd FileType elixir nnoremap <c-]> :ALEGoToDefinition<cr>
 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
