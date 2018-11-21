@@ -58,7 +58,6 @@ Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 
 " Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
-Plug 'slashmili/alchemist.vim', { 'for': 'elixir' } " Elixir support
 
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
@@ -149,7 +148,6 @@ let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
 let g:slime_target = "tmux" " Use vim-slime with tmux
 let g:neosolarized_italic = 1
-let g:alchemist#elixir_erlang_src = "~/.asdf/shims"
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
