@@ -12,14 +12,14 @@ packages=(
   flow
   git-flow
   gnupg
-  htop
+  haskell-platform
+  haskell-stack
   httpie
   hub
   imagemagick
   nmap
   nvim
   postgresql
-  redis
   rename
   terminal-notifier
   terraform
