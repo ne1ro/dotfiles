@@ -59,6 +59,9 @@ Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 " Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 
+" Haskell
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell'} " Haskell support
+
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'elixir'] } " Ruby code blocks
