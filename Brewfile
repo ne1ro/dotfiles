@@ -67,4 +67,3 @@ brew doctor
 brew cleanup
 brew prune
 brew cask doctor
-brew cask cleanup
