@@ -62,6 +62,11 @@ Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 " Haskell
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell'} " Haskell support
 
+" Clojure
+Plug 'tpope/vim-fireplace', { 'for': 'clojure'} " Clojure support
+Plug 'vim-scripts/paredit.vim', { 'for': 'clojure'} " Edit parentheses
+Plug 'venantius/vim-cljfmt', { 'for': 'clojure'} " Autoformat
+
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'elixir'] } " Ruby code blocks
@@ -160,6 +165,7 @@ let g:ale_linters = {'elixir': ['elixir-ls', 'credo'], 'sh': ['language_server']
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'elixir': ['mix_format'],
+\   'haskell': ['stylish-haskell']
 \}
 let g:ale_completion_enabled = 1
 let g:ale_elixir_elixir_ls_release = '/Users/neiro/Projects/opensource/elixir-ls/rel'
