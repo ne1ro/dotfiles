@@ -13,10 +13,6 @@ Plug 'mileszs/ack.vim' " File searching
 Plug 'vim-airline/vim-airline' " Custom status line
 Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
 Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
@@ -59,13 +55,11 @@ Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 " Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 
-" Haskell
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell'} " Haskell support
-
 " Clojure
 Plug 'tpope/vim-fireplace', { 'for': 'clojure'} " Clojure support
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure'} " Edit parentheses
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure'} " Autoformat
+Plug 'venantius/vim-eastwood', { 'for': 'clojure'} " Linter
 
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
@@ -133,10 +127,8 @@ highligh elixirStruct cterm=bold
 " Set custom parameters
 " -----------------------------------------------------------------------------
 let test#filename_modifier = ':~'
-let g:LanguageClient_serverCommands = {
-  \ 'elixir': ['/Users/neiro/Projects/opensource/elixir-ls/rel/language_server.sh'],
-  \ }
-
+let g:clj_fmt_autosave = 1
+let g:syntastic_clojure_checkers = ['eastwood']
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:autoformat_autoindent = 0
 let g:tmuxline_preset = {
@@ -161,11 +153,10 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
 let g:rainbow_active = 1 " Enable Rainbow parentheses
-let g:ale_linters = {'elixir': ['elixir-ls', 'credo'], 'sh': ['language_server'],}
+let g:ale_linters = {'elixir': ['elixir-ls', 'credo', 'mix'], 'sh': ['language_server']}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'elixir': ['mix_format'],
-\   'haskell': ['stylish-haskell']
+\   'elixir': ['mix_format']
 \}
 let g:ale_completion_enabled = 1
 let g:ale_elixir_elixir_ls_release = '/Users/neiro/Projects/opensource/elixir-ls/rel'
