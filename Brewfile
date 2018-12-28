@@ -2,8 +2,8 @@
 # Homebrew packages
 packages=(
   ansible
-  asdf
   bcrypt
+  clojure
   coreutils
   dnscrypt
   dnsmask
@@ -12,12 +12,12 @@ packages=(
   flow
   git-flow
   gnupg
-  haskell-platform
-  haskell-stack
   httpie
   hub
   imagemagick
+  leiningen
   nmap
+  node
   nvim
   postgresql
   rename
@@ -28,13 +28,13 @@ packages=(
   tree
   wget
   xz
+  yarn
   zsh
 )
 
 # Cask packages
 apps=(
   alfred
-  dash
   iterm2
   java
   karabiner
