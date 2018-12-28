@@ -34,9 +34,6 @@ Plug 'Shougo/neosnippet-snippets'
 " Autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-" Documentation
-Plug 'rizzatti/dash.vim'
-
 " Color scheme
 Plug 'iCyMind/NeoSolarized'
 Plug 'blueyed/vim-diminactive'
