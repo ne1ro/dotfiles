@@ -15,13 +15,13 @@ alias ans='ansible-playbook'
 alias be='bundle exec'
 alias h='history 0'
 alias http='http -v'
+alias l='lein'
 alias mux='tmuxinator start'
 alias ph='iex -S mix phx.server'
 alias tf='terraform'
 alias v='nvim'
-alias vim='nvim'
 alias vi='nvim'
-alias l='lein'
+alias vim='nvim'
 
 # iTerm hack
 # Disables quit by Ctrl-S and Ctrl-Q
@@ -35,7 +35,6 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export TERM=xterm-256color-italic
 export VISUAL="nvim"
 
 eval "$(rbenv init -)"

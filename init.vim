@@ -93,6 +93,14 @@ set cursorline
 set mousehide
 set mouse=nicr
 set showmatch
+
+" True color support
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 " set antialias
 set ttyfast
 set noswapfile
@@ -117,8 +125,8 @@ highlight htmlArg gui=italic
 highlight htmlArg cterm=italic
 highlight Comment gui=italic
 highlight Comment cterm=italic
-highligh elixirStruct gui=bold
-highligh elixirStruct cterm=bold
+highlight elixirStruct gui=bold
+highlight elixirStruct cterm=bold
 
 " -----------------------------------------------------------------------------
 " Set custom parameters
@@ -191,8 +199,8 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#initialize()
 
 " Fix indent guides colors
-hi IndentGuidesOdd  guibg=gray ctermbg=0
-hi IndentGuidesEven  guibg=gray ctermbg=0
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEvent  ctermbg=black
 
 
 " -----------------------------------------------------------------------------
