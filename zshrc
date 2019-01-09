@@ -20,6 +20,8 @@ alias ph='iex -S mix phx.server'
 alias tf='terraform'
 alias v='nvim'
 alias vim='nvim'
+alias vi='nvim'
+alias l='lein'
 
 # iTerm hack
 # Disables quit by Ctrl-S and Ctrl-Q
@@ -27,7 +29,6 @@ stty -ixon
 
 export ECTO_EDITOR="nvim"
 export EDITOR="nvim"
-export ERL_AFLAGS="-kernel shell_history enabled"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.bin:$PATH"
@@ -39,7 +40,3 @@ export VISUAL="nvim"
 
 eval "$(rbenv init -)"
 fpath=(/usr/local/share/zsh-completions $fpath)
-
-function task {
-  git flow feature start $(echo "$1" | ruby -e "puts gets.downcase.gsub(/[^a-zA-Z0-9 ]/, '').gsub(' ', '-')")
-}

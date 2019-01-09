@@ -1,5 +1,5 @@
-name: tracker_bot
-root: ~/Projects/tracker_bot
+name: attendance-api
+root: ~/Projects/opensource/attendance-api
 
 # Optional tmux socket
 # socket_name: foo
@@ -23,13 +23,13 @@ windows:
   - editor:
       layout: 6705,238x58,0,0{180x58,0,0,0,57x58,181,0,3}
       panes:
-        - vim
+        - v
   - dev:
       layout: main-vertical
       panes:
-        - iex -S mix
+        - l repl
   - misc:
       layout: main-vertical
       panes:
-        - tree -L 2
+        - l ring server-headless 3000
         - caffeinate -u -t 547584758 &
