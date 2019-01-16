@@ -53,10 +53,11 @@ Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 
 " Clojure
-Plug 'tpope/vim-fireplace', { 'for': 'clojure'} " Clojure support
+Plug 'tpope/vim-fireplace' " Clojure support
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure'} " Edit parentheses
-Plug 'venantius/vim-cljfmt', { 'for': 'clojure'} " Autoformat
 Plug 'venantius/vim-eastwood', { 'for': 'clojure'} " Linter
+Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'} " Autocomplete
+Plug 'venantius/vim-cljfmt', {'for': 'clojure'} " Autoformat
 
 " Ruby
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
@@ -93,6 +94,7 @@ set cursorline
 set mousehide
 set mouse=nicr
 set showmatch
+set nofoldenable
 
 " True color support
 if exists('+termguicolors')
@@ -115,7 +117,6 @@ set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
 set cole=1
 set foldmethod=indent " Fold by indents
-set foldlevel=3
 set title
 set t_8f=^[[38;2;%lu;%lu;%lum
 set t_8b=^[[48;2;%lu;%lu;%lum
@@ -132,7 +133,9 @@ highlight elixirStruct cterm=bold
 " Set custom parameters
 " -----------------------------------------------------------------------------
 let test#filename_modifier = ':~'
-let g:clj_fmt_autosave = 1
+let g:deoplete#keyword_patterns = {}
+let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
+let g:clj_fmt_autosave = 0
 let g:syntastic_clojure_checkers = ['eastwood']
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:autoformat_autoindent = 0
