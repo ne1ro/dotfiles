@@ -3,7 +3,6 @@
 packages=(
   ansible
   bcrypt
-  clojure
   coreutils
   dnscrypt
   dnsmask
@@ -17,7 +16,6 @@ packages=(
   imagemagick
   leiningen
   nmap
-  node
   nvim
   postgresql
   rename

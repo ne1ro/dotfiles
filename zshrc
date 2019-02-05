@@ -35,6 +35,8 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="./node_modules/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
 export VISUAL="nvim"
 
 eval "$(rbenv init -)"
