@@ -32,7 +32,6 @@ packages=(
 
 # Cask packages
 apps=(
-  alfred
   iterm2
   java
   karabiner
