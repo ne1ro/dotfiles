@@ -15,17 +15,17 @@ Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
 Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
 
 " (Optional) Multi-entry selection UI.
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Code style
-Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-endwise' " End certain structures automatically
-Plug 'Raimondi/delimitMate' " Closing of quotes, parenthesis, brackets
 Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
 Plug 'nathanaelkane/vim-indent-guides' " Show indents
 Plug 'tpope/vim-commentary' " Easy comments
 Plug 'luochen1990/rainbow' " Highlight parentheses
 Plug 'Chiel92/vim-autoformat' " Autoformatter
+Plug 'w0rp/ale' " Syntax linter
 
 " Snippets
 Plug 'Shougo/neosnippet.vim'
@@ -37,11 +37,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Color scheme
 Plug 'iCyMind/NeoSolarized'
 Plug 'blueyed/vim-diminactive'
+
 " VCS integration
 Plug 'tpope/vim-fugitive' " Git
-
-" Testing
-Plug 'janko-m/vim-test'
 
 " Tmux integration
 Plug 'benmills/vimux' " Tmux integration
@@ -53,24 +51,17 @@ Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 
 " Clojure
-Plug 'tpope/vim-fireplace' " Clojure support
+Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' , 'for': 'clojure' }
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure'} " Edit parentheses
 Plug 'venantius/vim-eastwood', { 'for': 'clojure'} " Linter
 Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'} " Autocomplete
 Plug 'venantius/vim-cljfmt', {'for': 'clojure'} " Autoformat
 
-" Ruby
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' } " Navigation and syntax highlight
-Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'elixir'] } " Ruby code blocks
-Plug 'osyo-manga/vim-monster', { 'for': 'ruby' } " Ruby autocomplete
-
 " DevOps
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' } " Vim terraform
 Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' } " Terraform completion support
-Plug 'pearofducks/ansible-vim', { 'for': ['yaml', 'ansible'] } " Ansible support
 
 " Misc
-Plug 'w0rp/ale' " Syntax linter
 Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
 Plug 'kana/vim-textobj-user' " Text objects
 Plug 'tpope/vim-surround' " Surroundings
@@ -112,7 +103,7 @@ set smartcase
 set relativenumber " Show relative line number
 set smartcase
 set gdefault
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/build/*,*/_build/*,*/,*/coverage/*,*/vendor/*,*/deps/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/_build/*,*/,*/coverage/*,*/vendor/*,*/deps/*
 set wrap
 set encoding=utf-8 " Set default encoding to UTF-8
 set cole=1
@@ -135,14 +126,13 @@ highlight elixirStruct cterm=bold
 let test#filename_modifier = ':~'
 let g:deoplete#keyword_patterns = {}
 let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
-let g:clj_fmt_autosave = 0
+let g:clj_fmt_autosave = 1
 let g:syntastic_clojure_checkers = ['eastwood']
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:autoformat_autoindent = 0
 let g:tmuxline_preset = {
       \'a'       : '#S',
       \'y'       : [ '%d-%m', '%H:%M' ],
-      \'z'       : [ '⧗ #(cat ~/.thyme-tmux)' ],
       \'win'     : [ '#I', '#W' ],
       \'cwin'    : [ '#I', '#W' ],
       \'options' : { 'status-justify': 'left'} }
@@ -161,7 +151,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_switch_buffer = 'et'
 let g:rainbow_active = 1 " Enable Rainbow parentheses
-let g:ale_linters = {'elixir': ['elixir-ls', 'credo', 'mix'], 'sh': ['language_server']}
+let g:ale_linters = {'elixir': ['credo', 'mix', 'elixir-ls'], 'sh': ['language_server']}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'elixir': ['mix_format']
@@ -171,6 +161,7 @@ let g:ale_elixir_elixir_ls_release = '/Users/neiro/Projects/opensource/elixir-ls
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_delay = 500
 let g:ale_fix_on_save = 1
+let g:prettier#exec_cmd_async = 1
 
 " The Silver Searcher
 if executable('ag')
@@ -188,8 +179,6 @@ if executable('ag')
   cnoreabbrev Ag Ack
   cnoreabbrev AG Ack
 endif
-
-let test#strategy = "neovim"
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
@@ -211,13 +200,8 @@ hi IndentGuidesEvent  ctermbg=black
 " -----------------------------------------------------------------------------
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0 " Use tab in makefile
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Disable automatic comment insertion
-autocmd FileType ruby set commentstring=#\ %s
 autocmd FileType elixir set commentstring=#\ %s
 autocmd FileType elixir nnoremap <c-]> :ALEGoToDefinition<cr>
-
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType terraform setlocal commentstring=#%s
 
 
@@ -239,16 +223,6 @@ if $TERM_PROGRAM =~ "iTerm"
   let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
   let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
-
-nmap <leader>h :!thyme -d -r 9<cr>
-nmap <silent> <leader>d <Plug>DashSearch
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
-
-let g:prettier#exec_cmd_async = 1
 
 if has('nvim')
   tmap <C-o> <C-\><C-n>

@@ -41,3 +41,5 @@ export VISUAL="nvim"
 
 eval "$(rbenv init -)"
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
