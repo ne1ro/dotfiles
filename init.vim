@@ -51,7 +51,7 @@ Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 
 " Clojure
-Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' , 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " Clojure support
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure'} " Edit parentheses
 Plug 'venantius/vim-eastwood', { 'for': 'clojure'} " Linter
 Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'} " Autocomplete
