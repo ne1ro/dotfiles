@@ -49,6 +49,7 @@ Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 
 " Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 
 " Clojure
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " Clojure support
@@ -78,7 +79,7 @@ colorscheme NeoSolarized " Set default color scheme
 set tabstop=2 shiftwidth=2 expandtab " Default tab params
 set laststatus=2 " Display status line status
 set number " Show line number
-set colorcolumn=100 " Highlight 100 column to view max length of line
+set colorcolumn=80 " Highlight 80 column to view max length of line
 set autoindent
 set nowrap
 set cursorline
@@ -141,7 +142,7 @@ let g:terraform_align=1
 let g:airline_powerline_fonts = 1 " Use powerline font with vim-airline
 let mapleader = ","
 let g:airline_theme = 'solarized' " Set vim-airline color scheme
-let s:width = 100
+let s:width = 80
 let g:LargeFile=10
 let g:indent_guides_enable_on_vim_startup = 1
 let g:slime_target = "tmux" " Use vim-slime with tmux
