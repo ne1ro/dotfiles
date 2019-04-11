@@ -30,6 +30,9 @@ Plug 'w0rp/ale' " Syntax linter
 " Snippets
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 " Autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -62,6 +65,7 @@ Plug 'hashivim/vim-terraform', { 'for': 'terraform' } " Vim terraform
 Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' } " Terraform completion support
 
 " Misc
+Plug 'junegunn/goyo.vim' " Distraction-free mode
 Plug 'terryma/vim-expand-region' " Visually select increasingly larger regions using the same key combination
 Plug 'kana/vim-textobj-user' " Text objects
 Plug 'tpope/vim-surround' " Surroundings
@@ -182,6 +186,12 @@ endif
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
