@@ -28,7 +28,8 @@ Plug 'mileszs/ack.vim' " File searching
 Plug 'vim-airline/vim-airline' " Custom status line
 Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
 Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
-Plug 'Shougo/denite.nvim' " Fuzzy search
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Code style
 Plug 'tpope/vim-endwise' " End certain structures automatically
@@ -44,7 +45,6 @@ Plug 'roxma/vim-hug-neovim-rpc'
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'honza/vim-snippets'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Color scheme
 Plug 'iCyMind/NeoSolarized'
@@ -164,18 +164,6 @@ let g:prettier#exec_cmd_async = 1
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
-let s:denite_options = {'default' : {
-\ 'auto_resize': 1,
-\ 'prompt': 'λ:',
-\ 'direction': 'rightbelow',
-\ 'winminheight': '10',
-\ 'highlight_mode_insert': 'Visual',
-\ 'highlight_mode_normal': 'Visual',
-\ 'prompt_highlight': 'Function',
-\ 'highlight_matched_char': 'Function',
-\ 'highlight_matched_range': 'Normal'
-\ }}
-
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
@@ -216,6 +204,7 @@ autocmd FileType terraform setlocal commentstring=#%s
 " -----------------------------------------------------------------------------
 imap jj <ESC>
 inoremap <F3> :Autoformat<CR><CR>
+nnoremap <C-P> :Files<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -248,11 +237,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-nmap ; :Denite buffer -split=floating -winrow=1<CR>
-nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
-nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
-nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
