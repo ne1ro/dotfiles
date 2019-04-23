@@ -1,3 +1,4 @@
+bindkey -v
 zstyle ':prompt:grml:left:setup' items change-root user at host path vcs
 
 # Git aliases
@@ -30,6 +31,7 @@ export ANDROID_SDK=$HOME/Library/Android/sdk
 export ECTO_EDITOR="nvim"
 export EDITOR="nvim"
 export ERL_AFLAGS="-kernel shell_history enabled"
+export KEYTIMEOUT=1
 export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
