@@ -2,16 +2,15 @@
 
 dotfiles_dir = Dir.pwd
 dotfiles = %w(
-  gitconfig
-  zshrc
   amethyst
+  curlrc
+  gitconfig
   gitignore_global
-  zpreztorc
+  thymerc
   tmux.conf
   tmuxinator
-  pryrc
-  thymerc
-  curlrc
+  zshrc
+  zshrc.local
 )
 
 # Link dotfiles
