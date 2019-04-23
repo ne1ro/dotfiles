@@ -138,8 +138,8 @@ highlight elixirStruct cterm=bold
 " Set custom parameters
 " -----------------------------------------------------------------------------
 let test#filename_modifier = ':~'
-let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
+let g:netrw_altv=1
+let g:netrw_liststyle=3
 let g:clj_fmt_autosave = 1
 let g:syntastic_clojure_checkers = ['eastwood']
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
@@ -178,13 +178,6 @@ if executable('ag')
   cnoreabbrev Ag Ack
   cnoreabbrev AG Ack
 endif
-
-" Use deoplete.
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#omni_patterns = {}
-" let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#initialize()
 
 " Fix indent guides colors
 hi IndentGuidesOdd  ctermbg=black
