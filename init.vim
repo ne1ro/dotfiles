@@ -32,12 +32,12 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " Code style
-Plug 'tpope/vim-endwise' " End certain structures automatically
+" Plug 'tpope/vim-endwise' " End certain structures automatically
 Plug 'bronson/vim-trailing-whitespace' " Highlight and remove trailing whitespaces
 Plug 'nathanaelkane/vim-indent-guides' " Show indents
 Plug 'tpope/vim-commentary' " Easy comments
 Plug 'luochen1990/rainbow' " Highlight parentheses
-Plug 'Chiel92/vim-autoformat' " Autoformatter
+Plug 'sbdchd/neoformat' " Autoformatter
 
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -55,7 +55,7 @@ Plug 'tpope/vim-fugitive' " Git
 
 " Tmux integration
 Plug 'benmills/vimux' " Tmux integration
-Plug 'jpalardy/vim-slime', { 'for': ['ruby', 'elixir'] } " Vim with REPL
+Plug 'jpalardy/vim-slime', { 'for': ['elixir'] } " Vim with REPL
 Plug 'christoomey/vim-tmux-navigator' " Move between Vim panes and tmux splits
 Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 
@@ -63,11 +63,12 @@ Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 
 " Clojure
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " Clojure support
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " Clojure support
+Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure'} " Edit parentheses
 Plug 'venantius/vim-eastwood', { 'for': 'clojure'} " Linter
 Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'} " Autocomplete
-Plug 'venantius/vim-cljfmt', {'for': 'clojure'} " Autoformat
+" Plug 'venantius/vim-cljfmt', {'for': 'clojure'} " Autoformat
 
 " DevOps
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' } " Vim terraform
@@ -142,7 +143,6 @@ let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 let g:clj_fmt_autosave = 1
 let g:syntastic_clojure_checkers = ['eastwood']
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
-let g:autoformat_autoindent = 0
 let g:tmuxline_preset = {
       \'a'       : '#S',
       \'y'       : [ '%d-%m', '%H:%M' ],
@@ -163,6 +163,7 @@ let g:rainbow_active = 1 " Enable Rainbow parentheses
 let g:prettier#exec_cmd_async = 1
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+let g:neoformat_try_formatprg = 1
 
 " The Silver Searcher
 if executable('ag')
@@ -203,8 +204,8 @@ autocmd FileType terraform setlocal commentstring=#%s
 " Key mappings
 " -----------------------------------------------------------------------------
 imap jj <ESC>
-inoremap <F3> :Autoformat<CR><CR>
-nnoremap <C-P> :Files<CR>
+inoremap <F3> :Neoformat<CR><CR>
+nnoremap <C-P> :GFiles<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -213,6 +214,8 @@ inoremap <silent><expr> <TAB>
       \ coc#expandableOrJumpable() ? coc#rpc#request('doKeymap', ['snippets-expand-jump','']) :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -226,7 +229,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
