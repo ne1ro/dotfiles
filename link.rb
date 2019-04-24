@@ -4,6 +4,7 @@ dotfiles_dir = Dir.pwd
 dotfiles = %w(
   amethyst
   curlrc
+  git_commit_msg.txt
   gitconfig
   gitignore_global
   thymerc
