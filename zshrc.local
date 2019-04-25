@@ -5,12 +5,13 @@ zstyle ':prompt:grml:left:setup' items change-root user at host path vcs
 alias gb='git branch'
 alias gbc='git checkout -b'
 alias gc='git commit --verbose'
-alias gca='git add . && git commit --amend --reuse-message HEAD'
+alias gca='git add . && git commit'
 alias gp='git push'
 alias gp='git push --force'
 alias gpu='git pull'
 alias gd='git diff'
 alias gs='git status'
+alias gl='git log'
 
 # Aliases
 alias h='history 0'

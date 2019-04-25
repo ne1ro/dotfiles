@@ -1,7 +1,6 @@
 #!/bin/sh
 # Homebrew packages
 packages=(
-  ansible
   bcrypt
   coreutils
   dnscrypt
