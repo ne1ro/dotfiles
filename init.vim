@@ -24,7 +24,6 @@ filetype off " Turn off file type detection
 call plug#begin('~/.vim/plugged') " Use vim-plug for plugin management
 
 " Navigation
-Plug 'mileszs/ack.vim' " File searching
 Plug 'vim-airline/vim-airline' " Custom status line
 Plug 'vim-airline/vim-airline-themes' " Vim-airline themes
 Plug 'Lokaltog/vim-easymotion' " Easy motion for vim
@@ -165,20 +164,6 @@ let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_er
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 let g:neoformat_try_formatprg = 1
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  let g:ackprg = 'ag --vimgrep --smart-case'
-
-  " Use Ag instead of Ack
-  cnoreabbrev ag Ack
-  cnoreabbrev aG Ack
-  cnoreabbrev Ag Ack
-  cnoreabbrev AG Ack
-endif
-
 " Fix indent guides colors
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEvent  ctermbg=black
@@ -192,6 +177,10 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "
 autocmd FileType elixir set commentstring=#\ %s
 autocmd FileType terraform setlocal commentstring=#%s
 
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
 " -----------------------------------------------------------------------------
 " Key mappings
