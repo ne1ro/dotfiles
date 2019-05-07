@@ -37,7 +37,8 @@ export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
+export PATH="$HOME/.vim/plugged/vim-iced/bin:$PATH"
+# export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
 export VISUAL="nvim"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
