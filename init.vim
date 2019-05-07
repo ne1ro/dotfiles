@@ -62,8 +62,8 @@ Plug 'edkolev/tmuxline.vim' " Airline integration with Tmux
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 
 " Clojure
-" Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " Clojure support
-Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'guns/vim-sexp',    {'for': 'clojure'}
+Plug 'liquidz/vim-iced', {'for': 'clojure'} " Clojure support
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure'} " Edit parentheses
 Plug 'venantius/vim-eastwood', { 'for': 'clojure'} " Linter
 Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'} " Autocomplete
@@ -137,10 +137,11 @@ highlight elixirStruct cterm=bold
 " Set custom parameters
 " -----------------------------------------------------------------------------
 let test#filename_modifier = ':~'
+let g:iced_enable_default_key_mappings = v:true
+let g:iced_enable_auto_linting = v:true
 let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:clj_fmt_autosave = 1
-let g:syntastic_clojure_checkers = ['eastwood']
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"} " Vim-slime default config
 let g:tmuxline_preset = {
       \'a'       : '#S',
