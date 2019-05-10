@@ -138,6 +138,7 @@ highlight elixirStruct cterm=bold
 " -----------------------------------------------------------------------------
 let test#filename_modifier = ':~'
 let g:iced_enable_default_key_mappings = v:true
+let g:iced_enable_auto_linting = v:true
 let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:clj_fmt_autosave = 1
