@@ -15,6 +15,7 @@ packages=(
   imagemagick
   leiningen
   nmap
+  npm
   nvim
   postgresql
   rename
@@ -25,7 +26,6 @@ packages=(
   tree
   wget
   xz
-  yarn
   zsh
 )
 
