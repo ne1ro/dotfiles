@@ -63,9 +63,8 @@ Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' } " Elixir support
 
 " Clojure
 Plug 'guns/vim-sexp',    {'for': 'clojure'}
-Plug 'liquidz/vim-iced', {'for': 'clojure'} " Clojure support
+Plug 'liquidz/vim-iced', {'for': 'clojure', 'branch': 'dev'} " Clojure support
 Plug 'vim-scripts/paredit.vim', { 'for': 'clojure'} " Edit parentheses
-Plug 'venantius/vim-eastwood', { 'for': 'clojure'} " Linter
 Plug 'clojure-vim/async-clj-omni', {'for': 'clojure'} " Autocomplete
 " Plug 'venantius/vim-cljfmt', {'for': 'clojure'} " Autoformat
 
