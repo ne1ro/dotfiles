@@ -5,6 +5,7 @@ packages=(
   coreutils
   dnscrypt
   dnsmask
+  emacs-plus
   fasd
   findutils
   flow
@@ -14,15 +15,14 @@ packages=(
   hub
   imagemagick
   leiningen
+  node
   nmap
   npm
-  nvim
   postgresql
   rename
   terminal-notifier
   terraform
   the_silver_searcher
-  tmux
   tree
   wget
   xz
@@ -46,9 +46,10 @@ apps=(
 
 # Cask fonts
 fonts=(
-  hasklig
+  font-fira-code
 )
 
+brew tap d12frosted/emacs-plus
 brew update
 brew upgrade
 brew install 'caskroom/cask/brew-cask'
