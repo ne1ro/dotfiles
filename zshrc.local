@@ -16,31 +16,30 @@ alias gl='git log'
 # Aliases
 alias h='history 0'
 alias http='http -v'
+alias k='kubectl'
+alias e='emacs --insecure'
 alias le='lein'
 alias mux='tmuxinator start'
 alias ph='iex -S mix phx.server'
 alias tf='terraform'
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
+alias v='vim'
 
 # iTerm hack
 # Disables quit by Ctrl-S and Ctrl-Q
 stty -ixon
 
-export ANDROID_SDK=$HOME/Library/Android/sdk
-export ECTO_EDITOR="nvim"
-export EDITOR="nvim"
+export ECTO_EDITOR="emacs"
+export EDITOR="emacs"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export KEYTIMEOUT=1
 export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.vim/plugged/vim-iced/bin:$PATH"
-# export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
-export VISUAL="nvim"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export VISUAL="emacs"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
