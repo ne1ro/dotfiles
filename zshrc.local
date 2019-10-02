@@ -14,6 +14,7 @@ alias gs='git status'
 alias gl='git log'
 
 # Aliases
+alias be='bundle exec'
 alias h='history 0'
 alias http='http -v'
 alias k='kubectl'
@@ -28,18 +29,20 @@ alias v='vim'
 # Disables quit by Ctrl-S and Ctrl-Q
 stty -ixon
 
-export ECTO_EDITOR="emacs"
-export EDITOR="emacs"
+export ECTO_EDITOR="vim"
+export EDITOR="vim"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export KEYTIMEOUT=1
+export KUBE_EDITOR="vim"
 export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export VISUAL="emacs"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
+eval "$(rbenv init -)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

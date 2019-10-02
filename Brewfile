@@ -15,10 +15,11 @@ packages=(
   hub
   imagemagick
   leiningen
-  node
   nmap
+  node
   npm
   postgresql
+  rbenv
   rename
   terminal-notifier
   terraform
