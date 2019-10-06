@@ -6,12 +6,12 @@ alias gb='git branch'
 alias gbc='git checkout -b'
 alias gc='git commit --verbose'
 alias gca='git add . && git commit'
-alias gp='git push'
-alias gp='git push --force'
-alias gpu='git pull'
 alias gd='git diff'
-alias gs='git status'
 alias gl='git log'
+alias gp='git push --force'
+alias gp='git push'
+alias gpu='git pull'
+alias gs='git status'
 
 # Aliases
 alias be='bundle exec'
@@ -43,6 +43,5 @@ export VISUAL="emacs"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 eval "$(rbenv init -)"
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
