@@ -18,6 +18,7 @@ packages=(
   nmap
   node
   npm
+  nvim
   postgresql
   rbenv
   rename
@@ -47,10 +48,9 @@ apps=(
 
 # Cask fonts
 fonts=(
-  font-fira-code
+  fira-code-mono
 )
 
-brew tap d12frosted/emacs-plus
 brew update
 brew upgrade
 brew install 'caskroom/cask/brew-cask'
