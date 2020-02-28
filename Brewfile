@@ -40,7 +40,6 @@ apps=(
   skype
   slack
   the-unarchiver
-  torbrowser
   transmission
   vlc
   xmind

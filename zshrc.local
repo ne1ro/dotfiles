@@ -30,7 +30,6 @@ alias vim='nvim'
 # Disables quit by Ctrl-S and Ctrl-Q
 stty -ixon
 
-export ANDROID_SDK=$HOME/Library/Android/sdk
 export ECTO_EDITOR="nvim"
 export EDITOR="nvim"
 export ERL_AFLAGS="-kernel shell_history enabled"
@@ -42,8 +41,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export VISUAL="nvim"
 
+eval "$(/usr/local/bin/rbenv init -)"
 fpath=(/usr/local/share/zsh-completions $fpath)
-eval "$(rbenv init -)"
-export PATH="$HOME/.vim/plugged/vim-iced/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
