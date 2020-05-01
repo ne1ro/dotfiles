@@ -2,6 +2,7 @@
 # Homebrew packages
 packages=(
   bcrypt
+  cmake
   coreutils
   dnscrypt
   dnsmask
@@ -15,10 +16,9 @@ packages=(
   hub
   imagemagick
   leiningen
+  libvterm
   nmap
-  node
   npm
-  nvim
   postgresql
   rbenv
   rename
@@ -28,14 +28,13 @@ packages=(
   tree
   wget
   xz
+  yarn
   zsh
 )
 
 # Cask packages
 apps=(
-  iterm2
   java
-  karabiner
   ngrok
   skype
   slack

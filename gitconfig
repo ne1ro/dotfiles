@@ -1,18 +1,12 @@
 [user]
 	email = neiro.mail@gmail.com
-	name = neiro
+	name = ne1ro
 [push]
 	default = current
 [core]
 	autocrlf = input
-	excludesfile = /Users/neiro/.gitignore_global
-	editor = vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+	excludesfile = $HOME/.gitignore_global
+	editor = emacs
 [credential]
 	helper = osxkeychain
 [filter "lfs"]
@@ -21,4 +15,4 @@
 	process = git-lfs filter-process
 	required = true
 [commit]
-	template = /Users/neiro/.git_commit_msg.txt
+	template = $HOME/.git_commit_msg.txt
