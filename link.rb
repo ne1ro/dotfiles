@@ -7,8 +7,6 @@ dotfiles = %w[
   git_commit_msg.txt
   gitconfig
   gitignore_global
-  spacemacs
-  zshrc
   zshrc.local
 ]
 
@@ -24,6 +22,3 @@ dotfiles.each do |file|
   File.symlink linked_file, linking_file
   puts "Created symlink for .#{file}", ''
 end
-
-File.delete("#{Dir.home}/.config/nvim/init.vim")
-File.symlink("#{dotfiles_dir}/init.vim", "#{Dir.home}/.config/nvim/init.vim")
