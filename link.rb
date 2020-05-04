@@ -3,11 +3,12 @@
 
 dotfiles_dir = Dir.pwd
 dotfiles = %w[
-  curlrc
+  doom.d
   git_commit_msg.txt
   gitconfig
   gitignore_global
   zshrc.local
+  curlrc
 ]
 
 dotfiles.each do |file|
