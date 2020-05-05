@@ -48,3 +48,5 @@
 
 (package! seeing-is-believing)
 (package! yaml-mode)
+(package! enh-ruby-mode)
+(package! org-fancy-priorities)

@@ -1,9 +1,11 @@
 #!/bin/sh
 # Homebrew packages
 packages=(
+  babashka
   bcrypt
   cmake
   coreutils
+  clojure
   dnscrypt
   dnsmask
   emacs-plus
@@ -15,7 +17,6 @@ packages=(
   httpie
   hub
   imagemagick
-  leiningen
   libvterm
   nmap
   npm

@@ -66,3 +66,15 @@
 (use-package! yaml-mode
   :init
   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+
+(use-package! enh-ruby-mode
+  :init
+  (progn (add-to-list 'auto-mode-alist
+                      '("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
+         (add-hook 'enh-ruby-mode-hook 'robe-mode)))
+
+(use-package! org-fancy-priorities
+  :hook
+  (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
