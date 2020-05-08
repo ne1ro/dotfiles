@@ -28,8 +28,9 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-(setq org-agenda-files '("~/org"))
+(setq find-file-visit-truename t)
+(setq vc-follow-symlinks t)
+(setq org-agenda-files '("~/org" "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org"))
 
 (setq doom-theme 'doom-solarized-dark)
 
@@ -59,6 +60,9 @@
       seeing-is-believing-timeout 10.5
       seeing-is-believing-alignment 'file)
 
+(use-package! org-agenda
+  :init (setq org-agenda-files '("~/org")))
+
 (use-package! seeing-is-believing
   :init
   (add-hook 'ruby-mode-hook 'seeing-is-believing))
@@ -66,12 +70,6 @@
 (use-package! yaml-mode
   :init
   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
-
-(use-package! enh-ruby-mode
-  :init
-  (progn (add-to-list 'auto-mode-alist
-                      '("\\(?:\\.rb\\|ru\\|rake\\|thor\\|jbuilder\\|gemspec\\|podspec\\|/\\(?:Gem\\|Rake\\|Cap\\|Thor\\|Vagrant\\|Guard\\|Pod\\)file\\)\\'" . enh-ruby-mode))
-         (add-hook 'enh-ruby-mode-hook 'robe-mode)))
 
 (use-package! org-fancy-priorities
   :hook
