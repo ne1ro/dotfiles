@@ -16,7 +16,8 @@
       (clojure.java.io/delete-file path))))
 
 (defn- remove-and-link [file]
-  (let [linking-file (io/file user-home file) linked-file (io/file dotfiles-dir file)]
+  (let [linking-file (io/file user-home (str "." file))
+       linked-file (io/file dotfiles-dir file)]
     (remove-existed linking-file)
     (Files/createSymbolicLink
      (.toPath linking-file)
