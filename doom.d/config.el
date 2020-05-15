@@ -5,6 +5,11 @@
 ;;
 (load! "bindings")
 
+;; Load maximized
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Aleksei Kuznetsov")
@@ -30,7 +35,6 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq find-file-visit-truename t)
 (setq vc-follow-symlinks t)
-(setq org-agenda-files '("~/org" "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org"))
 
 (setq doom-theme 'doom-solarized-dark)
 
@@ -55,24 +59,64 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
+(use-package! seeing-is-believing
+  :after ruby-mode
+  :init
+  (add-hook 'ruby-mode-hook 'seeing-is-believing)
+  :config (map! :nv "SPC m s s" 'seeing-is-believing-run))
+
 (setq seeing-is-believing-max-length 150
       seeing-is-believing-max-results 10
       seeing-is-believing-timeout 10.5
       seeing-is-believing-alignment 'file)
 
-(use-package! org-agenda
-  :init (setq org-agenda-files '("~/org")))
-
-(use-package! seeing-is-believing
-  :init
-  (add-hook 'ruby-mode-hook 'seeing-is-believing))
-
 (use-package! yaml-mode
+  :defer
   :init
   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
 
 (use-package! org-fancy-priorities
+  :after org
   :hook
   (org-mode . org-fancy-priorities-mode)
   :config
   (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
+
+;; =============================================================================
+;; ORG STATIC BLOG CONFIG
+;; =============================================================================
+(use-package! org-static-blog
+  :config
+  (setq
+   org-static-blog-publish-title "Neiro λ Functional programming, web development"
+   org-static-blog-publish-url "https://neiro.io/"
+   org-static-blog-publish-directory "~/Projects/neiro.io/blog/"
+   org-static-blog-posts-directory "~/Projects/neiro.io/posts/"
+   org-static-blog-drafts-directory "~/Projects/neiro.io/drafts/"
+   org-static-blog-enable-tags t
+   org-export-with-toc t
+   org-export-with-section-numbers t))
+
+;; This header is inserted into the <head> section of every page:
+;;   (you will need to create the style sheet at
+;;    ~/projects/blog/static/style.css
+;;    and the favicon at
+;;    ~/projects/blog/static/favicon.ico)
+;; (setq org-static-blog-page-header
+;; "<meta name=\"author\" content=\"Aleksei Kuznetsov\">
+;; <meta name=\"referrer\" content=\"no-referrer\">
+;; <link rel=\"icon\" href=\"static/favicon.ico\">")
+
+;; This preamble is inserted at the beginning of the <body> of every page:
+;;   This particular HTML creates a <div> with a simple linked headline
+;; (setq org-static-blog-page-preamble
+;; "<div class=\"header\">
+;;   <a href=\"https://neiro.io\">Neiro λ Functional programming, web development</a>
+;; </div>")
+
+(after! org-agenda
+  (setq org-agenda-files '("~/org" "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org"))
+  (add-hook 'org-agenda-mode-hook
+            (lambda ()
+              (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
+              (auto-save-mode))))
