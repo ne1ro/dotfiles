@@ -24,7 +24,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code Retina" :size 12))
+(setq doom-font (font-spec :family "Fira Code Retina" :size 12)
+      doom-variable-pitch-font (font-spec :family "Fira Code Retina" :size 12))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -114,8 +115,28 @@
 ;;   <a href=\"https://neiro.io\">Neiro λ Functional programming, web development</a>
 ;; </div>")
 
+(after! org
+  (setq org-capture-templates
+        '(("t" "Todo [inbox]" entry
+           (file+headline "~/Dropbox/org/inbox.org" "Tasks")
+           "* TODO %i%?")
+          ("T" "Tickler" entry
+           (file+headline "~/Dropbox/org/tickler.org" "Tickler")
+           "* %i%? \n %U"))))
+
 (after! org-agenda
-  (setq org-agenda-files '("~/org" "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org"))
+  (setq org-agenda-files
+        '("~/Dropbox/org/gtd.org"
+          "~/Dropbox/org/inbox.org"
+          "~/Dropbox/org/tickler.org")
+        org-deadline-warning-days 8
+        org-agenda-prefix-format
+        '(
+          (agenda  . "  • %?-12t% s") ;; file name + org-agenda-entry-type
+          (timeline  . "  % s")
+          (todo  . " %i %-12:c")
+          (tags  . " %i %-12:c")
+          (search . " %i %-12:c")))
   (add-hook 'org-agenda-mode-hook
             (lambda ()
               (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
