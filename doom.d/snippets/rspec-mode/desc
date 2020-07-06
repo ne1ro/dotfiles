@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: desc
+# key: desc
+# --
+describe '#$1' do
+  it '$2' do
+    $3
+  end
+end

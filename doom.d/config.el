@@ -89,6 +89,15 @@
 (use-package! org-static-blog
   :config
   (setq
+   org-static-blog-page-header
+    "<meta name=\"author\" content=\"Aleksei Kuznetsov\">
+    <meta name=\"referrer\" content=\"no-referrer\">
+    <link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" />
+    <link rel=\"icon\" href=\"static/favicon.ico\">"
+  org-static-blog-page-preamble
+  "<div class=\"header\">
+    <a href=\"https://neiro.io\">Neiro λ Functional programming, web development</a>
+  </div>"
    org-static-blog-publish-title "Neiro λ Functional programming, web development"
    org-static-blog-publish-url "https://neiro.io/"
    org-static-blog-publish-directory "~/Projects/neiro.io/blog/"
@@ -97,23 +106,6 @@
    org-static-blog-enable-tags t
    org-export-with-toc t
    org-export-with-section-numbers t))
-
-;; This header is inserted into the <head> section of every page:
-;;   (you will need to create the style sheet at
-;;    ~/projects/blog/static/style.css
-;;    and the favicon at
-;;    ~/projects/blog/static/favicon.ico)
-;; (setq org-static-blog-page-header
-;; "<meta name=\"author\" content=\"Aleksei Kuznetsov\">
-;; <meta name=\"referrer\" content=\"no-referrer\">
-;; <link rel=\"icon\" href=\"static/favicon.ico\">")
-
-;; This preamble is inserted at the beginning of the <body> of every page:
-;;   This particular HTML creates a <div> with a simple linked headline
-;; (setq org-static-blog-page-preamble
-;; "<div class=\"header\">
-;;   <a href=\"https://neiro.io\">Neiro λ Functional programming, web development</a>
-;; </div>")
 
 (after! org
   (setq org-capture-templates

@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: context
+# key: context
+# --
+context 'when $1' do
+  let(:$2) { $3 }
+
+  it '$4' do
+  end
+end
