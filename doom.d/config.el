@@ -114,13 +114,27 @@
 ;; </div>")
 
 (after! org
-  (setq org-capture-templates
+  (require 'org-roam-protocol)
+  (setq org-roam-server-host "127.0.0.1"
+        org-roam-server-port 8080
+        org-roam-server-export-inline-images t
+        org-roam-server-authenticate nil
+        org-roam-server-network-poll t
+        org-roam-server-network-arrows nil
+        org-roam-server-network-label-truncate t
+        org-roam-server-network-label-truncate-length 60
+        org-roam-server-network-label-wrap-length 20
+        org-roam-directory "~/roam"
+        org-roam-graph-viewer "/usr/bin/open"
+        org-roam-graph-executable "dot"
+        org-capture-templates
         '(("t" "Todo [inbox]" entry
            (file+headline "~/Dropbox/org/inbox.org" "Tasks")
            "* TODO %i%?")
           ("T" "Tickler" entry
            (file+headline "~/Dropbox/org/tickler.org" "Tickler")
-           "* %i%? \n %U"))))
+           "* %i%? \n %U")))
+  (add-hook 'after-init-hook 'org-roam-mode))
 
 (after! org-agenda
   (setq org-agenda-files
