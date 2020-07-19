@@ -50,3 +50,4 @@
 (package! yaml-mode)
 (package! org-fancy-priorities)
 (package! org-static-blog)
+(package! org-roam-server)
