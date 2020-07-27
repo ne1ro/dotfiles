@@ -30,7 +30,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-solarized-dark)
+(setq doom-theme 'doom-tomorrow-night)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -58,6 +58,14 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
+;; Change emacs theme based on system appearance
+(add-hook 'ns-system-appearance-change-functions
+          #'(lambda (appearance)
+              (mapc #'disable-theme custom-enabled-themes)
+              (pcase appearance
+                ('light (load-theme 'doom-tomorrow-day t))
+                ('dark (load-theme 'doom-tomorrow-night t)))))
+
 (use-package! seeing-is-believing
   :after ruby-mode
   :init
@@ -68,6 +76,10 @@
       seeing-is-believing-max-results 10
       seeing-is-believing-timeout 10.5
       seeing-is-believing-alignment 'file)
+
+(use-package! rbenv
+  :after ruby-mode
+  :init (add-hook 'ruby-mode-hook 'global-rbenv-mode))
 
 (use-package! yaml-mode
   :defer
@@ -88,12 +100,12 @@
   :config
   (setq
    org-static-blog-page-header
-    "<meta name=\"author\" content=\"Aleksei Kuznetsov\">
+   "<meta name=\"author\" content=\"Aleksei Kuznetsov\">
     <meta name=\"referrer\" content=\"no-referrer\">
     <link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" />
     <link rel=\"icon\" href=\"static/favicon.ico\">"
-  org-static-blog-page-preamble
-  "<div class=\"header\">
+   org-static-blog-page-preamble
+   "<div class=\"header\">
     <a href=\"https://neiro.io\">Neiro λ Functional programming, web development</a>
   </div>"
    org-static-blog-publish-title "Neiro λ Functional programming, web development"
