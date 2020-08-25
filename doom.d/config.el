@@ -77,6 +77,10 @@
       seeing-is-believing-timeout 10.5
       seeing-is-believing-alignment 'file)
 
+(use-package! rbenv
+  :after ruby-mode
+  :init (add-hook 'ruby-mode-hook 'global-rbenv-mode))
+
 (use-package! yaml-mode
   :defer
   :init
