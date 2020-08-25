@@ -33,12 +33,12 @@
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
        indent-guides     ; highlighted indent columns
+       (ligatures +fira)
        (modeline +light)          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink the current line after jumping
        ;; neotree           ; a project drawer, like NERDTree for vim
        ophints           ; highlight the region an operation acts on
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
-       (pretty-code) ; ligatures or substitute text with pretty symbols
        ;;tabs              ; an tab bar for Emacs
        treemacs          ; a project drawer, like neotree but cooler
        ;;unicode           ; extended unicode support for various languages
@@ -113,7 +113,7 @@
        ;;csharp            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
        ;;(dart +flutter)   ; paint ui and not much else
-       ;; elixir            ; erlang done right
+       (elixir +lsp)            ; erlang done right
        ;;elm               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        ;;erlang            ; an elegant language for a more civilized age
@@ -122,7 +122,7 @@
        ;;fsharp           ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;(go +lsp)         ; the hipster dialect
-       ;;(haskell +dante)  ; a language that's lazier than I am
+       (haskell +dante +lsp)  ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
@@ -135,7 +135,7 @@
        ;;ledger            ; an accounting system in Emacs
        ;;lua               ; one-based indices? one-based indices
        markdown            ; writing docs for people to ignore
-       (org +roam +gnuplot)         ; organize your plain life in plain text
+       (org +pretty +roam +gnuplot)         ; organize your plain life in plain text
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
@@ -151,7 +151,7 @@
        (ruby +rails +rbenv +lsp)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
-       ;;scheme            ; a fully conniving family of lisps
+       scheme            ; a fully conniving family of lisps
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
@@ -167,7 +167,7 @@
        :app
        ;; calendar
        ;;irc               ; how neckbeards socialize
-       (rss +org)        ; emacs as an RSS reader
+       ;;(rss +org)        ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought
 
        :config
