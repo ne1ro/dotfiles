@@ -48,5 +48,6 @@
 
 (package! seeing-is-believing)
 (package! yaml-mode)
-(package! org-static-blog)
 (package! org-roam-server)
+(package! kubernetes)
+(package! kubernetes-evil)
