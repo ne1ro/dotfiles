@@ -92,33 +92,24 @@
   :init
   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
 
-(use-package! google-translate
-  :config
-  (setq google-translate-default-target-language "en"))
+(use-package lsp-mode
+  :commands lsp
+  :ensure t
+  :diminish lsp-mode
+  :hook
+  (elixir-mode . lsp)
+  :init
+  (add-to-list 'exec-path "~/Projects/elixir-ls"))
 
-;; =============================================================================
-;; ORG STATIC BLOG CONFIG
-;; =============================================================================
-(use-package! org-static-blog
-  :config
-  (setq
-   org-static-blog-page-header
-   "<meta name=\"author\" content=\"Aleksei Kuznetsov\">
-    <meta name=\"referrer\" content=\"no-referrer\">
-    <link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" />
-    <link rel=\"icon\" href=\"static/favicon.ico\">"
-   org-static-blog-page-preamble
-   "<div class=\"header\">
-    <a href=\"https://neiro.io\">Neiro λ Functional programming, web development</a>
-  </div>"
-   org-static-blog-publish-title "Neiro λ Functional programming, web development"
-   org-static-blog-publish-url "https://neiro.io/"
-   org-static-blog-publish-directory "~/Projects/neiro.io/blog/"
-   org-static-blog-posts-directory "~/Projects/neiro.io/posts/"
-   org-static-blog-drafts-directory "~/Projects/neiro.io/drafts/"
-   org-static-blog-enable-tags t
-   org-export-with-toc t
-   org-export-with-section-numbers t))
+;; Kubernetes configuration
+(use-package kubernetes
+  :ensure t
+  :commands (kubernetes-overview))
+
+;; If you want to pull in the Evil compatibility package.
+(use-package kubernetes-evil
+  :ensure t
+  :after kubernetes)
 
 (after! org
   (require 'org-roam-protocol)
@@ -138,10 +129,14 @@
         '(("t" "Todo [inbox]" entry
            (file+headline "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/inbox.org" "Tasks")
            "* TODO %i%?")
-          ("T" "Tickler" entry
-           (file+headline "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/tickler.org" "Tickler")
-           "* %i%? \n %U")))
-  (add-hook 'after-init-hook 'org-roam-mode))
+          ("a" "Anki Deutsch"
+           entry
+           (file+headline "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/anki.org" "Dispatch Shelf")
+           "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: Deutsch\n:END:\n** Front\n%?\n** Back\n%x\n")
+        ("T" "Tickler" entry
+         (file+headline "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/tickler.org" "Tickler")
+         "* %i%? \n %U")))
+(add-hook 'after-init-hook 'org-roam-mode))
 
 (after! org-agenda
   (setq org-agenda-files
