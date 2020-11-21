@@ -18,14 +18,14 @@
 ;; are the three important ones:
 ;;
 ;; + `doom-font'
-;; + `doom-variable-pitch-font'
+;; + `doom-variable-pitch-font
 ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code Retina" :size 12)
-      doom-variable-pitch-font (font-spec :family "Fira Code Retina" :size 12))
+(setq doom-font (font-spec :family "Fira Code" :size 12)
+      doom-variable-pitch-font (font-spec :family "Fira Code" :size 12))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -34,12 +34,13 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
+(setq org-directory "~/Library/Mobile\ Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org")
 (setq find-file-visit-truename t)
 (setq vc-follow-symlinks t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type nil)
+(setq display-line-numbers-type 'relative)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -57,6 +58,11 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+
+;; The built-in package manager package.el supports ahead-of-time native compilation when installing a package
+(setq package-native-compile t)
+
+(setq comp-speed 4)
 
 ;; Change emacs theme based on system appearance
 (add-hook 'ns-system-appearance-change-functions
@@ -130,18 +136,18 @@
         org-roam-graph-executable "dot"
         org-capture-templates
         '(("t" "Todo [inbox]" entry
-           (file+headline "~/Dropbox/org/inbox.org" "Tasks")
+           (file+headline "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/inbox.org" "Tasks")
            "* TODO %i%?")
           ("T" "Tickler" entry
-           (file+headline "~/Dropbox/org/tickler.org" "Tickler")
+           (file+headline "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/tickler.org" "Tickler")
            "* %i%? \n %U")))
   (add-hook 'after-init-hook 'org-roam-mode))
 
 (after! org-agenda
   (setq org-agenda-files
-        '("~/Dropbox/org/gtd.org"
-          "~/Dropbox/org/inbox.org"
-          "~/Dropbox/org/tickler.org")
+        '("/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/gtd.org"
+          "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/inbox.org"
+          "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/tickler.org")
         org-deadline-warning-days 8
         org-agenda-prefix-format
         '(
