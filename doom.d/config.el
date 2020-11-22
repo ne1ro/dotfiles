@@ -133,10 +133,24 @@
            entry
            (file+headline "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/anki.org" "Dispatch Shelf")
            "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: Deutsch\n:END:\n** Front\n%?\n** Back\n%x\n")
-        ("T" "Tickler" entry
-         (file+headline "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/tickler.org" "Tickler")
-         "* %i%? \n %U")))
-(add-hook 'after-init-hook 'org-roam-mode))
+          ("T" "Tickler" entry
+           (file+headline "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/tickler.org" "Tickler")
+           "* %i%? \n %U")))
+  (add-hook 'after-init-hook 'org-roam-mode))
+
+
+;; Org-Super agenda configuration
+(setq org-super-agenda-groups
+      '((:name "Today"  ; Optionally specify section name
+         :time-grid t  ; Items that appear on the time grid
+         :todo "TODAY")  ; Items that have this TODO keyword
+        (:name "Important"
+         :priority "A")
+        (:priority<= "B"
+         ;; Show this section after "Today" and "Important", because
+         ;; their order is unspecified, defaulting to 0. Sections
+         ;; are displayed lowest-number-first.
+         :order 1)))
 
 (after! org-agenda
   (setq org-agenda-files
