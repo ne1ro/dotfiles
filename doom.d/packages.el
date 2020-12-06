@@ -53,3 +53,4 @@
 (package! kubernetes-evil)
 (package! anki-editor)
 (package! org-super-agenda)
+(package! org-static-blog)

@@ -152,6 +152,32 @@
          ;; are displayed lowest-number-first.
          :order 1)))
 
+;; =============================================================================
+;; ORG STATIC BLOG CONFIG
+;; =============================================================================
+(use-package! org-static-blog
+  :config
+  (setq
+   org-static-blog-page-header
+    "<meta name=\"author\" content=\"Aleksei Kuznetsov\">
+    <meta name=\"referrer\" content=\"no-referrer\">
+    <link href= \"https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css\" rel=\"stylesheet\" type=\"text/css\" />
+    <link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" />
+    <link rel=\"icon\" href=\"static/favicon.ico\">"
+  org-static-blog-page-preamble
+  "<div class=\"header\">
+    <a href=\"https://neiro.io\">Neiro - Functional programming, software architecture</a>
+  </div>"
+   org-static-blog-use-preview t
+   org-static-blog-publish-title "Neiro - Functional programming, software architecture"
+   org-static-blog-publish-url "https://neiro.io/"
+   org-static-blog-publish-directory "~/Projects/neiro.io/blog/"
+   org-static-blog-posts-directory "~/Projects/neiro.io/posts/"
+   org-static-blog-drafts-directory "~/Projects/neiro.io/drafts/"
+   org-static-blog-enable-tags t
+   org-export-with-toc t
+   org-export-with-section-numbers t))
+
 (after! org-agenda
   (setq org-agenda-files
         '("/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/gtd.org"
