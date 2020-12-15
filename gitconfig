@@ -5,14 +5,12 @@
 	default = current
 [core]
 	autocrlf = input
-	excludesfile = $HOME/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = emacs
-[credential]
-	helper = osxkeychain
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 [commit]
-	template = $HOME/.git_commit_msg.txt
+	template = ~/.git_commit_msg.txt

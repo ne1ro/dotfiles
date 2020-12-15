@@ -34,7 +34,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Library/Mobile\ Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org")
+(setq org-directory "~/Dropbox/org")
 (setq find-file-visit-truename t)
 (setq vc-follow-symlinks t)
 
@@ -122,19 +122,19 @@
         org-roam-server-network-label-truncate t
         org-roam-server-network-label-truncate-length 60
         org-roam-server-network-label-wrap-length 20
-        org-roam-directory "~/roam"
+        org-roam-directory "~/Dropbox/roam"
         org-roam-graph-viewer "/usr/bin/open"
         org-roam-graph-executable "dot"
         org-capture-templates
         '(("t" "Todo [inbox]" entry
-           (file+headline "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/inbox.org" "Tasks")
+           (file+headline "~/Dropbox/org/inbox.org" "Tasks")
            "* TODO %i%?")
           ("a" "Anki Deutsch"
            entry
-           (file+headline "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/anki.org" "Dispatch Shelf")
+           (file+headline "~/Dropbox/org/anki.org" "Dispatch Shelf")
            "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: Deutsch\n:END:\n** Front\n%?\n** Back\n%x\n")
           ("T" "Tickler" entry
-           (file+headline "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/tickler.org" "Tickler")
+           (file+headline "~/Dropbox/org/tickler.org" "Tickler")
            "* %i%? \n %U")))
   (add-hook 'after-init-hook 'org-roam-mode))
 
@@ -180,9 +180,9 @@
 
 (after! org-agenda
   (setq org-agenda-files
-        '("/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/gtd.org"
-          "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/inbox.org"
-          "/Users/neiro/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/tickler.org")
+        '("~/Dropbox/org/gtd.org"
+          "~/Dropbox/org/inbox.org"
+          "~/Dropbox/org/tickler.org")
         org-deadline-warning-days 8
         org-agenda-prefix-format
         '(
