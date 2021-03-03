@@ -54,3 +54,4 @@
 (package! anki-editor)
 (package! org-super-agenda)
 (package! org-static-blog)
+(package! org-plus-contrib)

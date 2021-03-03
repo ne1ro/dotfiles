@@ -112,6 +112,7 @@
   :after kubernetes)
 
 (after! org
+  (add-to-list 'org-modules 'org-habit)
   (require 'org-roam-protocol)
   (setq org-roam-server-host "127.0.0.1"
         org-roam-server-port 8080
@@ -125,6 +126,10 @@
         org-roam-directory "~/Dropbox/roam"
         org-roam-graph-viewer "/usr/bin/open"
         org-roam-graph-executable "dot"
+        org-pomodoro-long-break-frequency 1
+        org-pomodoro-length 52
+        org-pomodoro-format "🍅 ~%s"
+        org-pomodoro-long-break-length 17
         org-capture-templates
         '(("t" "Todo [inbox]" entry
            (file+headline "~/Dropbox/org/inbox.org" "Tasks")
@@ -138,19 +143,6 @@
            "* %i%? \n %U")))
   (add-hook 'after-init-hook 'org-roam-mode))
 
-
-;; Org-Super agenda configuration
-(setq org-super-agenda-groups
-      '((:name "Today"  ; Optionally specify section name
-         :time-grid t  ; Items that appear on the time grid
-         :todo "TODAY")  ; Items that have this TODO keyword
-        (:name "Important"
-         :priority "A")
-        (:priority<= "B"
-         ;; Show this section after "Today" and "Important", because
-         ;; their order is unspecified, defaulting to 0. Sections
-         ;; are displayed lowest-number-first.
-         :order 1)))
 
 ;; =============================================================================
 ;; ORG STATIC BLOG CONFIG
