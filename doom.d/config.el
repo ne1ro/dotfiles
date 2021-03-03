@@ -210,3 +210,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(defun jx/produce-pomodoro-string-for-menu-bar ()
+  "Produce the string for the current pomodoro counter to display on the menu bar"
+  (let ((prefix (cl-case org-pomodoro-state
+            (:pomodoro "🍅")
+            (:overtime "O")
+            (:short-break "B")
+            (:long-break "B"))))
+          (if (and (org-pomodoro-active-p) (> (length prefix) 0))
+            (list prefix (org-pomodoro-format-seconds)) "")))
