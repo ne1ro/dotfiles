@@ -4,6 +4,7 @@
 ;; sync' after modifying this file!
 ;;
 (load! "bindings")
+(load! "secrets")
 
 ;; Load maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
@@ -24,8 +25,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code" :size 12)
-      doom-variable-pitch-font (font-spec :family "Fira Code" :size 12))
+(setq doom-font (font-spec :family "Fira Code" :size 12.5)
+      doom-variable-pitch-font (font-spec :family "Fira Code" :size 12.5))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -72,17 +73,6 @@
                 ('light (load-theme 'doom-tomorrow-day t))
                 ('dark (load-theme 'doom-tomorrow-night t)))))
 
-(use-package! seeing-is-believing
-  :after ruby-mode
-  :init
-  (add-hook 'ruby-mode-hook 'seeing-is-believing)
-  :config (map! :nv "SPC m s s" 'seeing-is-believing-run))
-
-(setq seeing-is-believing-max-length 150
-      seeing-is-believing-max-results 10
-      seeing-is-believing-timeout 10.5
-      seeing-is-believing-alignment 'file)
-
 (use-package! rbenv
   :after ruby-mode
   :init (add-hook 'ruby-mode-hook 'global-rbenv-mode))
@@ -111,25 +101,21 @@
   :ensure t
   :after kubernetes)
 
+(use-package plantuml-mode
+  :defer
+  :config (setq plantuml-executable-path "/usr/local/bin/plantuml" plantuml-default-exec-mode 'executable))
+
 (after! org
   (add-to-list 'org-modules 'org-habit)
   (require 'org-roam-protocol)
-  (setq org-roam-server-host "127.0.0.1"
-        org-roam-server-port 8080
-        org-roam-server-export-inline-images t
-        org-roam-server-authenticate nil
-        org-roam-server-network-poll t
-        org-roam-server-network-arrows nil
-        org-roam-server-network-label-truncate t
-        org-roam-server-network-label-truncate-length 60
-        org-roam-server-network-label-wrap-length 20
-        org-roam-directory "~/Dropbox/roam"
-        org-roam-graph-viewer "/usr/bin/open"
-        org-roam-graph-executable "dot"
+  (setq org-roam-directory "~/Dropbox/roam"
         org-pomodoro-long-break-frequency 1
         org-pomodoro-length 52
         org-pomodoro-format "🍅 ~%s"
         org-pomodoro-long-break-length 17
+        org-agenda-custom-commands
+        '(("w" "Work tasks" tags-todo "@work"
+                ((org-agenda-overriding-header "Work"))))
         org-capture-templates
         '(("t" "Todo [inbox]" entry
            (file+headline "~/Dropbox/org/inbox.org" "Tasks")
@@ -140,8 +126,7 @@
            "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: Deutsch\n:END:\n** Front\n%?\n** Back\n%x\n")
           ("T" "Tickler" entry
            (file+headline "~/Dropbox/org/tickler.org" "Tickler")
-           "* %i%? \n %U")))
-  (add-hook 'after-init-hook 'org-roam-mode))
+           "* %i%? \n %U"))))
 
 
 ;; =============================================================================
@@ -172,8 +157,9 @@
 
 (after! org-agenda
   (setq org-agenda-files
-        '("~/Dropbox/org/gtd.org"
-          "~/Dropbox/org/inbox.org"
+        '("~/Dropbox/org/inbox.org"
+          "~/Dropbox/org/habits.org"
+          "~/Dropbox/org/gtd.org"
           "~/Dropbox/org/tickler.org")
         org-deadline-warning-days 8
         org-agenda-prefix-format
@@ -202,7 +188,6 @@
    '("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "7a994c16aa550678846e82edc8c9d6a7d39cc6564baaaacc305a3fdc0bd8725f" "e1ef2d5b8091f4953fe17b4ca3dd143d476c106e221d92ded38614266cea3c8b" "1623aa627fecd5877246f48199b8e2856647c99c6acdab506173f9bb8b0a41ac" "bf387180109d222aee6bb089db48ed38403a1e330c9ec69fe1f52460a8936b66" "99ea831ca79a916f1bd789de366b639d09811501e8c092c85b2cb7d697777f93" "e2acbf379aa541e07373395b977a99c878c30f20c3761aac23e9223345526bcc" "425cf02839fa7c5ebd6cb11f8074f6b8463ae6ed3eeb4cf5a2b18ffc33383b0b" default))
  '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
  '(frame-background-mode 'dark)
- '(org-roam-server-mode t)
  '(window-divider-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -210,13 +195,3 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(defun jx/produce-pomodoro-string-for-menu-bar ()
-  "Produce the string for the current pomodoro counter to display on the menu bar"
-  (let ((prefix (cl-case org-pomodoro-state
-            (:pomodoro "🍅")
-            (:overtime "O")
-            (:short-break "B")
-            (:long-break "B"))))
-          (if (and (org-pomodoro-active-p) (> (length prefix) 0))
-            (list prefix (org-pomodoro-format-seconds)) "")))
