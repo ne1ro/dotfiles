@@ -109,6 +109,7 @@
   (add-to-list 'org-modules 'org-habit)
   (require 'org-roam-protocol)
   (setq org-roam-directory "~/Dropbox/roam"
+        calendar-week-start-day 1
         org-pomodoro-long-break-frequency 1
         org-pomodoro-length 52
         org-pomodoro-format "🍅 ~%s"
