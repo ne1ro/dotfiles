@@ -19,12 +19,17 @@ alias gs='git status'
 
 # Aliases
 alias be='bundle exec'
+alias bi='bundle install'
+alias e='emacs -nw'
 alias h='history 0'
 alias http='http -v'
 alias k='kubectl'
+alias kont='kubectl config use-context '
 alias le='lein'
 alias mux='tmuxinator start'
+alias pc='podman-compose'
 alias ph='iex -S mix phx.server'
+alias sctl='sudo systemctl'
 alias tf='terraform'
 alias v='nvim'
 alias vim='nvim'
@@ -40,13 +45,19 @@ export KEYTIMEOUT=1
 export KUBE_EDITOR="nvim"
 export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export VISUAL="emacs"
 
-eval "$(/usr/local/bin/rbenv init -)"
+. $HOME/.asdf/asdf.sh
+
+fpath=(${ASDF_DIR}/completions $fpath)
 fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(~/.zsh/completion $fpath)
 
+autoload -U promptinit; promptinit
+autoload -Uz compinit && compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(rbenv init -)"
