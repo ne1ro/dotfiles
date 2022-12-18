@@ -52,3 +52,6 @@
 (package! plantuml-mode)
 (package! smudge)
 (package! graphql-mode)
+
+(unpin! org-roam)
+(package! org-roam-ui)

@@ -175,6 +175,23 @@
               (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
               (auto-save-mode))))
 
+;; Org Roam v2 UI
+;; (org-roam-ui-mode) opens http://localhost:35901
+(use-package! websocket
+    :after org-roam)
+
+(use-package! org-roam-ui
+    :after org-roam ;; or :after org
+;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
+;;         a hookable mode anymore, you're advised to pick something yourself
+;;         if you don't care about startup time, use
+;;  :hook (after-init . org-roam-ui-mode)
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
+
 (when (window-system)
   (set-frame-font "Fira Code"))
 (custom-set-variables
