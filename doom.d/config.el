@@ -7,13 +7,11 @@
 (load! "secrets")
 
 ;; Load maximized
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
+(toggle-frame-fullscreen)
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Aleksei Kuznetsov")
+(setq user-full-name "ne1ro")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -25,13 +23,13 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code" :size 12.5)
-      doom-variable-pitch-font (font-spec :family "Fira Code" :size 12.5))
+(setq doom-font (font-spec :family "Fira Code Retina" :size 30)
+      doom-variable-pitch-font (font-spec :family "Fira Code Retina" :size 30))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-tomorrow-night)
+(setq doom-theme 'doom-one-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -62,8 +60,7 @@
 
 ;; The built-in package manager package.el supports ahead-of-time native compilation when installing a package
 (setq package-native-compile t)
-
-(setq comp-speed 4)
+(setq comp-speed 8)
 
 ;; Change emacs theme based on system appearance
 (add-hook 'ns-system-appearance-change-functions
@@ -87,8 +84,7 @@
   :ensure t
   :diminish lsp-mode
   :hook
-  (elixir-mode . lsp)
-  :init
+  (elixir-mode . lsp) :init
   (add-to-list 'exec-path "~/Projects/elixir-ls"))
 
 ;; Kubernetes configuration
@@ -104,6 +100,8 @@
 (use-package plantuml-mode
   :defer
   :config (setq plantuml-executable-path "/usr/local/bin/plantuml" plantuml-default-exec-mode 'executable))
+
+(after! core-ui (menu-bar-mode))
 
 (after! org
   (add-to-list 'org-modules 'org-habit)
@@ -149,10 +147,11 @@
    org-static-blog-use-preview t
    org-static-blog-publish-title "Neiro - Functional programming, software architecture"
    org-static-blog-publish-url "https://neiro.io/"
-   org-static-blog-publish-directory "~/Projects/neiro.io/blog/"
-   org-static-blog-posts-directory "~/Projects/neiro.io/posts/"
-   org-static-blog-drafts-directory "~/Projects/neiro.io/drafts/"
+   org-static-blog-publish-directory "~/Projekte/neiro.io/blog/"
+   org-static-blog-posts-directory "~/Projekte/neiro.io/posts/"
+   org-static-blog-drafts-directory "~/Projekte/neiro.io/drafts/"
    org-static-blog-enable-tags t
+   org-static-blog-index-length 10
    org-export-with-toc t
    org-export-with-section-numbers t))
 
@@ -205,7 +204,6 @@
  '(custom-safe-themes
    '("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "7a994c16aa550678846e82edc8c9d6a7d39cc6564baaaacc305a3fdc0bd8725f" "e1ef2d5b8091f4953fe17b4ca3dd143d476c106e221d92ded38614266cea3c8b" "1623aa627fecd5877246f48199b8e2856647c99c6acdab506173f9bb8b0a41ac" "bf387180109d222aee6bb089db48ed38403a1e330c9ec69fe1f52460a8936b66" "99ea831ca79a916f1bd789de366b639d09811501e8c092c85b2cb7d697777f93" "e2acbf379aa541e07373395b977a99c878c30f20c3761aac23e9223345526bcc" "425cf02839fa7c5ebd6cb11f8074f6b8463ae6ed3eeb4cf5a2b18ffc33383b0b" default))
  '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
- '(frame-background-mode 'dark)
  '(window-divider-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
