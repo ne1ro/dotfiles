@@ -3,7 +3,6 @@ compinit
 
 bindkey -v
 zstyle ':prompt:grml:left:setup' items change-root user at host path vcs
-source <(kubectl completion zsh)
 
 # Git aliases
 alias gb='git branch'
@@ -38,17 +37,21 @@ alias vim='nvim'
 # Disables quit by Ctrl-S and Ctrl-Q
 stty -ixon
 
-export ECTO_EDITOR="emacs"
-export EDITOR="emacs"
+export ECTO_EDITOR="emacs -nw"
+export EDITOR="emacs -nw"
 export ERL_AFLAGS="-kernel shell_history enabled"
 export KEYTIMEOUT=1
-export KUBE_EDITOR="nvim"
+export KUBE_EDITOR="emacs -nw"
 export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export VISUAL="emacs"
+export VISUAL="emacs -nw"
+export XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share"
+export FZF_TMUX_OPTS="-p"
+export FZF_CTRL_R_OPTS="--reverse --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export RUBY_YJIT_ENABLE=1
 
 . $HOME/.asdf/asdf.sh
 
@@ -61,3 +64,4 @@ autoload -Uz compinit && compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(rbenv init -)"
+[[ "$commands[kubectl]" ]] && source <(kubectl completion zsh)

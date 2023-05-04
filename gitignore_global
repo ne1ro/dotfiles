@@ -7,3 +7,4 @@
 Icon
 .dir-locals.el
 *Org*Agenda*
+.yardoc
