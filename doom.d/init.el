@@ -134,7 +134,7 @@
        ;;lean
        ;;factor
        ;;ledger            ; an accounting system in Emacs
-       ;;lua               ; one-based indices? one-based indices
+       (lua +lsp +fennel +moonscript) ; one-based indices? one-based indices
        markdown            ; writing docs for people to ignore
        (org +pretty +roam2 +gnuplot +present +journal +pomodoro)         ; organize your plain life in plain text
        ;;nim               ; python + lisp at the speed of c
