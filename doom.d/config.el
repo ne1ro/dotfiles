@@ -191,6 +191,15 @@
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
 
+;; accept completion from copilot and fallback to company
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+
 (when (window-system)
   (set-frame-font "Fira Code"))
 (custom-set-variables
