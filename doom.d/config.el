@@ -23,8 +23,8 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code Retina" :size 18)
-      doom-variable-pitch-font (font-spec :family "Fira Code Retina" :size 18))
+(setq doom-font (font-spec :family "Fira Code Retina" :size 14)
+      doom-variable-pitch-font (font-spec :family "Fira Code Retina" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -114,7 +114,7 @@
         org-pomodoro-long-break-length 17
         org-agenda-custom-commands
         '(("w" "Work tasks" tags-todo "@work"
-                ((org-agenda-overriding-header "Work"))))
+           ((org-agenda-overriding-header "Work"))))
         org-capture-templates
         '(("t" "Todo [inbox]" entry
            (file+headline "~/Dropbox/org/inbox.org" "Tasks")
@@ -127,33 +127,6 @@
            (file+headline "~/Dropbox/org/tickler.org" "Tickler")
            "* %i%? \n %U"))))
 
-
-;; =============================================================================
-;; ORG STATIC BLOG CONFIG
-;; =============================================================================
-(use-package! org-static-blog
-  :config
-  (setq
-   org-static-blog-page-header
-    "<meta name=\"author\" content=\"Aleksei Kuznetsov\">
-    <meta name=\"referrer\" content=\"no-referrer\">
-    <link href= \"https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css\" rel=\"stylesheet\" type=\"text/css\" />
-    <link href= \"static/style.css\" rel=\"stylesheet\" type=\"text/css\" />
-    <link rel=\"icon\" href=\"static/favicon.ico\">"
-  org-static-blog-page-preamble
-  "<div class=\"header\">
-    <a href=\"https://neiro.io\">Neiro - Functional programming, software architecture</a>
-  </div>"
-   org-static-blog-use-preview t
-   org-static-blog-publish-title "Neiro - Functional programming, software architecture"
-   org-static-blog-publish-url "https://neiro.io/"
-   org-static-blog-publish-directory "~/Projekte/neiro.io/blog/"
-   org-static-blog-posts-directory "~/Projekte/neiro.io/posts/"
-   org-static-blog-drafts-directory "~/Projekte/neiro.io/drafts/"
-   org-static-blog-enable-tags t
-   org-static-blog-index-length 10
-   org-export-with-toc t
-   org-export-with-section-numbers t))
 
 (after! org-agenda
   (setq org-agenda-files
@@ -177,19 +150,19 @@
 ;; Org Roam v2 UI
 ;; (org-roam-ui-mode) opens http://localhost:35901
 (use-package! websocket
-    :after org-roam)
+  :after org-roam)
 
 (use-package! org-roam-ui
-    :after org-roam ;; or :after org
-;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
-;;         a hookable mode anymore, you're advised to pick something yourself
-;;         if you don't care about startup time, use
-;;  :hook (after-init . org-roam-ui-mode)
-    :config
-    (setq org-roam-ui-sync-theme t
-          org-roam-ui-follow t
-          org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t))
+  :after org-roam ;; or :after org
+  ;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
+  ;;         a hookable mode anymore, you're advised to pick something yourself
+  ;;         if you don't care about startup time, use
+  ;;  :hook (after-init . org-roam-ui-mode)
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
 
 ;; accept completion from copilot and fallback to company
 (use-package! copilot
