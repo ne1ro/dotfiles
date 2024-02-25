@@ -33,7 +33,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Dropbox/org")
+(setq org-directory "~/Library/Mobile\ Documents/iCloud~com~appsonthemove~beorg/Documents/org")
 (setq find-file-visit-truename t)
 (setq vc-follow-symlinks t)
 
@@ -106,7 +106,7 @@
 (after! org
   (add-to-list 'org-modules 'org-habit)
   (require 'org-roam-protocol)
-  (setq org-roam-directory "~/Dropbox/roam"
+  (setq org-roam-directory "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/roam"
         calendar-week-start-day 1
         org-pomodoro-long-break-frequency 1
         org-pomodoro-length 52
@@ -117,23 +117,23 @@
            ((org-agenda-overriding-header "Work"))))
         org-capture-templates
         '(("t" "Todo [inbox]" entry
-           (file+headline "~/Dropbox/org/inbox.org" "Tasks")
+           (file+headline "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org/inbox.org" "Tasks")
            "* TODO %i%?")
           ("a" "Anki Deutsch"
            entry
-           (file+headline "~/Dropbox/org/anki.org" "Dispatch Shelf")
+           (file+headline "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org/anki.org" "Dispatch Shelf")
            "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: Deutsch\n:END:\n** Front\n%?\n** Back\n%x\n")
           ("T" "Tickler" entry
-           (file+headline "~/Dropbox/org/tickler.org" "Tickler")
+           (file+headline "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org/tickler.org" "Tickler")
            "* %i%? \n %U"))))
 
 
 (after! org-agenda
   (setq org-agenda-files
-        '("~/Dropbox/org/inbox.org"
-          "~/Dropbox/org/habits.org"
-          "~/Dropbox/org/gtd.org"
-          "~/Dropbox/org/tickler.org")
+        '("~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org/inbox.org"
+          "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org/habits.org"
+          "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org/gtd.org"
+          "~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org/tickler.org")
         org-deadline-warning-days 8
         org-agenda-prefix-format
         '(
